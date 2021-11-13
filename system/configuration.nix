@@ -10,7 +10,6 @@ let
   vscodium-with-extensions = pkgs.vscode-with-extensions.override {
     vscode = pkgs.vscodium;
     vscodeExtensions = (with pkgs.vscode-extensions; [
-      # bbenoist.Nix
       jnoortheen.nix-ide
     ]);
   };
@@ -23,9 +22,7 @@ in {
     ];
 
   hardware = {
-    pulseaudio = {
-      enable = false;
-    };
+    pulseaudio = { enable = false; };
   };
 
   nixpkgs = {
@@ -37,20 +34,15 @@ in {
   # Use the systemd-boot EFI boot loader.
   boot = {
     loader = {
-      systemd-boot = {
-        enable = true;
-      };
-      efi = {
-        canTouchEfiVariables = true;
-      };
+      #grup = { enable = true; version = 2; device = "replace_disk"; };
+      systemd-boot = { enable = true; };
+      efi = { canTouchEfiVariables = true; };
     };
     kernelPackages = pkgs.linuxPackages_latest;
   };
  
   # Set your time zone.
-  time = {
-    timeZone = "Europe/Madrid";
-  };
+  time = { timeZone = "Europe/Madrid"; };
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -58,25 +50,12 @@ in {
   networking = {
     useDHCP = false;
     hostName = "nixos";
-    networkmanager = {
-      enable = true;
-    };
+    networkmanager = { enable = true; };
   };
-  #networking.interfaces.eno1.useDHCP = true;
-  #networking.interfaces.wlp4s0.useDHCP = true;
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-  };
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
-  };
+  i18n = { defaultLocale = "en_US.UTF-8"; };
+  console = { font = "Lat2-Terminus16"; keyMap = "us"; };
 
   # Fonts
   fonts = {
@@ -97,9 +76,7 @@ in {
 
   # Security
   security = {
-    rtkit = {
-      enable = true;
-    };
+    rtkit = { enable = true; };
   };
 
   # services
@@ -124,17 +101,11 @@ in {
       };
     };
     # dbus
-    dbus = {
-      packages = [ pkgs.gnome3.dconf ];
-    };
+    dbus = { packages = [ pkgs.gnome3.dconf ]; };
     # udev
-    udev = {
-      packages = [ pkgs.gnome3.gnome-settings-daemon ];
-    };
-    # cups printing
-    printing = {
-      enable = true;
-    };
+    udev = { packages = [ pkgs.gnome3.gnome-settings-daemon ]; };
+    # cups printing (can be accessed on http://localhost:631/)
+    printing = { enable = true; };
     # pipewire
     pipewire = {
       enable = true;
@@ -142,31 +113,21 @@ in {
       alsa.support32Bit = true;
       pulse.enable = true;
       media-session.config.bluez-monitor.rules = [
-      {
-        # Matches all cards
-        matches = [ { "device.name" = "~bluez_card.*"; } ];
-        actions = {
-          "update-props" = {
-            "bluez5.reconnect-profiles" = [ "hfp_hf" "hsp_hs" "a2dp_sink" ];
-            # mSBC is not expected to work on all headset + adapter combinations.
-            "bluez5.msbc-support" = true;
-            # SBC-XQ is not expected to work on all headset + adapter combinations.
-            "bluez5.sbc-xq-support" = true;
+        {
+          matches = [ { "device.name" = "~bluez_card.*"; } ];
+          actions = {
+            "update-props" = {
+              "bluez5.reconnect-profiles" = [ "hfp_hf" "hsp_hs" "a2dp_sink" ];
+              "bluez5.msbc-support" = true;
+              "bluez5.sbc-xq-support" = true;
+             };
           };
-        };
-      }
-      {
-        matches = [
-          # Matches all sources
-          { "node.name" = "~bluez_input.*"; }
-          # Matches all outputs
-          { "node.name" = "~bluez_output.*"; }
-        ];
-        actions = {
-          "node.pause-on-idle" = false;
-        };
-      }
-    ];
+        }
+        {
+          matches = [ { "node.name" = "~bluez_input.*"; } { "node.name" = "~bluez_output.*"; }  ];
+          actions = { "node.pause-on-idle" = false; };
+        }
+      ];
     };
   };
 
@@ -194,6 +155,7 @@ in {
     google-chrome
     networkmanager
     autorandr
+    neofetch
 
     # dev
     vscodium-with-extensions
@@ -223,31 +185,11 @@ in {
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
   programs = {
-    zsh = {
-      enable = true;
-    };
-    steam = {
-      enable = true;
-    };
+    zsh = { enable = true; };
+    steam = { enable = true; };
   };  
   
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # orking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

@@ -2,7 +2,7 @@
 
 USER=""
 BOOT_TYPE=""
-LOCALE=""
+TIMEZONE=""
 KEYMAP=""
 DISK=""
 TOTAL_MEMORY_IN_GIB=0
@@ -19,7 +19,7 @@ nix-channel --add https://nixos.org/channels/nixos-unstable nixos
 nix-channel --update
 
 echo "Downloading remote configuration.nix ..."
-curl -s https://raw.githubusercontent.com/wllianwd/nix/main/installation/configuration-template.nix > configuration-template.nix
+curl -s https://raw.githubusercontent.com/wllianwd/my-nix-os/main/system/configuration.nix > configuration-template.nix
 
 # Memory
 MEM_UNPARSED=$(grep MemTotal /proc/meminfo)
@@ -57,17 +57,17 @@ then
   exit
 fi
 
-# Locale
-echo -n "Enter your locale: (Europe/Madrid) "
-read LOCALE
-if [[ "$LOCALE" == "" ]];
+# Timezone
+echo -n "Enter your timezone: (Europe/Madrid) "
+read TIMEZONE
+if [[ "$TIMEZONE" == "" ]];
 then
-  LOCALE="Europe/Madrid"
+  TIMEZONE="Europe/Madrid"
 fi
 
-if [[ "$LOCALE" == "" ]];
+if [[ "$TIMEZONE" == "" ]];
 then
-  echo -n "Exiting as locale was not informed..."
+  echo -n "Exiting as timezone was not informed..."
   exit
 fi
 
@@ -162,9 +162,9 @@ then
   
   echo -e "Configuring BIOS boot loader ..."
   
-  sed -i 's|# boot.loader.grub.enable|boot.loader.grub.enable|g' configuration-template.nix
-  sed -i 's|# boot.loader.grub.version|boot.loader.grub.version|g' configuration-template.nix
-  sed -i 's|# boot.loader.grub.device|boot.loader.grub.device|g' configuration-template.nix
+  sed -i 's|#grup|grup|g' configuration-template.nix
+  sed -i 's|systemd-boot = |#systemd-boot = |g' configuration-template.nix
+  sed -i 's|efi = |#efi = |g' configuration-template.nix
   sed -i 's|replace_disk_id|'"${DISK}"'|g' configuration-template.nix
 fi
 
@@ -185,18 +185,18 @@ then
   mount /dev/disk/by-label/boot /mnt/boot
 
   echo -e "Configuring EFI boot loader ..."
-  sed -i 's|# boot.loader.systemd-boot.enable|boot.loader.systemd-boot.enable|g' configuration-template.nix
+  sed -i 's|#systemd-boot|systemd-boot|g' configuration-template.nix
+  sed -i 's|#efi|efi|g' configuration-template.nix
 fi
 
-echo -e "Configuring timezone as ${LOCALE} ..."
-sed -i 's/replace_timezone/'"${LOCALE}"'/g' configuration-template.nix
+echo -e "Configuring timezone as ${TIMEZONE} ..."
+sed -i 's|Europe/Madrid|'"${TIMEZONE}"'|g' configuration-template.nix
 
 echo -e "Configuring keymap as ${KEYMAP} ..."
-sed -i 's/replace_keymap/'"${KEYMAP}"'/g' configuration-template.nix
+sed -i 's/keyMap = "us"/keyMap = '"${KEYMAP}"'/g' configuration-template.nix
 
 echo -e "Configuring user ${USER} ..."
-sed -i 's/replace_user/'"${USER}"'/g' configuration-template.nix
-
+sed -i 's/willian/'"${USER}"'/g' configuration-template.nix
 
 nixos-generate-config --root /mnt
 mv /mnt/etc/nixos/configuration.nix /mnt/etc/nixos/configuration-bkp.nix
@@ -208,8 +208,25 @@ echo -e "Chroot into installed system for post-configuration ..."
 nixos-enter
 
 echo -e "Installing home-manager ..."
+su ${USER}
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
 export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 nix-shell '<home-manager>' -A install
+
+echo -e "Configuring dotfiles..."
+cd ~/
+mkdir .my-nix-os
+cd .my-nix-os
+git clone git@github.com:wllianwd/my-nix-os.git .
+mv system/hardware-configuration.nix system/hardware-configuration.nix.bkp
+cp /etc/nixos/hardware-configuration.nix system/hardware-configuration.nix
+mv users/willian/ users/${USER}/
+sed -i 's/willian/'"${USER}"'/g' scripts/update-dconf.sh
+sed -i 's/willian/'"${USER}"'/g' scripts/update-home.sh
+sed -i 's/willian/'"${USER}"'/g' users/${USER}/dconf.nix
+
+echo -e "Updating home manager ..."
+home-manager switch -f ~/.my-nix-os/users/${USER}/home.nix
+echo -e "Done! Please reboot."
 
