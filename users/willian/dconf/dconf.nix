@@ -1,0 +1,169 @@
+# Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
+{ lib, ... }:
+
+let
+  mkTuple = lib.hm.gvariant.mkTuple;
+in
+{
+  dconf.settings = {
+    "org/gnome/Music" = {
+      window-maximized = true;
+      window-position = [ 0 0 ];
+      window-size = [ 1920 1048 ];
+    };
+
+    "org/gnome/baobab/ui" = {
+      window-size = mkTuple [ 960 600 ];
+      window-state = 87168;
+    };
+
+    "org/gnome/control-center" = {
+      last-panel = "wifi";
+    };
+
+    "org/gnome/desktop/input-sources" = {
+      per-window = false;
+      sources = [ (mkTuple [ "xkb" "gb+extd" ]) ];
+      xkb-options = [ "terminate:ctrl_alt_bksp" ];
+    };
+
+    "org/gnome/desktop/interface" = {
+      font-antialiasing = "grayscale";
+      font-hinting = "slight";
+      gtk-im-module = "gtk-im-context-simple";
+      gtk-theme = "Adwaita-dark";
+      monospace-font-name = "MesloLGS Nerd Font Mono 11";
+    };
+
+    "org/gnome/desktop/notifications" = {
+      application-children = [ "gnome-power-panel" ];
+    };
+
+    "org/gnome/desktop/notifications/application/gnome-power-panel" = {
+      application-id = "gnome-power-panel.desktop";
+    };
+
+    "org/gnome/desktop/peripherals/keyboard" = {
+      numlock-state = true;
+    };
+
+    "org/gnome/desktop/privacy" = {
+      disable-microphone = false;
+    };
+
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu:minimize,maximize,close";
+    };
+
+    "org/gnome/evolution-data-server" = {
+      migrated = true;
+      network-monitor-gio-name = "";
+    };
+
+    "org/gnome/gedit/plugins" = {
+      active-plugins = [ "spell" "modelines" "docinfo" "sort" "filebrowser" ];
+    };
+
+    "org/gnome/gedit/plugins/filebrowser" = {
+      root = "file:///";
+      tree-view = true;
+      virtual-root = "file:///home/willian/.config/nixpkgs";
+    };
+
+    "org/gnome/gedit/preferences/ui" = {
+      show-tabs-mode = "auto";
+    };
+
+    "org/gnome/gedit/state/window" = {
+      bottom-panel-size = 140;
+      side-panel-active-page = "GeditWindowDocumentsPanel";
+      side-panel-size = 200;
+      size = mkTuple [ 900 700 ];
+      state = 87168;
+    };
+
+    "org/gnome/gnome-system-monitor" = {
+      current-tab = "processes";
+      maximized = false;
+      network-total-in-bits = false;
+      show-dependencies = false;
+      show-whose-processes = "user";
+      window-state = mkTuple [ 700 500 ];
+    };
+
+    "org/gnome/gnome-system-monitor/disktreenew" = {
+      col-6-visible = true;
+      col-6-width = 0;
+    };
+
+    "org/gnome/gnome-system-monitor/proctree" = {
+      columns-order = [ 0 1 2 3 4 6 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ];
+      sort-col = 8;
+      sort-order = 0;
+    };
+
+    "org/gnome/mutter" = {
+      attach-modal-dialogs = true;
+      dynamic-workspaces = true;
+      edge-tiling = true;
+      focus-change-on-pointer-rest = true;
+      workspaces-only-on-primary = true;
+    };
+
+    "org/gnome/nautilus/preferences" = {
+      default-folder-viewer = "icon-view";
+      search-filter-time-type = "last_modified";
+    };
+
+    "org/gnome/nautilus/window-state" = {
+      initial-size = mkTuple [ 890 550 ];
+      maximized = false;
+    };
+
+    "org/gnome/photos" = {
+      window-maximized = true;
+    };
+
+    "org/gnome/shell" = {
+      disabled-extensions = [];
+      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "places-menu@gnome-shell-extensions.gcampax.github.com" ];
+      favorite-apps = [ "google-chrome.desktop" "codium.desktop" "idea-community.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Terminal.desktop" ];
+      had-bluetooth-devices-setup = true;
+      welcome-dialog-last-shown-version = "41.1";
+    };
+
+    "org/gnome/shell/world-clocks" = {
+      locations = "@av []";
+    };
+
+    "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" = {
+      font = "MesloLGS Nerd Font Mono 11";
+      use-system-font = true;
+    };
+
+    "org/gnome/tweaks" = {
+      show-extensions-notice = false;
+    };
+
+    "org/gtk/settings/color-chooser" = {
+      custom-colors = [ (mkTuple [ 0.286275 0.658824 ]) ];
+      selected-color = mkTuple [ true 0.286275 ];
+    };
+
+    "org/gtk/settings/file-chooser" = {
+      date-format = "regular";
+      location-mode = "path-bar";
+      show-hidden = false;
+      show-size-column = true;
+      show-type-column = true;
+      sidebar-width = 157;
+      sort-column = "name";
+      sort-directories-first = false;
+      sort-order = "descending";
+      type-format = "category";
+      window-position = mkTuple [ 2265 82 ];
+      window-size = mkTuple [ 1231 902 ];
+    };
+
+  };
+}
