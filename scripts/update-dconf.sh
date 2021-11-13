@@ -1,10 +1,13 @@
 #/bin/sh
-pushd ~/.config/nixpkgs/dconf
+
+pushd ~/.my-nix-os
 echo "Dumping to dconf.settings ..."
 dconf dump / > dconf.settings
 echo "Generating ~/.config/nixpkgs/dconf/dconf.nix ..."
-dconf2nix -i dconf.settings -o dconf.nix
+dconf2nix -i dconf.settings -o users/willian/dconf/dconf.nix
 echo "Updating home-manager ..."
-home-manager switch
+home-manager switch -f ./users/willian/home.nix
+echo "Removing dconf.settings ..."
+rm dconf.settings
 echo "Done!"
 popd

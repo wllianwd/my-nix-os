@@ -15,10 +15,10 @@
     zsh = {
       enable = true;
       shellAliases = {
-        update-dconf = "sh ~/.config/nixpkgs/dconf/update-dconf.sh";
-        update-system = "sudo nixos-rebuild switch";
-        update-system-boot = "sudo nixos-rebuild switch";
-        update-home = "home-manager switch";
+        update-dconf = "sh ~/.my-nix-os/scripts/update-dconf.sh";
+        update-system = "sh ~/.my-nix-os/scripts/update-system.sh";
+        update-system-boot = "sh ~/.my-nix-os/scripts/update-boot.sh";
+        update-home = "sh ~/.my-nix-os/scripts/update-home.sh";
       };
       history = {
         size = 10000;
