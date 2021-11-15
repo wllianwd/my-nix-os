@@ -6,6 +6,15 @@ let
 in
 {
   dconf.settings = {
+    "apps/seahorse/listing" = {
+      keyrings-selected = [ "openssh:///home/willian/.ssh" ];
+    };
+
+    "apps/seahorse/windows/key-manager" = {
+      height = 476;
+      width = 1009;
+    };
+
     "org/gnome/Music" = {
       window-maximized = true;
       window-position = [ 0 0 ];
@@ -17,8 +26,19 @@ in
       window-state = 87168;
     };
 
+    "org/gnome/calendar" = {
+      active-view = "month";
+      window-maximized = true;
+      window-position = mkTuple [ 0 0 ];
+      window-size = mkTuple [ 1920 1048 ];
+    };
+
     "org/gnome/control-center" = {
-      last-panel = "wifi";
+      last-panel = "info-overview";
+    };
+
+    "org/gnome/desktop/calendar" = {
+      show-weekdate = false;
     };
 
     "org/gnome/desktop/input-sources" = {
@@ -32,7 +52,7 @@ in
       font-hinting = "slight";
       gtk-im-module = "gtk-im-context-simple";
       gtk-theme = "Adwaita-dark";
-      monospace-font-name = "MesloLGS Nerd Font Mono 11";
+      monospace-font-name = "MesloLGS NF 10";
     };
 
     "org/gnome/desktop/notifications" = {
@@ -41,6 +61,14 @@ in
 
     "org/gnome/desktop/notifications/application/gnome-power-panel" = {
       application-id = "gnome-power-panel.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/google-chrome" = {
+      application-id = "google-chrome.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/zoom" = {
+      application-id = "Zoom.desktop";
     };
 
     "org/gnome/desktop/peripherals/keyboard" = {
@@ -120,8 +148,23 @@ in
       maximized = false;
     };
 
+    "org/gnome/nm-applet/eap/41860233-f35f-42ba-be46-be9cf1128443" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
+    "org/gnome/nm-applet/eap/df7aacf2-195d-4ac2-ad5d-485bd6d3c864" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
     "org/gnome/photos" = {
       window-maximized = true;
+    };
+
+    "org/gnome/settings-daemon/plugins/power" = {
+      sleep-inactive-ac-type = "nothing";
+      sleep-inactive-battery-type = "suspend";
     };
 
     "org/gnome/shell" = {

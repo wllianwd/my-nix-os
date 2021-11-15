@@ -29,6 +29,19 @@ in {
     config = {
       allowUnfree = true;
     };
+    overlays = [
+      (self: super:
+        # fix zoom screen sharing (https://github.com/NixOS/nixpkgs/issues/107233)
+        {
+          zoomUsFixed = pkgs.zoom-us.overrideAttrs (old: {postFixup = old.postFixup + ''
+              wrapProgram $out/bin/zoom-us --unset XDG_SESSION_TYPE
+            '';});
+          zoom = pkgs.zoom-us.overrideAttrs (old: {postFixup = old.postFixup + ''
+              wrapProgram $out/bin/zoom --unset XDG_SESSION_TYPE
+            '';});
+        }
+      )
+    ];
   };
 
   # Use the systemd-boot EFI boot loader.
@@ -175,6 +188,7 @@ in {
     # video
     mesa
     mesa-demos
+    zoom
     dconf2nix
     wine-staging
     vulkan-tools
