@@ -169,6 +169,9 @@ in {
     networkmanager
     autorandr
     neofetch
+    bash
+    wine-staging
+    wineWowPackages.staging
 
     # dev
     vscodium-with-extensions
@@ -190,7 +193,6 @@ in {
     mesa-demos
     zoom
     dconf2nix
-    wine-staging
     vulkan-tools
     vulkan-loader
     vulkan-headers
