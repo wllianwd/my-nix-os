@@ -37,6 +37,14 @@ in
       last-panel = "info-overview";
     };
 
+    "org/gnome/desktop/background" = {
+      color-shading-type = "solid";
+      picture-options = "zoom";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/Blobs.svg";
+      primary-color = "#ffffff";
+      secondary-color = "#000000";
+    };
+
     "org/gnome/desktop/calendar" = {
       show-weekdate = false;
     };
@@ -63,8 +71,16 @@ in
       application-id = "gnome-power-panel.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/gnome-printers-panel" = {
+      application-id = "gnome-printers-panel.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/google-chrome" = {
       application-id = "google-chrome.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-nautilus" = {
+      application-id = "org.gnome.Nautilus.desktop";
     };
 
     "org/gnome/desktop/notifications/application/zoom" = {
@@ -77,6 +93,18 @@ in
 
     "org/gnome/desktop/privacy" = {
       disable-microphone = false;
+    };
+
+    "org/gnome/desktop/screensaver" = {
+      color-shading-type = "solid";
+      picture-options = "zoom";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/Blobs.svg";
+      primary-color = "#ffffff";
+      secondary-color = "#000000";
+    };
+
+    "org/gnome/desktop/search-providers" = {
+      sort-order = [ "org.gnome.Contacts.desktop" "org.gnome.Documents.desktop" "org.gnome.Nautilus.desktop" ];
     };
 
     "org/gnome/desktop/wm/preferences" = {
@@ -168,11 +196,17 @@ in
     };
 
     "org/gnome/shell" = {
+      disable-user-extensions = false;
       disabled-extensions = [];
-      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "places-menu@gnome-shell-extensions.gcampax.github.com" ];
+      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "places-menu@gnome-shell-extensions.gcampax.github.com" "gsconnect@andyholmes.github.io" ];
       favorite-apps = [ "google-chrome.desktop" "codium.desktop" "idea-community.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Terminal.desktop" ];
       had-bluetooth-devices-setup = true;
       welcome-dialog-last-shown-version = "41.1";
+    };
+
+    "org/gnome/shell/extensions/gsconnect" = {
+      id = "061888b5-76bd-4174-8464-b1ddb6563934";
+      name = "nixos";
     };
 
     "org/gnome/shell/world-clocks" = {

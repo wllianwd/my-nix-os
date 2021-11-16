@@ -162,10 +162,10 @@ then
   
   echo -e "Configuring BIOS boot loader ..."
   
-  sed -i 's|#grup|grup|g' configuration-template.nix
+  sed -i 's|#grub|grub|g' configuration-template.nix
   sed -i 's|systemd-boot = |#systemd-boot = |g' configuration-template.nix
   sed -i 's|efi = |#efi = |g' configuration-template.nix
-  sed -i 's|replace_disk_id|'"${DISK}"'|g' configuration-template.nix
+  sed -i 's|replace_disk|'"${DISK}"'|g' configuration-template.nix
 fi
 
 if [[ "$BOOT_TYPE" == "EFI" ]];
@@ -193,7 +193,7 @@ echo -e "Configuring timezone as ${TIMEZONE} ..."
 sed -i 's|Europe/Madrid|'"${TIMEZONE}"'|g' configuration-template.nix
 
 echo -e "Configuring keymap as ${KEYMAP} ..."
-sed -i 's/keyMap = "us"/keyMap = '"${KEYMAP}"'/g' configuration-template.nix
+sed -i 's/keyMap = "us"/keyMap = "'"${KEYMAP}"'"/g' configuration-template.nix
 
 echo -e "Configuring user ${USER} ..."
 sed -i 's/willian/'"${USER}"'/g' configuration-template.nix
@@ -215,13 +215,21 @@ export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 nix-shell '<home-manager>' -A install
 
 echo -e "Configuring dotfiles..."
+echo -e "Configuring dotfiles - entering ~/"
 cd ~/
+echo -e "Configuring dotfiles - creating .my-nix-os"
 mkdir .my-nix-os
+echo -e "Configuring dotfiles - entering .my-nix-os"
 cd .my-nix-os
-git clone git@github.com:wllianwd/my-nix-os.git .
+echo -e "Configuring dotfiles - cloning git"
+git clone https://github.com/wllianwd/my-nix-os.git .
+echo -e "Configuring dotfiles - moving hardware-configuration.nix.bkp"
 mv system/hardware-configuration.nix system/hardware-configuration.nix.bkp
+echo -e "Configuring dotfiles - moving hardware-configuration.nix"
 cp /etc/nixos/hardware-configuration.nix system/hardware-configuration.nix
+echo -e "Configuring dotfiles - renaming home config user"
 mv users/willian/ users/${USER}/
+echo -e "Configuring dotfiles - replacing username in home files"
 sed -i 's/willian/'"${USER}"'/g' scripts/update-dconf.sh
 sed -i 's/willian/'"${USER}"'/g' scripts/update-home.sh
 sed -i 's/willian/'"${USER}"'/g' users/${USER}/dconf.nix
@@ -229,4 +237,3 @@ sed -i 's/willian/'"${USER}"'/g' users/${USER}/dconf.nix
 echo -e "Updating home manager ..."
 home-manager switch -f ~/.my-nix-os/users/${USER}/home.nix
 echo -e "Done! Please reboot."
-

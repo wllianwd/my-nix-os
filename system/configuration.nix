@@ -4,17 +4,16 @@
 
 { config, pkgs, ... }:
 
-# variables
+# Variables
 
-let
-  vscodium-with-extensions = pkgs.vscode-with-extensions.override {
+let vscodium-with-extensions = pkgs.vscode-with-extensions.override {
     vscode = pkgs.vscodium;
     vscodeExtensions = (with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
     ]);
   };
 
-# config
+# Config
 in {
   imports =
     [ # Include the results of the hardware scan.
@@ -22,7 +21,13 @@ in {
     ];
 
   hardware = {
+    # Disabled to use pipewire
     pulseaudio = { enable = false; };
+    opengl = { 
+      enable = true; 
+      driSupport = true; 
+      driSupport32Bit = true; 
+    };
   };
 
   nixpkgs = {
@@ -47,7 +52,7 @@ in {
   # Use the systemd-boot EFI boot loader.
   boot = {
     loader = {
-      #grup = { enable = true; version = 2; device = "replace_disk"; };
+      #grub = { enable = true; version = 2; device = "replace_disk"; };
       systemd-boot = { enable = true; };
       efi = { canTouchEfiVariables = true; };
     };
@@ -57,9 +62,7 @@ in {
   # Set your time zone.
   time = { timeZone = "Europe/Madrid"; };
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
+  # Network
   networking = {
     useDHCP = false;
     hostName = "nixos";
@@ -92,26 +95,16 @@ in {
     rtkit = { enable = true; };
   };
 
-  # services
+  # Services
   services = {
     # X11
     xserver = {
       enable = true;
       # touchpad
-      libinput = {
-        enable = true;
-      };
+      libinput = { enable = true; };
       # gnome
-      displayManager = {
-        gdm = {
-          enable = true;
-        };
-      };
-      desktopManager = {
-        gnome = {
-          enable = true;
-        };
-      };
+      displayManager = { gdm = { enable = true; }; };
+      desktopManager = { gnome = { enable = true; }; };
     };
     # dbus
     dbus = { packages = [ pkgs.gnome3.dconf ]; };
@@ -119,6 +112,8 @@ in {
     udev = { packages = [ pkgs.gnome3.gnome-settings-daemon ]; };
     # cups printing (can be accessed on http://localhost:631/)
     printing = { enable = true; };
+    # flatpack
+    flatpak = { enable = true; };
     # pipewire
     pipewire = {
       enable = true;
@@ -144,7 +139,6 @@ in {
     };
   };
 
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     defaultUserShell = pkgs.zsh;
@@ -159,45 +153,59 @@ in {
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    cacert
-    pciutils
-    nano
-    unzip
-    google-chrome
-    networkmanager
-    autorandr
-    neofetch
-    bash
-    wine-staging
-    wineWowPackages.staging
+  environment = {
+    systemPackages = with pkgs; [
+      vim
+      cacert
+      pciutils
+      nano
+      unzip
+      google-chrome
+      networkmanager
+      autorandr
+      neofetch
+      bash
 
-    # dev
-    vscodium-with-extensions
-    git
-    wget
-    curl
-    nodejs
-    yarn
-    maven
-    openjdk11
-    jetbrains.idea-community
+      # dev
+      vscodium-with-extensions
+      git
+      wget
+      curl
+      nodejs
+      yarn
+      maven
+      openjdk11
+      jetbrains.idea-community
+      obsidian
+      kubectl
 
-    # gnome
-    gnome3.gnome-tweaks
-    gnomeExtensions.appindicator
+      # gnome
+      gnome3.gnome-tweaks
+      gnomeExtensions.appindicator
+      gnomeExtensions.gsconnect
 
-    # video
-    mesa
-    mesa-demos
-    zoom
-    dconf2nix
-    vulkan-tools
-    vulkan-loader
-    vulkan-headers
-    vulkan-tools-lunarg
-  ];
+      # video
+      mesa
+      mesa-demos
+      zoom
+      dconf2nix
+
+      # gaming
+      vulkan-loader
+      vulkan-validation-layers
+      vulkan-tools
+      vulkan-headers
+      wineWowPackages.staging
+      wine-staging
+      winetricks
+      lutris
+      discord
+      mangohud
+    ];
+    etc = with pkgs; {
+      "jdk-11".source = openjdk11;
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
