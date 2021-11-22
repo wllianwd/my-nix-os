@@ -1,8 +1,8 @@
 #/bin/sh
 
-echo "Executing: sudo nixos-rebuild switch -I nixos-config=~/.my-nix-os/system/configuration.nix"
+echo "Executing: sudo nixos-rebuild switch --flake .#"
 
 pushd ~/.my-nix-os
-nix-flake update --recreate-lock-file
+nix flake update
 sudo nixos-rebuild switch --flake .#
 popd

@@ -8,7 +8,15 @@ cd ~/
 mkdir .my-nix-os
 cd .my-nix-os
 git clone https://github.com/wllianwd/my-nix-os.git .
-home-manager switch -f ~/.my-nix-os/users/willian/home.nix
+nix flake update
+
+# system
+sudo nixos-rebuild switch --flake .#
+
+# home
+nix build .#homeManagerConfigurations.willian.activationPackage
+./result/activate
+
 ```
 This will create some aliases that can be used to maintain your system and home-manager using the dotfiles from this repo:
 * `update-system`: will do a `sudo nixos-rebuild switch` using `~/.my-nix-os/system/configuration.nix`
