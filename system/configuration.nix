@@ -20,6 +20,14 @@ in {
       ./hardware-configuration.nix
     ];
 
+  # Make ready for nix flakes
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   hardware = {
     # Disabled to use pipewire
     pulseaudio = { enable = false; };
@@ -178,6 +186,7 @@ in {
       jetbrains.idea-community
       obsidian
       kubectl
+      postman
 
       # gnome
       gnome3.gnome-tweaks

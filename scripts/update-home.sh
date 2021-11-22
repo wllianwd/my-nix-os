@@ -3,6 +3,6 @@
 echo "Executing: home-manager switch -f ~/.my-nix-os/users/willian/home.nix"
 
 pushd ~/.my-nix-os
-nix-channel --update
-home-manager switch -f ./users/willian/home.nix
+nix build .#homeManagerConfigurations.willian.activationPackage
+./result/activate
 popd
