@@ -34,15 +34,32 @@ in
     };
 
     "org/gnome/control-center" = {
-      last-panel = "info-overview";
+      last-panel = "background";
+    };
+
+    "org/gnome/desktop/app-folders" = {
+      folder-children = [ "Utilities" "YaST" ];
+    };
+
+    "org/gnome/desktop/app-folders/folders/Utilities" = {
+      apps = [ "gnome-abrt.desktop" "gnome-system-log.desktop" "nm-connection-editor.desktop" "org.gnome.baobab.desktop" "org.gnome.Connections.desktop" "org.gnome.DejaDup.desktop" "org.gnome.Dictionary.desktop" "org.gnome.DiskUtility.desktop" "org.gnome.eog.desktop" "org.gnome.Evince.desktop" "org.gnome.FileRoller.desktop" "org.gnome.fonts.desktop" "org.gnome.seahorse.Application.desktop" "org.gnome.tweaks.desktop" "org.gnome.Usage.desktop" "vinagre.desktop" ];
+      categories = [ "X-GNOME-Utilities" ];
+      name = "X-GNOME-Utilities.directory";
+      translate = true;
+    };
+
+    "org/gnome/desktop/app-folders/folders/YaST" = {
+      categories = [ "X-SuSE-YaST" ];
+      name = "suse-yast.directory";
+      translate = true;
     };
 
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/Blobs.svg";
-      primary-color = "#ffffff";
-      secondary-color = "#000000";
+      picture-uri = "file:///home/willian/.local/share/backgrounds/2021-11-16-16-14-35-abstract1.jpg";
+      primary-color = "#000000000000";
+      secondary-color = "#000000000000";
     };
 
     "org/gnome/desktop/calendar" = {
@@ -67,6 +84,10 @@ in
       application-children = [ "gnome-power-panel" ];
     };
 
+    "org/gnome/desktop/notifications/application/discord" = {
+      application-id = "discord.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/gnome-power-panel" = {
       application-id = "gnome-power-panel.desktop";
     };
@@ -81,6 +102,14 @@ in
 
     "org/gnome/desktop/notifications/application/org-gnome-nautilus" = {
       application-id = "org.gnome.Nautilus.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-shell-extensions-gsconnect-preferences" = {
+      application-id = "org.gnome.Shell.Extensions.GSConnect.Preferences.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/steam" = {
+      application-id = "steam.desktop";
     };
 
     "org/gnome/desktop/notifications/application/zoom" = {
@@ -98,9 +127,9 @@ in
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/Blobs.svg";
-      primary-color = "#ffffff";
-      secondary-color = "#000000";
+      picture-uri = "file:///home/willian/.local/share/backgrounds/2021-11-16-16-14-35-abstract1.jpg";
+      primary-color = "#000000000000";
+      secondary-color = "#000000000000";
     };
 
     "org/gnome/desktop/search-providers" = {
@@ -211,6 +240,12 @@ in
 
     "org/gnome/shell/world-clocks" = {
       locations = "@av []";
+    };
+
+    "org/gnome/software" = {
+      check-timestamp = "int64 1637571149";
+      online-updates-timestamp = "int64 1637571160";
+      update-notification-timestamp = "int64 1637571160";
     };
 
     "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" = {
