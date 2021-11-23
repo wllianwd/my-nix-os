@@ -7,7 +7,10 @@
   };
 
   # imports
-  imports = [ ./dconf/dconf.nix ];
+  imports = [ 
+    #./nvim/nvim.nix
+    ./dconf/dconf.nix
+  ];
   
   # programs
   programs = {
@@ -35,6 +38,14 @@
         # Config with: POWERLEVEL9K_CONFIG_FILE=~/.my-nix-os/users/willian/p10k-config/p10k.zsh p10k configure   
         { name = "zsh-syntax-highlighting"; src = pkgs.fetchFromGitHub { owner = "zsh-users"; repo = "zsh-syntax-highlighting"; rev = "0.7.1"; sha256 = "03r6hpb5fy4yaakqm3lbf4xcvd408r44jgpv4lnzl9asp4sb9qc0"; }; }
       ];
+    };
+    vim = {
+      enable = true;
+      plugins = with pkgs.vimPlugins; [ vim-airline nerdtree nerdtree-git-plugin ];
+      settings = { ignorecase = true; };
+      extraConfig = ''
+        set mouse=a
+      '';
     };
   };
 }

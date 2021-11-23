@@ -211,6 +211,9 @@ in {
       discord
       mangohud
     ];
+    variables = {
+      NIXOS_CONFIG_DIR="$HOME/.my-nix-os/";
+    };
     etc = with pkgs; {
       "jdk-11".source = openjdk11;
     };
