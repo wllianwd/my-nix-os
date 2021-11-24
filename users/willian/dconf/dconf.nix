@@ -64,7 +64,7 @@ in
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/willian/.local/share/backgrounds/2021-11-16-16-14-35-abstract1.jpg";
+      picture-uri = "file:///home/willian/.local/share/backgrounds/2021-11-17-16-26-37-nix-wallpaper-simple-dark-gray.png";
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
@@ -138,7 +138,7 @@ in
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/willian/.local/share/backgrounds/2021-11-16-16-14-35-abstract1.jpg";
+      picture-uri = "file:///home/willian/.local/share/backgrounds/2021-11-17-16-26-37-nix-wallpaper-simple-dark-gray.png";
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
@@ -258,7 +258,7 @@ in
     };
 
     "org/gnome/software" = {
-      check-timestamp = "int64 1637571149";
+      check-timestamp = "int64 1637777930";
       online-updates-timestamp = "int64 1637571160";
       update-notification-timestamp = "int64 1637571160";
     };
