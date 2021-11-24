@@ -15,6 +15,13 @@ in
       width = 1009;
     };
 
+    "org/gnome/Geary" = {
+      compose-as-html = true;
+      composer-window-size = [ 680 600 ];
+      formatting-toolbar-visible = false;
+      migrated-config = true;
+    };
+
     "org/gnome/Music" = {
       window-maximized = true;
       window-position = [ 0 0 ];
@@ -98,6 +105,10 @@ in
 
     "org/gnome/desktop/notifications/application/google-chrome" = {
       application-id = "google-chrome.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-geary" = {
+      application-id = "org.gnome.Geary.desktop";
     };
 
     "org/gnome/desktop/notifications/application/org-gnome-nautilus" = {
@@ -193,6 +204,10 @@ in
       edge-tiling = true;
       focus-change-on-pointer-rest = true;
       workspaces-only-on-primary = true;
+    };
+
+    "org/gnome/nautilus/icon-view" = {
+      default-zoom-level = "large";
     };
 
     "org/gnome/nautilus/preferences" = {
