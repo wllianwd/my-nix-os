@@ -65,6 +65,7 @@ in {
       efi = { canTouchEfiVariables = true; };
     };
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [ "acpi_backlight=vendor" ];
   };
  
   # Set your time zone.
