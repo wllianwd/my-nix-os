@@ -175,6 +175,12 @@ in {
       neofetch
       bash
 
+      # multimedia
+      deluge
+      handbrake
+      vlc
+      discord
+
       # dev
       vscodium-with-extensions
       git
@@ -209,7 +215,6 @@ in {
       wine-staging
       winetricks
       lutris
-      discord
       mangohud
     ];
     variables = {
