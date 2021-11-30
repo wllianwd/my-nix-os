@@ -34,7 +34,7 @@ in {
     opengl = { 
       enable = true; 
       driSupport = true; 
-      driSupport32Bit = true; 
+      driSupport32Bit = true;
     };
   };
 
@@ -76,6 +76,10 @@ in {
     useDHCP = false;
     hostName = "nixos";
     networkmanager = { enable = true; };
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 5000 8010 ];
+    };
   };
 
   # Select internationalisation properties.
@@ -85,16 +89,6 @@ in {
   # Fonts
   fonts = {
     fonts = with pkgs; [
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
-      liberation_ttf
-      fira-code
-      fira-code-symbols 
-      mplus-outline-fonts
-      dina-font
-      proggyfonts
-      nerdfonts
       meslo-lgs-nf
     ];
   };
@@ -174,11 +168,12 @@ in {
       autorandr
       neofetch
       bash
+      vlc
+      mkchromecast
 
       # multimedia
       deluge
       handbrake
-      vlc
       discord
 
       # dev
