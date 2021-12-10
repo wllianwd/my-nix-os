@@ -1,9 +1,8 @@
 # Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
 { lib, ... }:
 
-let
-  mkTuple = lib.hm.gvariant.mkTuple;
-in
+with lib.hm.gvariant;
+
 {
   dconf.settings = {
     "apps/seahorse/listing" = {
@@ -28,6 +27,11 @@ in
       window-size = [ 1920 1048 ];
     };
 
+    "org/gnome/Totem" = {
+      active-plugins = [ "screensaver" "movie-properties" "apple-trailers" "save-file" "open-directory" "vimeo" "variable-rate" "autoload-subtitles" "rotation" "media-player-keys" "recent" "screenshot" "skipto" ];
+      subtitle-encoding = "UTF-8";
+    };
+
     "org/gnome/baobab/ui" = {
       window-size = mkTuple [ 960 600 ];
       window-state = 87168;
@@ -38,6 +42,12 @@ in
       window-maximized = true;
       window-position = mkTuple [ 0 0 ];
       window-size = mkTuple [ 1920 1048 ];
+    };
+
+    "org/gnome/clocks/state/window" = {
+      panel-id = "world";
+      size = mkTuple [ 870 690 ];
+      state = 87168;
     };
 
     "org/gnome/control-center" = {
@@ -85,14 +95,23 @@ in
       gtk-im-module = "gtk-im-context-simple";
       gtk-theme = "Adwaita-dark";
       monospace-font-name = "MesloLGS NF 10";
+      show-battery-percentage = false;
     };
 
     "org/gnome/desktop/notifications" = {
       application-children = [ "gnome-power-panel" ];
     };
 
+    "org/gnome/desktop/notifications/application/deluge" = {
+      application-id = "deluge.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/discord" = {
       application-id = "discord.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/fr-handbrake-ghb" = {
+      application-id = "fr.handbrake.ghb.desktop";
     };
 
     "org/gnome/desktop/notifications/application/gnome-power-panel" = {
@@ -123,6 +142,10 @@ in
       application-id = "steam.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/vlc" = {
+      application-id = "vlc.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/zoom" = {
       application-id = "Zoom.desktop";
     };
@@ -145,6 +168,15 @@ in
 
     "org/gnome/desktop/search-providers" = {
       sort-order = [ "org.gnome.Contacts.desktop" "org.gnome.Documents.desktop" "org.gnome.Nautilus.desktop" ];
+    };
+
+    "org/gnome/desktop/session" = {
+      idle-delay = "uint32 0";
+    };
+
+    "org/gnome/desktop/sound" = {
+      event-sounds = true;
+      theme-name = "__custom";
     };
 
     "org/gnome/desktop/wm/preferences" = {
@@ -179,7 +211,7 @@ in
     };
 
     "org/gnome/gnome-system-monitor" = {
-      current-tab = "processes";
+      current-tab = "resources";
       maximized = false;
       network-total-in-bits = false;
       show-dependencies = false;
@@ -213,6 +245,7 @@ in
     "org/gnome/nautilus/preferences" = {
       default-folder-viewer = "icon-view";
       search-filter-time-type = "last_modified";
+      search-view = "list-view";
     };
 
     "org/gnome/nautilus/window-state" = {
@@ -251,6 +284,12 @@ in
     "org/gnome/shell/extensions/gsconnect" = {
       id = "061888b5-76bd-4174-8464-b1ddb6563934";
       name = "nixos";
+      show-indicators = false;
+    };
+
+    "org/gnome/shell/extensions/gsconnect/preferences" = {
+      window-maximized = false;
+      window-size = mkTuple [ 640 440 ];
     };
 
     "org/gnome/shell/world-clocks" = {
@@ -258,7 +297,7 @@ in
     };
 
     "org/gnome/software" = {
-      check-timestamp = "int64 1637777930";
+      check-timestamp = "int64 1639066693";
       online-updates-timestamp = "int64 1637571160";
       update-notification-timestamp = "int64 1637571160";
     };

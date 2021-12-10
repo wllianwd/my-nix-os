@@ -120,9 +120,13 @@ in {
     # pipewire
     pipewire = {
       enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      pulse = {
+        enable = true;
+      };
       media-session.config.bluez-monitor.rules = [
         {
           matches = [ { "device.name" = "~bluez_card.*"; } ];
@@ -186,7 +190,6 @@ in {
       maven
       openjdk11
       jetbrains.idea-community
-      obsidian
       kubectl
       postman
 
@@ -234,6 +237,6 @@ in {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system = {
-    stateVersion = "21.05"; # Did you read the comment?
+    stateVersion = "21.11"; # Did you read the comment?
   };
 }
