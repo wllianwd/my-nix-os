@@ -14,6 +14,10 @@ with lib.hm.gvariant;
       width = 1009;
     };
 
+    "org/gnome/Disks" = {
+      image-dir-uri = "file:///home/willian/Documents";
+    };
+
     "org/gnome/Geary" = {
       compose-as-html = true;
       composer-window-size = [ 680 600 ];
@@ -74,9 +78,9 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/willian/.local/share/backgrounds/2021-11-17-16-26-37-nix-wallpaper-simple-dark-gray.png";
-      primary-color = "#000000000000";
-      secondary-color = "#000000000000";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-timed.xml";
+      primary-color = "#ffffff";
+      secondary-color = "#000000";
     };
 
     "org/gnome/desktop/calendar" = {
@@ -161,9 +165,9 @@ with lib.hm.gvariant;
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/willian/.local/share/backgrounds/2021-11-17-16-26-37-nix-wallpaper-simple-dark-gray.png";
-      primary-color = "#000000000000";
-      secondary-color = "#000000000000";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-timed.xml";
+      primary-color = "#ffffff";
+      secondary-color = "#000000";
     };
 
     "org/gnome/desktop/search-providers" = {
@@ -181,6 +185,12 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,maximize,close";
+    };
+
+    "org/gnome/epiphany/state" = {
+      is-maximized = false;
+      window-position = mkTuple [ (-1) (-1) ];
+      window-size = mkTuple [ 1024 768 ];
     };
 
     "org/gnome/evolution-data-server" = {
@@ -220,6 +230,8 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/gnome-system-monitor/disktreenew" = {
+      col-0-visible = true;
+      col-0-width = 437;
       col-6-visible = true;
       col-6-width = 0;
     };
@@ -263,11 +275,22 @@ with lib.hm.gvariant;
       ignore-phase2-ca-cert = false;
     };
 
+    "org/gnome/nm-applet/eap/e8f53794-9636-4a95-866f-c16186dd4c4d" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
+    "org/gnome/nm-applet/eap/f183661b-61e6-4c6f-80c4-e573b33f3613" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
     "org/gnome/photos" = {
       window-maximized = true;
     };
 
     "org/gnome/settings-daemon/plugins/power" = {
+      idle-dim = false;
       sleep-inactive-ac-type = "nothing";
       sleep-inactive-battery-type = "suspend";
     };
@@ -297,7 +320,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = "int64 1639066693";
+      check-timestamp = mkInt64 1639336946;
       online-updates-timestamp = "int64 1637571160";
       update-notification-timestamp = "int64 1637571160";
     };
