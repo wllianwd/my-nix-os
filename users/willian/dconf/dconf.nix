@@ -55,7 +55,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "background";
+      last-panel = "sound";
     };
 
     "org/gnome/desktop/app-folders" = {
@@ -78,8 +78,8 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-timed.xml";
-      primary-color = "#ffffff";
+      picture-uri = "file:///nix/store/8jkjgrz2nh3fyawlsnsylcrv1p1h1337-gnome-backgrounds-41.0/share/backgrounds/gnome/adwaita-timed.xml";
+      primary-color = "#3465a4";
       secondary-color = "#000000";
     };
 
@@ -103,7 +103,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "gnome-power-panel" ];
+      application-children = [ "gnome-power-panel" "steam" "zoom" ];
     };
 
     "org/gnome/desktop/notifications/application/deluge" = {
@@ -165,8 +165,8 @@ with lib.hm.gvariant;
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-timed.xml";
-      primary-color = "#ffffff";
+      picture-uri = "file:///nix/store/8jkjgrz2nh3fyawlsnsylcrv1p1h1337-gnome-backgrounds-41.0/share/backgrounds/gnome/adwaita-timed.xml";
+      primary-color = "#3465a4";
       secondary-color = "#000000";
     };
 
@@ -175,7 +175,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/session" = {
-      idle-delay = "uint32 0";
+      idle-delay = mkUint32 0;
     };
 
     "org/gnome/desktop/sound" = {
@@ -255,7 +255,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/nautilus/preferences" = {
-      default-folder-viewer = "icon-view";
+      default-folder-viewer = "list-view";
       search-filter-time-type = "last_modified";
       search-view = "list-view";
     };
@@ -300,7 +300,7 @@ with lib.hm.gvariant;
       disabled-extensions = [];
       enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "places-menu@gnome-shell-extensions.gcampax.github.com" "gsconnect@andyholmes.github.io" ];
       favorite-apps = [ "google-chrome.desktop" "codium.desktop" "idea-community.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Terminal.desktop" ];
-      had-bluetooth-devices-setup = true;
+      had-bluetooth-devices-setup = false;
       welcome-dialog-last-shown-version = "41.1";
     };
 
@@ -320,7 +320,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1639336946;
+      check-timestamp = mkInt64 1639471121;
       online-updates-timestamp = "int64 1637571160";
       update-notification-timestamp = "int64 1637571160";
     };
