@@ -55,7 +55,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "sound";
+      last-panel = "display";
     };
 
     "org/gnome/desktop/app-folders" = {
@@ -103,7 +103,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "gnome-power-panel" "steam" "zoom" ];
+      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" ];
     };
 
     "org/gnome/desktop/notifications/application/deluge" = {
@@ -320,7 +320,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1639471121;
+      check-timestamp = mkInt64 1639558437;
       online-updates-timestamp = "int64 1637571160";
       update-notification-timestamp = "int64 1637571160";
     };
@@ -350,8 +350,8 @@ with lib.hm.gvariant;
       sort-directories-first = false;
       sort-order = "descending";
       type-format = "category";
-      window-position = mkTuple [ 2265 82 ];
-      window-size = mkTuple [ 1231 902 ];
+      window-position = mkTuple [ 26 23 ];
+      window-size = mkTuple [ 1297 902 ];
     };
 
   };
