@@ -173,6 +173,7 @@ in {
       autorandr
       neofetch
       bash
+      xdelta
       vlc
       mkchromecast
 
