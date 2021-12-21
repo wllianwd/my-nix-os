@@ -55,7 +55,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "online-accounts";
+      last-panel = "info-overview";
     };
 
     "org/gnome/desktop/app-folders" = {
@@ -103,7 +103,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" ];
+      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" ];
     };
 
     "org/gnome/desktop/notifications/application/deluge" = {
@@ -320,7 +320,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1639558437;
+      check-timestamp = mkInt64 1640075154;
       online-updates-timestamp = "int64 1637571160";
       update-notification-timestamp = "int64 1637571160";
     };
