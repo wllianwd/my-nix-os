@@ -235,6 +235,7 @@ in {
     ];
     variables = {
       NIXOS_CONFIG_DIR="$HOME/.my-nix-os/";
+      LIBVA_DRIVER_NAME="radeonsi";
     };
     etc = with pkgs; {
       "jdk-11".source = openjdk11;
