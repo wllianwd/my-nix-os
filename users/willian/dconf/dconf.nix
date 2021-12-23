@@ -103,7 +103,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" ];
+      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" "gnome-network-panel" ];
     };
 
     "org/gnome/desktop/notifications/application/deluge" = {
@@ -116,6 +116,10 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/notifications/application/fr-handbrake-ghb" = {
       application-id = "fr.handbrake.ghb.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/gnome-network-panel" = {
+      application-id = "gnome-network-panel.desktop";
     };
 
     "org/gnome/desktop/notifications/application/gnome-power-panel" = {
@@ -320,7 +324,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1640075154;
+      check-timestamp = mkInt64 1640267871;
       online-updates-timestamp = "int64 1637571160";
       update-notification-timestamp = "int64 1637571160";
     };
@@ -350,7 +354,7 @@ with lib.hm.gvariant;
       sort-directories-first = false;
       sort-order = "descending";
       type-format = "category";
-      window-position = mkTuple [ 26 23 ];
+      window-position = mkTuple [ 2232 82 ];
       window-size = mkTuple [ 1297 902 ];
     };
 

@@ -1,4 +1,4 @@
-# Edit this configuration file to define what should be installed on
+## Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
@@ -35,6 +35,10 @@ in {
       enable = true; 
       driSupport = true; 
       driSupport32Bit = true;
+      extraPackages = with pkgs; [
+        vaapiVdpau
+        libvdpau-va-gl
+      ];
     };
   };
 
@@ -65,7 +69,6 @@ in {
       efi = { canTouchEfiVariables = true; };
     };
     kernelPackages = pkgs.linuxPackages_zen;
-    #kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [ "acpi_backlight=vendor" ];
   };
  
@@ -185,6 +188,8 @@ in {
       neofetch
       bash
       xdelta
+      libva
+      libva-utils
       vlc
       mkchromecast
 
