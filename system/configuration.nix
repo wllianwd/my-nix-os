@@ -84,17 +84,6 @@ in {
       enable = true;
       allowedTCPPorts = [ 5000 8010 ];
     };
-    extraHosts = ''
-      # Genshin logging servers (do not remove!)
-      0.0.0.0 log-upload-os.mihoyo.com
-      0.0.0.0 overseauspider.yuanshen.com 
-      # Optional Unity proxy/cdn servers
-      0.0.0.0 prd-lender.cdp.internal.unity3d.com
-      0.0.0.0 thind-prd-knob.data.ie.unity3d.com
-      0.0.0.0 thind-gke-usc.prd.data.corp.unity3d.com
-      0.0.0.0 cdp.cloud.unity3d.com
-      0.0.0.0 remote-config-proxy-prd.uca.cloud.unity3d.com
-    '';
   };
 
   # Select internationalisation properties.
@@ -142,22 +131,6 @@ in {
       pulse = {
         enable = true;
       };
-      media-session.config.bluez-monitor.rules = [
-        {
-          matches = [ { "device.name" = "~bluez_card.*"; } ];
-          actions = {
-            "update-props" = {
-              "bluez5.reconnect-profiles" = [ "hfp_hf" "hsp_hs" "a2dp_sink" ];
-              "bluez5.msbc-support" = true;
-              "bluez5.sbc-xq-support" = true;
-             };
-          };
-        }
-        {
-          matches = [ { "node.name" = "~bluez_input.*"; } { "node.name" = "~bluez_output.*"; }  ];
-          actions = { "node.pause-on-idle" = false; };
-        }
-      ];
     };
   };
 
@@ -187,7 +160,6 @@ in {
       autorandr
       neofetch
       bash
-      xdelta
       libva
       libva-utils
       vlc
