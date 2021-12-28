@@ -304,7 +304,7 @@ with lib.hm.gvariant;
       disabled-extensions = [];
       enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "places-menu@gnome-shell-extensions.gcampax.github.com" "gsconnect@andyholmes.github.io" ];
       favorite-apps = [ "google-chrome.desktop" "codium.desktop" "idea-community.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Terminal.desktop" ];
-      had-bluetooth-devices-setup = false;
+      had-bluetooth-devices-setup = true;
       welcome-dialog-last-shown-version = "41.1";
     };
 
@@ -324,7 +324,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1640356017;
+      check-timestamp = mkInt64 1640678655;
       online-updates-timestamp = "int64 1637571160";
       update-notification-timestamp = "int64 1637571160";
     };
