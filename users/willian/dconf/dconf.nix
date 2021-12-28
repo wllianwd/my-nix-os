@@ -55,7 +55,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "info-overview";
+      last-panel = "background";
     };
 
     "org/gnome/desktop/app-folders" = {
@@ -78,7 +78,7 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///nix/store/8jkjgrz2nh3fyawlsnsylcrv1p1h1337-gnome-backgrounds-41.0/share/backgrounds/gnome/adwaita-timed.xml";
+      picture-uri = "file:///nix/store/ymjq3grahqkq0kynsrxxjabzhqg6la0z-gnome-backgrounds-41.0/share/backgrounds/gnome/adwaita-timed.xml";
       primary-color = "#3465a4";
       secondary-color = "#000000";
     };
@@ -169,7 +169,7 @@ with lib.hm.gvariant;
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///nix/store/8jkjgrz2nh3fyawlsnsylcrv1p1h1337-gnome-backgrounds-41.0/share/backgrounds/gnome/adwaita-timed.xml";
+      picture-uri = "file:///nix/store/ymjq3grahqkq0kynsrxxjabzhqg6la0z-gnome-backgrounds-41.0/share/backgrounds/gnome/adwaita-timed.xml";
       primary-color = "#3465a4";
       secondary-color = "#000000";
     };
