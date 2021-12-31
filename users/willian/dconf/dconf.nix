@@ -55,7 +55,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "background";
+      last-panel = "info-overview";
     };
 
     "org/gnome/desktop/app-folders" = {
@@ -324,7 +324,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1640810457;
+      check-timestamp = mkInt64 1640952061;
       online-updates-timestamp = "int64 1637571160";
       update-notification-timestamp = "int64 1637571160";
     };
@@ -354,7 +354,7 @@ with lib.hm.gvariant;
       sort-directories-first = false;
       sort-order = "descending";
       type-format = "category";
-      window-position = mkTuple [ 2232 82 ];
+      window-position = mkTuple [ 26 23 ];
       window-size = mkTuple [ 1297 902 ];
     };
 
