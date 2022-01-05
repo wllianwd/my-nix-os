@@ -324,7 +324,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1641273213;
+      check-timestamp = mkInt64 1641382333;
       online-updates-timestamp = "int64 1637571160";
       update-notification-timestamp = "int64 1637571160";
     };
