@@ -55,7 +55,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "info-overview";
+      last-panel = "sound";
     };
 
     "org/gnome/desktop/app-folders" = {
