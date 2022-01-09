@@ -55,7 +55,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "sound";
+      last-panel = "power";
     };
 
     "org/gnome/desktop/app-folders" = {
@@ -324,7 +324,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1641382333;
+      check-timestamp = mkInt64 1641732211;
       online-updates-timestamp = "int64 1637571160";
       update-notification-timestamp = "int64 1637571160";
     };
