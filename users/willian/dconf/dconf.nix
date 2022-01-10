@@ -55,7 +55,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "power";
+      last-panel = "sound";
     };
 
     "org/gnome/desktop/app-folders" = {
@@ -103,7 +103,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" "gnome-network-panel" ];
+      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" "gnome-network-panel" "idea-community" ];
     };
 
     "org/gnome/desktop/notifications/application/deluge" = {
@@ -132,6 +132,10 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/notifications/application/google-chrome" = {
       application-id = "google-chrome.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/idea-community" = {
+      application-id = "idea-community.desktop";
     };
 
     "org/gnome/desktop/notifications/application/org-gnome-geary" = {
@@ -203,13 +207,13 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/gedit/plugins" = {
-      active-plugins = [ "spell" "modelines" "docinfo" "sort" "filebrowser" ];
+      active-plugins = [ "filebrowser" "docinfo" "spell" "sort" "modelines" ];
     };
 
     "org/gnome/gedit/plugins/filebrowser" = {
       root = "file:///";
       tree-view = true;
-      virtual-root = "file:///home/willian/.config/nixpkgs";
+      virtual-root = "file:///home/willian/.my-nix-os/system";
     };
 
     "org/gnome/gedit/preferences/ui" = {
@@ -324,7 +328,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1641732211;
+      check-timestamp = mkInt64 1641890958;
       online-updates-timestamp = "int64 1637571160";
       update-notification-timestamp = "int64 1637571160";
     };
@@ -354,7 +358,7 @@ with lib.hm.gvariant;
       sort-directories-first = false;
       sort-order = "descending";
       type-format = "category";
-      window-position = mkTuple [ 26 23 ];
+      window-position = mkTuple [ 2232 82 ];
       window-size = mkTuple [ 1297 902 ];
     };
 
