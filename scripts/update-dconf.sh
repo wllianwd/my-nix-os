@@ -4,7 +4,7 @@ pushd ~/.my-nix-os
 echo "Dumping to dconf.settings ..."
 dconf dump / > dconf.settings
 echo "Generating ~/.config/nixpkgs/dconf/dconf.nix ..."
-dconf2nix -i dconf.settings -o users/willian/dconf/dconf.nix
+dconf2nix -i dconf.settings -o users/willian/dconf/dconf.nix -t20 --verbose
 echo "Updating home-manager ..."
 nix build .#homeManagerConfigurations.willian.activationPackage
 ./result/activate

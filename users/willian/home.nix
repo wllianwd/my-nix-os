@@ -7,9 +7,9 @@
   };
 
   # imports
-  imports = [ 
-    ./dconf/dconf.nix
-  ];
+  #imports = [ 
+  #  ./dconf/dconf.nix
+  #];
   
   # programs
   programs = {

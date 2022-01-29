@@ -114,7 +114,7 @@ in {
       desktopManager = { gnome = { enable = true; }; };
     };
     # dbus
-    dbus = { packages = [ pkgs.gnome3.dconf ]; };
+    dbus = { packages = [ pkgs.dconf ]; };
     # udev
     udev = { packages = [ pkgs.gnome3.gnome-settings-daemon ]; };
     # cups printing (can be accessed on http://localhost:631/)
@@ -180,6 +180,7 @@ in {
       maven
       openjdk11
       jetbrains.idea-community
+      jetbrains.datagrip
       kubectl
       postman
 
