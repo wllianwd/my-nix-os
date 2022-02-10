@@ -203,6 +203,7 @@ in {
       wineWowPackages.staging
       wine-staging
       winetricks
+      protontricks
       lutris
       mangohud
     ];
