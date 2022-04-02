@@ -100,6 +100,12 @@ in {
   # Security
   security = {
     rtkit = { enable = true; };
+    pam = {
+      loginLimits = [
+        { domain = "*"; type = "soft"; item = "nofile"; value = "1048576"; }
+        { domain = "*"; type = "hard"; item = "nofile"; value = "1048576"; }
+      ];
+    };
   };
 
   # Services
@@ -206,6 +212,8 @@ in {
       protontricks
       lutris
       mangohud
+      protonup
+      libstrangle
     ];
     variables = {
       NIXOS_CONFIG_DIR="$HOME/.my-nix-os/";
