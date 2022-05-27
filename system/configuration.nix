@@ -82,7 +82,7 @@ in {
     networkmanager = { enable = true; };
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 5000 8010 ];
+      allowedTCPPorts = [ 3000 5000 8010 ];
     };
   };
 
@@ -175,6 +175,8 @@ in {
       deluge
       handbrake
       discord
+#      gphoto2
+#      digikam      
 
       # dev
       vscodium-with-extensions
