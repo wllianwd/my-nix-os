@@ -44,7 +44,7 @@ in {
 
   virtualisation = {
     docker = {
-      enable = true;
+      enable = false;
     };
   };
 
@@ -153,7 +153,7 @@ in {
       willian = {
         isNormalUser = true;
         initialPassword = "guest";
-        extraGroups = [ "wheel" "networkmanager" "docker" ]; # Enable ‘sudo’ for the user.
+        extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
       };
     };
   };
