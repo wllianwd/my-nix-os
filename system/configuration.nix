@@ -42,6 +42,12 @@ in {
     };
   };
 
+  virtualisation = {
+    docker = {
+      enable = true;
+    };
+  };
+
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -147,7 +153,7 @@ in {
       willian = {
         isNormalUser = true;
         initialPassword = "guest";
-        extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+        extraGroups = [ "wheel" "networkmanager" "docker" ]; # Enable ‘sudo’ for the user.
       };
     };
   };
@@ -180,6 +186,7 @@ in {
 
       # dev
       vscodium-with-extensions
+      docker-compose
       git
       wget
       curl
