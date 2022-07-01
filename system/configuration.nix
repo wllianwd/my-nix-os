@@ -174,17 +174,19 @@ in {
       bash
       libva
       libva-utils
+      #gnumake
+      #gcc
       vlc
       mkchromecast
 
       # multimedia
+      pdftk
       deluge
       handbrake
       discord
-#      gphoto2
-#      digikam      
 
       # dev
+      python
       vscodium-with-extensions
       docker-compose
       git

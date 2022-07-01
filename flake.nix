@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }:
   let
     system = "x86_64-linux";
 
@@ -29,15 +29,11 @@
   in {
     homeManagerConfigurations = {
       willian = home-manager.lib.homeManagerConfiguration {
-        inherit system pkgs;
-        username = "willian";
-        homeDirectory = "/home/willian";
-        configuration = {
-          imports = [
-            ./users/willian/home.nix
-          ];
-        };
-      };
+	  pkgs = nixpkgs.legacyPackages.${system};
+	  modules = [
+	    ./users/willian/home.nix
+	  ];
+	};
     };
     nixosConfigurations = {
       nixos = lib.nixosSystem {
