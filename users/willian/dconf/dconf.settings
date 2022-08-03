@@ -8,6 +8,12 @@ width=1009
 [org/gnome/Disks]
 image-dir-uri='file:///home/willian/Documents'
 
+[org/gnome/Disks/benchmark]
+do-write=true
+num-access-samples=1000
+num-samples=1000
+sample-size-mib=10
+
 [org/gnome/Geary]
 compose-as-html=true
 composer-window-size=[680, 600]
@@ -20,12 +26,27 @@ window-position=[0, 0]
 window-size=[1920, 1048]
 
 [org/gnome/Totem]
-active-plugins=['screensaver', 'movie-properties', 'apple-trailers', 'save-file', 'open-directory', 'vimeo', 'variable-rate', 'autoload-subtitles', 'rotation', 'media-player-keys', 'recent', 'screenshot', 'skipto']
+active-plugins=['recent', 'vimeo', 'open-directory', 'screensaver', 'save-file', 'apple-trailers', 'rotation', 'autoload-subtitles', 'skipto', 'screenshot', 'movie-properties', 'mpris', 'variable-rate']
 subtitle-encoding='UTF-8'
 
 [org/gnome/baobab/ui]
 window-size=(960, 600)
 window-state=87168
+
+[org/gnome/calculator]
+accuracy=9
+angle-units='degrees'
+base=10
+button-mode='basic'
+number-format='automatic'
+show-thousands=false
+show-zeroes=false
+source-currency=''
+source-units='degree'
+target-currency=''
+target-units='radian'
+window-position=(26, 23)
+word-size=64
 
 [org/gnome/calendar]
 active-view='month'
@@ -33,13 +54,22 @@ window-maximized=true
 window-position=(0, 0)
 window-size=(1920, 1048)
 
+[org/gnome/cheese]
+burst-delay=1000
+camera='HD Webcam'
+photo-x-resolution=1280
+photo-y-resolution=720
+video-x-resolution=1280
+video-y-resolution=720
+
 [org/gnome/clocks/state/window]
 panel-id='world'
 size=(870, 690)
 state=87168
 
 [org/gnome/control-center]
-last-panel='info-overview'
+last-panel='bluetooth'
+window-state=(980, 640, false)
 
 [org/gnome/desktop/app-folders]
 folder-children=['Utilities', 'YaST']
@@ -58,19 +88,21 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///nix/store/ymjq3grahqkq0kynsrxxjabzhqg6la0z-gnome-backgrounds-41.0/share/backgrounds/gnome/adwaita-timed.xml'
-primary-color='#3465a4'
-secondary-color='#000000'
+picture-uri='file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png'
+picture-uri-dark='file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png'
+primary-color='#000000000000'
+secondary-color='#000000000000'
 
 [org/gnome/desktop/calendar]
 show-weekdate=false
 
 [org/gnome/desktop/input-sources]
 per-window=false
-sources=[('xkb', 'gb+extd')]
-xkb-options=['terminate:ctrl_alt_bksp']
+sources=[('xkb', 'us+altgr-intl')]
+xkb-options=['terminate:ctrl_alt_bksp', 'lv3:ralt_switch', 'compose:lalt']
 
 [org/gnome/desktop/interface]
+color-scheme='prefer-dark'
 font-antialiasing='grayscale'
 font-hinting='slight'
 gtk-im-module='gtk-im-context-simple'
@@ -79,7 +111,7 @@ monospace-font-name='MesloLGS NF 10'
 show-battery-percentage=false
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-power-panel', 'steam', 'zoom', 'deluge', 'fr-handbrake-ghb', 'google-chrome', 'gnome-network-panel', 'idea-community']
+application-children=['gnome-power-panel', 'steam', 'zoom', 'deluge', 'fr-handbrake-ghb', 'google-chrome', 'gnome-network-panel', 'idea-community', 'discord', 'postman', 'org-gnome-evolution-alarm-notify', 'org-gnome-console', 'org-gnome-nautilus', 'org-kde-showfoto', 'org-gnome-baobab', 'org-kde-digikam', 'org-gnome-characters', 'gvim']
 
 [org/gnome/desktop/notifications/application/codium]
 application-id='codium.desktop'
@@ -105,8 +137,20 @@ application-id='gnome-printers-panel.desktop'
 [org/gnome/desktop/notifications/application/google-chrome]
 application-id='google-chrome.desktop'
 
+[org/gnome/desktop/notifications/application/gvim]
+application-id='gvim.desktop'
+
 [org/gnome/desktop/notifications/application/idea-community]
 application-id='idea-community.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-baobab]
+application-id='org.gnome.baobab.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-characters]
+application-id='org.gnome.Characters.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-console]
+application-id='org.gnome.Console.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-evolution-alarm-notify]
 application-id='org.gnome.Evolution-alarm-notify.desktop'
@@ -123,6 +167,15 @@ application-id='org.gnome.Nautilus.desktop'
 [org/gnome/desktop/notifications/application/org-gnome-shell-extensions-gsconnect-preferences]
 application-id='org.gnome.Shell.Extensions.GSConnect.Preferences.desktop'
 
+[org/gnome/desktop/notifications/application/org-kde-digikam]
+application-id='org.kde.digikam.desktop'
+
+[org/gnome/desktop/notifications/application/org-kde-showfoto]
+application-id='org.kde.showfoto.desktop'
+
+[org/gnome/desktop/notifications/application/postman]
+application-id='postman.desktop'
+
 [org/gnome/desktop/notifications/application/steam]
 application-id='steam.desktop'
 
@@ -135,15 +188,22 @@ application-id='Zoom.desktop'
 [org/gnome/desktop/peripherals/keyboard]
 numlock-state=true
 
+[org/gnome/desktop/peripherals/mouse]
+left-handed=false
+speed=0.058295964125560484
+
+[org/gnome/desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
 [org/gnome/desktop/privacy]
 disable-microphone=false
 
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///nix/store/ymjq3grahqkq0kynsrxxjabzhqg6la0z-gnome-backgrounds-41.0/share/backgrounds/gnome/adwaita-timed.xml'
-primary-color='#3465a4'
-secondary-color='#000000'
+picture-uri='file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png'
+primary-color='#000000000000'
+secondary-color='#000000000000'
 
 [org/gnome/desktop/search-providers]
 sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
@@ -167,12 +227,32 @@ is-maximized=false
 window-position=(-1, -1)
 window-size=(1024, 768)
 
+[org/gnome/evince/default]
+window-ratio=(0.10964912280701754, 0.16447368421052633)
+
 [org/gnome/evolution-data-server]
 migrated=true
 network-monitor-gio-name=''
 
 [org/gnome/evolution-data-server/calendar]
-reminders-past=['9252a789a1d6161f2a3bb3791f63900874817712\n1b4ff2a46c7ad163a8b857f1ff96a84e1c762726\t20220113T140000\n1641992400\n1642078800\n1642082400\nBEGIN:VEVENT\r\nDTSTART;TZID=Europe/Madrid:20220113T140000\r\nDTEND;TZID=Europe/Madrid:20220113T150000\r\nDTSTAMP:20211216T134400Z\r\nUID:h3eo12jo66iug3qc1v2l5rf04c@google.com\r\nCREATED:20211216T134400Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20211216T134400Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Mesico\r\nTRANSP:OPAQUE\r\nX-EVOLUTION-CALDAV-ETAG:63775345440\r\nBEGIN:VALARM\r\nACTION:EMAIL\r\nDESCRIPTION:This is an event reminder\r\nSUMMARY:Alarm notification\r\nATTENDEE:mailto:willian.wd@gmail.com\r\nTRIGGER:-PT10M\r\nX-EVOLUTION-ALARM-UID:cd57e6a0b154c510d615b71759160a6233745e72\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT30M\r\nX-EVOLUTION-ALARM-UID:5a4bb1baf949735ed5803794d89a8af719c3e8cc\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P1D\r\nX-EVOLUTION-ALARM-UID:1b4ff2a46c7ad163a8b857f1ff96a84e1c762726\r\nEND:VALARM\r\nEND:VEVENT\r\n']
+notify-window-height=160
+notify-window-paned-position=48
+notify-window-width=522
+notify-window-x=26
+notify-window-y=23
+reminders-past=['9252a789a1d6161f2a3bb3791f63900874817712\nf6f913ad9f98c15aaa175980a020dcdeb6a6d93e\t20220409\n1649460600\n1649462400\n1649548800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20220409\r\nDTEND;VALUE=DATE:20220410\r\nDTSTAMP:20220223T221320Z\r\nUID:ptnq6c1pg2gdv740sk1r14eh78@google.com\r\nCREATED:20220223T221320Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20220408T165000Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Vitamina D - Dose 4\r\nTRANSP:TRANSPARENT\r\nX-EVOLUTION-CALDAV-ETAG:63781337600\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT30M\r\nX-EVOLUTION-ALARM-UID:f6f913ad9f98c15aaa175980a020dcdeb6a6d93e\r\nEND:VALARM\r\nBEGIN:VALARM\r\nX-EVOLUTION-ALARM-UID:ed0e9a21a9865d3bf8a4cf21f4239763b1a21377\r\nACTION:EMAIL\r\nSUMMARY:Alarm notification\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER;RELATED=START:-PT7H10M\r\nATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=FALSE:mailto:\r\n willian.wd@gmail.com\r\nACKNOWLEDGED:20220408T165000Z\r\nEND:VALARM\r\nEND:VEVENT\r\n', '9252a789a1d6161f2a3bb3791f63900874817712\n7e9b33e26fc413ea1a3afadafa5a45de7f23af70\t20220325\n1648164600\n1648166400\n1648252800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20220325\r\nDTEND;VALUE=DATE:20220326\r\nDTSTAMP:20220324T165001Z\r\nUID:v0dph3gq4ndlv9kt2h2dr08dnc@google.com\r\nCREATED:20220223T221209Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20220324T165001Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Vitamina D - Dose 3\r\nTRANSP:TRANSPARENT\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nX-EVOLUTION-CALDAV-ETAG:63783823801\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT30M\r\nX-EVOLUTION-ALARM-UID:7e9b33e26fc413ea1a3afadafa5a45de7f23af70\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:EMAIL\r\nDESCRIPTION:This is an event reminder\r\nSUMMARY:Alarm notification\r\nATTENDEE:mailto:willian.wd@gmail.com\r\nTRIGGER:-PT7H10M\r\nX-EVOLUTION-ALARM-UID:c1e17283e65295226af453f5d8f1eca1eb08c728\r\nEND:VALARM\r\nEND:VEVENT\r\n', '9252a789a1d6161f2a3bb3791f63900874817712\n2443c8869e931125dfe4155114a02d2be96bb668\t20220325\n1648080000\n1648166400\n1648252800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20160325\r\nDTEND;VALUE=DATE:20160326\r\nRRULE:FREQ=YEARLY\r\nDTSTAMP:20220317T230726Z\r\nUID:tlu9lroo37kts03frpifuu1l7g@google.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=Willian Dallastella;X-NUM-GUESTS=0:mailto:willian.wd@gmail.com\r\nCREATED:20160219T112442Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20220317T230726Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Cumpleaños Namoro\r\nTRANSP:OPAQUE\r\nX-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC\r\nX-EVOLUTION-CALDAV-ETAG:63783241646\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P1D\r\nX-EVOLUTION-ALARM-UID:2443c8869e931125dfe4155114a02d2be96bb668\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P7D\r\nX-EVOLUTION-ALARM-UID:ac5075b181df1495533d44cf48c84b0276db5e27\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P2D\r\nX-EVOLUTION-ALARM-UID:56dba5f0673f21a9f0cf89547d5bb30354c40369\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:AUDIO\r\nTRIGGER:-PT15H\r\nX-WR-ALARMUID:0529268B-083A-4E0C-936D-8734A6E1B4DE\r\nUID:0529268B-083A-4E0C-936D-8734A6E1B4DE\r\nATTACH:Basso\r\nX-APPLE-DEFAULT-ALARM:TRUE\r\nACKNOWLEDGED:20180322T230252Z\r\nX-EVOLUTION-ALARM-UID:8e915d885087fcbe2c3ff0a4bec5b4106e8a13c5\r\nEND:VALARM\r\nEND:VEVENT\r\n', '9252a789a1d6161f2a3bb3791f63900874817712\n56dba5f0673f21a9f0cf89547d5bb30354c40369\t20220325\n1647993600\n1648166400\n1648252800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20160325\r\nDTEND;VALUE=DATE:20160326\r\nRRULE:FREQ=YEARLY\r\nDTSTAMP:20220317T230726Z\r\nUID:tlu9lroo37kts03frpifuu1l7g@google.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=Willian Dallastella;X-NUM-GUESTS=0:mailto:willian.wd@gmail.com\r\nCREATED:20160219T112442Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20220317T230726Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Cumpleaños Namoro\r\nTRANSP:OPAQUE\r\nX-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC\r\nX-EVOLUTION-CALDAV-ETAG:63783241646\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P1D\r\nX-EVOLUTION-ALARM-UID:2443c8869e931125dfe4155114a02d2be96bb668\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P7D\r\nX-EVOLUTION-ALARM-UID:ac5075b181df1495533d44cf48c84b0276db5e27\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P2D\r\nX-EVOLUTION-ALARM-UID:56dba5f0673f21a9f0cf89547d5bb30354c40369\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:AUDIO\r\nTRIGGER:-PT15H\r\nX-WR-ALARMUID:0529268B-083A-4E0C-936D-8734A6E1B4DE\r\nUID:0529268B-083A-4E0C-936D-8734A6E1B4DE\r\nATTACH:Basso\r\nX-APPLE-DEFAULT-ALARM:TRUE\r\nACKNOWLEDGED:20180322T230252Z\r\nX-EVOLUTION-ALARM-UID:8e915d885087fcbe2c3ff0a4bec5b4106e8a13c5\r\nEND:VALARM\r\nEND:VEVENT\r\n', '9252a789a1d6161f2a3bb3791f63900874817712\nac5075b181df1495533d44cf48c84b0276db5e27\t20220325\n1647561600\n1648166400\n1648252800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20160325\r\nDTEND;VALUE=DATE:20160326\r\nRRULE:FREQ=YEARLY\r\nDTSTAMP:20220317T230726Z\r\nUID:tlu9lroo37kts03frpifuu1l7g@google.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=Willian Dallastella;X-NUM-GUESTS=0:mailto:willian.wd@gmail.com\r\nCREATED:20160219T112442Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20220317T230726Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Cumpleaños Namoro\r\nTRANSP:OPAQUE\r\nX-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC\r\nX-EVOLUTION-CALDAV-ETAG:63783241646\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P1D\r\nX-EVOLUTION-ALARM-UID:2443c8869e931125dfe4155114a02d2be96bb668\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P7D\r\nX-EVOLUTION-ALARM-UID:ac5075b181df1495533d44cf48c84b0276db5e27\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P2D\r\nX-EVOLUTION-ALARM-UID:56dba5f0673f21a9f0cf89547d5bb30354c40369\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:AUDIO\r\nTRIGGER:-PT15H\r\nX-WR-ALARMUID:0529268B-083A-4E0C-936D-8734A6E1B4DE\r\nUID:0529268B-083A-4E0C-936D-8734A6E1B4DE\r\nATTACH:Basso\r\nX-APPLE-DEFAULT-ALARM:TRUE\r\nACKNOWLEDGED:20180322T230252Z\r\nX-EVOLUTION-ALARM-UID:8e915d885087fcbe2c3ff0a4bec5b4106e8a13c5\r\nEND:VALARM\r\nEND:VEVENT\r\n', '9252a789a1d6161f2a3bb3791f63900874817712\n39fd120a28301f965301f8d7380bbb7dec1929cd\t20220310\n1646868600\n1646870400\n1646956800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20220310\r\nDTEND;VALUE=DATE:20220311\r\nDTSTAMP:20220309T165001Z\r\nUID:be0v8c89anmust57eu57e5oop4@google.com\r\nCREATED:20220223T221135Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20220309T165001Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Vitamina D - Dose 2\r\nTRANSP:TRANSPARENT\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nX-EVOLUTION-CALDAV-ETAG:63782527801\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT30M\r\nX-EVOLUTION-ALARM-UID:39fd120a28301f965301f8d7380bbb7dec1929cd\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:EMAIL\r\nDESCRIPTION:This is an event reminder\r\nSUMMARY:Alarm notification\r\nATTENDEE:mailto:willian.wd@gmail.com\r\nTRIGGER:-PT7H10M\r\nX-EVOLUTION-ALARM-UID:8f9761777647f6dc6510483e46f6b88b9b2c1fc9\r\nEND:VALARM\r\nEND:VEVENT\r\n', '9252a789a1d6161f2a3bb3791f63900874817712\n1a085c671ab75f3ce7160126ad7ed664e81cd441\t20220222T160000\n1645540200\n1645542000\n1645545600\nBEGIN:VEVENT\r\nDTSTART;TZID=Europe/Madrid:20220222T160000\r\nDTEND;TZID=Europe/Madrid:20220222T170000\r\nDTSTAMP:20220215T110404Z\r\nUID:43dstlh9vkhpf84nvn22f4gioa@google.com\r\nCREATED:20220215T110404Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20220215T110404Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Banco\r\nTRANSP:OPAQUE\r\nX-EVOLUTION-CALDAV-ETAG:63780606244\r\nBEGIN:VALARM\r\nACTION:EMAIL\r\nDESCRIPTION:This is an event reminder\r\nSUMMARY:Alarm notification\r\nATTENDEE:mailto:willian.wd@gmail.com\r\nTRIGGER:-PT10M\r\nX-EVOLUTION-ALARM-UID:77036d673d50ad6ee10dddd2cb84905c3ea6ad7d\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT30M\r\nX-EVOLUTION-ALARM-UID:1a085c671ab75f3ce7160126ad7ed664e81cd441\r\nEND:VALARM\r\nEND:VEVENT\r\n', '9252a789a1d6161f2a3bb3791f63900874817712\n6d720a69cc64a5c8aa4859d3169f898e851f7ae4\t20220219T200000\n1645295400\n1645297200\n1645300800\nBEGIN:VEVENT\r\nDTSTART;TZID=Europe/Madrid:20220219T200000\r\nDTEND;TZID=Europe/Madrid:20220219T210000\r\nDTSTAMP:20220214T111247Z\r\nORGANIZER;CN=Unknown Organizer:mailto:\r\n unknownorganizer@calendar.google.com\r\nUID:7kukuqrfedlm2f9tk4q89ktg28pdetnl7lq374anjtondjg1psfq5mc4f8utt7bssda0\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=willian.wd@gmail.com;X-NUM-GUESTS=0:mailto:willian.wd@gmail.com\r\nCLASS:PRIVATE\r\nCREATED:20220214T111247Z\r\nDESCRIPTION:Si quieres ver información detallada sobre los eventos \r\n creados automáticamente como este\\, utiliza la aplicación oficial de \r\n Google Calendar. https://g.co/calendar\\n\\nEste evento se ha creado a \r\n partir de un correo que recibiste en Gmail. https:\r\n //mail.google.com/mail?extsrc=cal&plid=ACUX6DM3mwlmV6vVfxlrutWesPGKkEpScgM\r\n qnuc\\n\r\nLAST-MODIFIED:20220214T111247Z\r\nLOCATION:Pau Claris - Calle Pau Claris\\, 70\\, Barcelona\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Reservation at Restaurante Asador de Aranda\r\nTRANSP:TRANSPARENT\r\nX-EVOLUTION-CALDAV-ETAG:63780520367\r\nBEGIN:VALARM\r\nACTION:EMAIL\r\nDESCRIPTION:This is an event reminder\r\nSUMMARY:Alarm notification\r\nATTENDEE:mailto:willian.wd@gmail.com\r\nTRIGGER:-PT10M\r\nX-EVOLUTION-ALARM-UID:5073ba9954e8fc62d9bf5f50c47c3a5dc1f003b3\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT30M\r\nX-EVOLUTION-ALARM-UID:6d720a69cc64a5c8aa4859d3169f898e851f7ae4\r\nEND:VALARM\r\nEND:VEVENT\r\n', '9252a789a1d6161f2a3bb3791f63900874817712\n9a6962a54d55c8ce635f7d064c8e383b094c0396\t20220219T200000\n1645295400\n1645297200\n1645300800\nBEGIN:VEVENT\r\nDTSTART;TZID=Europe/Madrid:20220219T200000\r\nDTEND;TZID=Europe/Madrid:20220219T210000\r\nDTSTAMP:20220214T111250Z\r\nORGANIZER;CN=Unknown Organizer:mailto:\r\n unknownorganizer@calendar.google.com\r\nUID:7kukuqrfedlm2f9tsdfekd1mor6gfc9768kufrer3nges2bgoj1ilhsrpq4d4ig8msug\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=willian.wd@gmail.com;X-NUM-GUESTS=0:mailto:willian.wd@gmail.com\r\nCLASS:PRIVATE\r\nCREATED:20220214T111250Z\r\nDESCRIPTION:Si quieres ver información detallada sobre los eventos \r\n creados automáticamente como este\\, utiliza la aplicación oficial de \r\n Google Calendar. https://g.co/calendar\\n\\nEste evento se ha creado a \r\n partir de un correo que recibiste en Gmail. https:\r\n //mail.google.com/mail?extsrc=cal&plid=ACUX6DNGrm9T68J7aWOTPXEJoxLPpSeZTRp\r\n _V40\\n\r\nLAST-MODIFIED:20220214T111250Z\r\nLOCATION:Restaurante ASADOR DE ARANDA\\, Carrer de Pau Claris\\, 70\\, \r\n Barcelona\\, CT\\, ES\\, 08010\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Reservation at Restaurante ASADOR DE ARANDA\r\nTRANSP:TRANSPARENT\r\nX-EVOLUTION-CALDAV-ETAG:63780520370\r\nBEGIN:VALARM\r\nACTION:EMAIL\r\nDESCRIPTION:This is an event reminder\r\nSUMMARY:Alarm notification\r\nATTENDEE:mailto:willian.wd@gmail.com\r\nTRIGGER:-PT10M\r\nX-EVOLUTION-ALARM-UID:6b6cf66eb530fb5dd60868212b8fd52c6a66113d\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT30M\r\nX-EVOLUTION-ALARM-UID:9a6962a54d55c8ce635f7d064c8e383b094c0396\r\nEND:VALARM\r\nEND:VEVENT\r\n', "9252a789a1d6161f2a3bb3791f63900874817712\n0fdd4b4a119359dbf9cbabdfb2bf59c2aea1204c\t20220214T213000\n1644868800\n1644870600\n1644874200\nBEGIN:VEVENT\r\nDTSTART;TZID=Europe/Madrid:20220214T213000\r\nDTEND;TZID=Europe/Madrid:20220214T223000\r\nDTSTAMP:20220210T210319Z\r\nORGANIZER;CN=Unknown Organizer:mailto:\r\n unknownorganizer@calendar.google.com\r\nUID:7kukuqrfedlm2f9tp9svrsjlrfgt1i1tg609te0qmd94sbm028blsve41jerre7rn4ig\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=willian.wd@gmail.com;X-NUM-GUESTS=0:mailto:willian.wd@gmail.com\r\nCLASS:PRIVATE\r\nCREATED:20220210T210319Z\r\nDESCRIPTION:Si quieres ver información detallada sobre los eventos \r\n creados automáticamente como este\\, utiliza la aplicación oficial de \r\n Google Calendar. https://g.co/calendar\\n\\nEste evento se ha creado a \r\n partir de un correo que recibiste en Gmail. https:\r\n //mail.google.com/mail?extsrc=cal&plid=ACUX6DPOgvv9vgFhOiBIJ-BiPoLu-g0_lTZ\r\n c754\\n\r\nLAST-MODIFIED:20220210T210319Z\r\nLOCATION:C/ Saragossa\\, 123\\, 08006 Barcelona\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Reservation at L'Osteria del Contadino\r\nTRANSP:TRANSPARENT\r\nX-EVOLUTION-CALDAV-ETAG:63780210199\r\nBEGIN:VALARM\r\nACTION:EMAIL\r\nDESCRIPTION:This is an event reminder\r\nSUMMARY:Alarm notification\r\nATTENDEE:mailto:willian.wd@gmail.com\r\nTRIGGER:-PT10M\r\nX-EVOLUTION-ALARM-UID:8020f28e1a66678d56bdc780f9a56e7af5ed820b\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT30M\r\nX-EVOLUTION-ALARM-UID:0fdd4b4a119359dbf9cbabdfb2bf59c2aea1204c\r\nEND:VALARM\r\nEND:VEVENT\r\n", '9252a789a1d6161f2a3bb3791f63900874817712\n520d8bc08ea7f3fdeaa813707851c25fb3d1b4ca\t20220214T200000\n1644863400\n1644865200\n1644868800\nBEGIN:VEVENT\r\nDTSTART;TZID=Europe/Madrid:20220214T200000\r\nDTEND;TZID=Europe/Madrid:20220214T210000\r\nDTSTAMP:20220210T211250Z\r\nORGANIZER;CN=Unknown Organizer:mailto:\r\n unknownorganizer@calendar.google.com\r\nUID:7kukuqrfedlm2f9t8smh3t8ba2pqapgnickkfj7900hk03ovfd6uerdag1hfd8orioq0\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=willian.wd@gmail.com;X-NUM-GUESTS=0:mailto:willian.wd@gmail.com\r\nCLASS:PRIVATE\r\nCREATED:20220210T211250Z\r\nDESCRIPTION:Si quieres ver información detallada sobre los eventos \r\n creados automáticamente como este\\, utiliza la aplicación oficial de \r\n Google Calendar. https://g.co/calendar\\n\\nEste evento se ha creado a \r\n partir de un correo que recibiste en Gmail. https:\r\n //mail.google.com/mail?extsrc=cal&plid=ACUX6DNJx9c5FwsNpOu9UxSBEtZLUF-4vY1\r\n twzI\\n\r\nLAST-MODIFIED:20220210T211250Z\r\nLOCATION:Restaurante ASADOR DE ARANDA\\, Carrer de Pau Claris\\, 70\\, \r\n Barcelona\\, CT\\, ES\\, 08010\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Reservation at Restaurante ASADOR DE ARANDA\r\nTRANSP:TRANSPARENT\r\nX-EVOLUTION-CALDAV-ETAG:63780210770\r\nBEGIN:VALARM\r\nACTION:EMAIL\r\nDESCRIPTION:This is an event reminder\r\nSUMMARY:Alarm notification\r\nATTENDEE:mailto:willian.wd@gmail.com\r\nTRIGGER:-PT10M\r\nX-EVOLUTION-ALARM-UID:d443a119f2ddcbc46664aea5661ad37b1201f637\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT30M\r\nX-EVOLUTION-ALARM-UID:520d8bc08ea7f3fdeaa813707851c25fb3d1b4ca\r\nEND:VALARM\r\nEND:VEVENT\r\n', '9252a789a1d6161f2a3bb3791f63900874817712\n1b4ff2a46c7ad163a8b857f1ff96a84e1c762726\t20220113T140000\n1641992400\n1642078800\n1642082400\nBEGIN:VEVENT\r\nDTSTART;TZID=Europe/Madrid:20220113T140000\r\nDTEND;TZID=Europe/Madrid:20220113T150000\r\nDTSTAMP:20211216T134400Z\r\nUID:h3eo12jo66iug3qc1v2l5rf04c@google.com\r\nCREATED:20211216T134400Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20211216T134400Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Mesico\r\nTRANSP:OPAQUE\r\nX-EVOLUTION-CALDAV-ETAG:63775345440\r\nBEGIN:VALARM\r\nACTION:EMAIL\r\nDESCRIPTION:This is an event reminder\r\nSUMMARY:Alarm notification\r\nATTENDEE:mailto:willian.wd@gmail.com\r\nTRIGGER:-PT10M\r\nX-EVOLUTION-ALARM-UID:cd57e6a0b154c510d615b71759160a6233745e72\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT30M\r\nX-EVOLUTION-ALARM-UID:5a4bb1baf949735ed5803794d89a8af719c3e8cc\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P1D\r\nX-EVOLUTION-ALARM-UID:1b4ff2a46c7ad163a8b857f1ff96a84e1c762726\r\nEND:VALARM\r\nEND:VEVENT\r\n']
+
+[org/gnome/file-roller/listing]
+list-mode='as-folder'
+name-column-width=500
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[org/gnome/file-roller/ui]
+sidebar-width=200
+window-height=480
+window-width=1090
 
 [org/gnome/gedit/plugins]
 active-plugins=['filebrowser', 'docinfo', 'spell', 'sort', 'modelines']
@@ -180,7 +260,7 @@ active-plugins=['filebrowser', 'docinfo', 'spell', 'sort', 'modelines']
 [org/gnome/gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/willian/.my-nix-os/users/willian/dconf'
+virtual-root='file:///home/willian/.my-nix-os/system'
 
 [org/gnome/gedit/preferences/ui]
 show-tabs-mode='auto'
@@ -198,12 +278,12 @@ include-pointer=false
 last-save-directory='file:///home/willian/Pictures'
 
 [org/gnome/gnome-system-monitor]
-current-tab='resources'
+current-tab='processes'
 maximized=false
 network-total-in-bits=false
 show-dependencies=false
 show-whose-processes='user'
-window-state=(700, 500)
+window-state=(1026, 500, 26, 23)
 
 [org/gnome/gnome-system-monitor/disktreenew]
 col-0-visible=true
@@ -213,7 +293,7 @@ col-6-width=0
 
 [org/gnome/gnome-system-monitor/proctree]
 columns-order=[0, 1, 2, 3, 4, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
-sort-col=8
+sort-col=15
 sort-order=0
 
 [org/gnome/mutter]
@@ -232,7 +312,7 @@ search-filter-time-type='last_modified'
 search-view='list-view'
 
 [org/gnome/nautilus/window-state]
-initial-size=(890, 550)
+initial-size=(1060, 550)
 maximized=false
 
 [org/gnome/nm-applet/eap/41860233-f35f-42ba-be46-be9cf1128443]
@@ -260,16 +340,20 @@ window-maximized=true
 
 [org/gnome/settings-daemon/plugins/power]
 idle-dim=false
+power-button-action='suspend'
 sleep-inactive-ac-type='nothing'
 sleep-inactive-battery-type='suspend'
 
 [org/gnome/shell]
 disable-user-extensions=false
-disabled-extensions=@as []
-enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'gsconnect@andyholmes.github.io']
-favorite-apps=['google-chrome.desktop', 'codium.desktop', 'idea-community.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop']
+disabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['places-menu@gnome-shell-extensions.gcampax.github.com', 'gsconnect@andyholmes.github.io', 'appindicatorsupport@rgcjonas.gmail.com']
+favorite-apps=['google-chrome.desktop', 'codium.desktop', 'idea-community.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop']
 had-bluetooth-devices-setup=true
 welcome-dialog-last-shown-version='41.1'
+
+[org/gnome/shell/extensions/appindicator]
+tray-pos='right'
 
 [org/gnome/shell/extensions/gsconnect]
 id='061888b5-76bd-4174-8464-b1ddb6563934'
@@ -283,10 +367,14 @@ window-size=(640, 440)
 [org/gnome/shell/world-clocks]
 locations=@av []
 
+[org/gnome/simple-scan]
+document-type='photo'
+
 [org/gnome/software]
-check-timestamp=int64 1642761113
-online-updates-timestamp='int64 1637571160'
-update-notification-timestamp='int64 1637571160'
+check-timestamp=int64 1656734448
+first-run=false
+online-updates-timestamp=int64 1649689558
+update-notification-timestamp=int64 1649689558
 
 [org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 font='MesloLGS Nerd Font Mono 11'
@@ -294,6 +382,19 @@ use-system-font=true
 
 [org/gnome/tweaks]
 show-extensions-notice=false
+
+[org/gtk/gtk4/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=169
+sort-column='modified'
+sort-directories-first=false
+sort-order='descending'
+type-format='category'
+window-size=(1284, 1048)
 
 [org/gtk/settings/color-chooser]
 custom-colors=[(0.286275, 0.65882399999999997)]
@@ -306,9 +407,12 @@ show-hidden=true
 show-size-column=true
 show-type-column=true
 sidebar-width=157
-sort-column='name'
+sort-column='modified'
 sort-directories-first=false
-sort-order='ascending'
+sort-order='descending'
 type-format='category'
 window-position=(26, 23)
 window-size=(1297, 902)
+
+[system/proxy]
+mode='none'
