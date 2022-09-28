@@ -22,7 +22,8 @@ in {
 
   # Make ready for nix flakes
   nix = {
-    package = pkgs.nixFlakes;
+    #package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -128,11 +129,18 @@ in {
     # dbus
     dbus = { packages = [ pkgs.dconf ]; };
     # udev
-    udev = { packages = [ pkgs.gnome3.gnome-settings-daemon ]; };
+    udev = { packages = [ pkgs.gnome.gnome-settings-daemon ]; };
     # cups printing (can be accessed on http://localhost:631/)
     printing = { enable = true; };
     # flatpack
     flatpak = { enable = true; };
+    plex = {
+      enable = true;
+      openFirewall = true;
+#      user = "willian";
+#      group = "wheel"; 
+#      dataDir = "/home/willian/Videos/plex";
+    };
     # pipewire
     pipewire = {
       enable = true;
@@ -202,7 +210,7 @@ in {
       postman
 
       # gnome
-      gnome3.gnome-tweaks
+      gnome.gnome-tweaks
       gnomeExtensions.appindicator
       gnomeExtensions.gsconnect
 
