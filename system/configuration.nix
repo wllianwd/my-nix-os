@@ -89,7 +89,7 @@ in {
     networkmanager = { enable = true; };
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 3000 5000 8010 ];
+      allowedTCPPorts = [ 3000 5000 8010 8096 ];
     };
   };
 
@@ -117,6 +117,12 @@ in {
 
   # Services
   services = {
+    # jellyfin
+    jellyfin = {
+      enable = true;
+      user = "willian";
+      group = "wheel";
+    };
     # X11
     xserver = {
       enable = true;
@@ -134,13 +140,13 @@ in {
     printing = { enable = true; };
     # flatpack
     flatpak = { enable = true; };
-    plex = {
-      enable = true;
-      openFirewall = true;
+#    plex = {
+#      enable = true;
+#      openFirewall = true;
 #      user = "willian";
 #      group = "wheel"; 
 #      dataDir = "/home/willian/Videos/plex";
-    };
+#    };
     # pipewire
     pipewire = {
       enable = true;
