@@ -18,6 +18,13 @@ with lib.hm.gvariant;
       image-dir-uri = "file:///home/willian/Documents";
     };
 
+    "org/gnome/Disks/benchmark" = {
+      do-write = true;
+      num-access-samples = 1000;
+      num-samples = 1000;
+      sample-size-mib = 10;
+    };
+
     "org/gnome/Geary" = {
       compose-as-html = true;
       composer-window-size = [ 680 600 ];
@@ -32,13 +39,29 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/Totem" = {
-      active-plugins = [ "screensaver" "movie-properties" "apple-trailers" "save-file" "open-directory" "vimeo" "variable-rate" "autoload-subtitles" "rotation" "media-player-keys" "recent" "screenshot" "skipto" ];
+      active-plugins = [ "recent" "vimeo" "open-directory" "screensaver" "save-file" "apple-trailers" "rotation" "autoload-subtitles" "skipto" "screenshot" "movie-properties" "mpris" "variable-rate" ];
       subtitle-encoding = "UTF-8";
     };
 
     "org/gnome/baobab/ui" = {
       window-size = mkTuple [ 960 600 ];
       window-state = 87168;
+    };
+
+    "org/gnome/calculator" = {
+      accuracy = 9;
+      angle-units = "degrees";
+      base = 10;
+      button-mode = "basic";
+      number-format = "automatic";
+      show-thousands = false;
+      show-zeroes = false;
+      source-currency = "";
+      source-units = "degree";
+      target-currency = "";
+      target-units = "radian";
+      window-position = mkTuple [ 26 23 ];
+      word-size = 64;
     };
 
     "org/gnome/calendar" = {
@@ -48,6 +71,15 @@ with lib.hm.gvariant;
       window-size = mkTuple [ 1920 1048 ];
     };
 
+    "org/gnome/cheese" = {
+      burst-delay = 1000;
+      camera = "HD Webcam";
+      photo-x-resolution = 1280;
+      photo-y-resolution = 720;
+      video-x-resolution = 1280;
+      video-y-resolution = 720;
+    };
+
     "org/gnome/clocks/state/window" = {
       panel-id = "world";
       size = mkTuple [ 870 690 ];
@@ -55,7 +87,8 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "sound";
+      last-panel = "bluetooth";
+      window-state = mkTuple [ 980 640 ];
     };
 
     "org/gnome/desktop/app-folders" = {
@@ -78,9 +111,10 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///nix/store/ymjq3grahqkq0kynsrxxjabzhqg6la0z-gnome-backgrounds-41.0/share/backgrounds/gnome/adwaita-timed.xml";
-      primary-color = "#3465a4";
-      secondary-color = "#000000";
+      picture-uri = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png";
+      picture-uri-dark = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png";
+      primary-color = "#000000000000";
+      secondary-color = "#000000000000";
     };
 
     "org/gnome/desktop/calendar" = {
@@ -89,11 +123,12 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/input-sources" = {
       per-window = false;
-      sources = [ (mkTuple [ "xkb" "gb+extd" ]) ];
-      xkb-options = [ "terminate:ctrl_alt_bksp" ];
+      sources = [ (mkTuple [ "xkb" "us+altgr-intl" ]) ];
+      xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" "compose:lalt" ];
     };
 
     "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
       font-antialiasing = "grayscale";
       font-hinting = "slight";
       gtk-im-module = "gtk-im-context-simple";
@@ -103,7 +138,11 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" "gnome-network-panel" "idea-community" ];
+      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" "gnome-network-panel" "idea-community" "discord" "postman" "org-gnome-evolution-alarm-notify" "org-gnome-console" "org-gnome-nautilus" "org-kde-showfoto" "org-gnome-baobab" "org-kde-digikam" "org-gnome-characters" "gvim" "org-gnome-settings" ];
+    };
+
+    "org/gnome/desktop/notifications/application/codium" = {
+      application-id = "codium.desktop";
     };
 
     "org/gnome/desktop/notifications/application/deluge" = {
@@ -134,20 +173,60 @@ with lib.hm.gvariant;
       application-id = "google-chrome.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/gvim" = {
+      application-id = "gvim.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/idea-community" = {
       application-id = "idea-community.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-baobab" = {
+      application-id = "org.gnome.baobab.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-characters" = {
+      application-id = "org.gnome.Characters.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-console" = {
+      application-id = "org.gnome.Console.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-evolution-alarm-notify" = {
+      application-id = "org.gnome.Evolution-alarm-notify.desktop";
     };
 
     "org/gnome/desktop/notifications/application/org-gnome-geary" = {
       application-id = "org.gnome.Geary.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/org-gnome-gedit" = {
+      application-id = "org.gnome.gedit.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/org-gnome-nautilus" = {
       application-id = "org.gnome.Nautilus.desktop";
     };
 
+    "org/gnome/desktop/notifications/application/org-gnome-settings" = {
+      application-id = "org.gnome.Settings.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/org-gnome-shell-extensions-gsconnect-preferences" = {
       application-id = "org.gnome.Shell.Extensions.GSConnect.Preferences.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-kde-digikam" = {
+      application-id = "org.kde.digikam.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-kde-showfoto" = {
+      application-id = "org.kde.showfoto.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/postman" = {
+      application-id = "postman.desktop";
     };
 
     "org/gnome/desktop/notifications/application/steam" = {
@@ -166,16 +245,27 @@ with lib.hm.gvariant;
       numlock-state = true;
     };
 
+    "org/gnome/desktop/peripherals/mouse" = {
+      left-handed = false;
+      speed = 5.8295964125560484e-2;
+    };
+
+    "org/gnome/desktop/peripherals/touchpad" = {
+      two-finger-scrolling-enabled = true;
+    };
+
     "org/gnome/desktop/privacy" = {
       disable-microphone = false;
+      old-files-age = mkUint32 30;
+      recent-files-max-age = -1;
     };
 
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///nix/store/ymjq3grahqkq0kynsrxxjabzhqg6la0z-gnome-backgrounds-41.0/share/backgrounds/gnome/adwaita-timed.xml";
-      primary-color = "#3465a4";
-      secondary-color = "#000000";
+      picture-uri = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png";
+      primary-color = "#000000000000";
+      secondary-color = "#000000000000";
     };
 
     "org/gnome/desktop/search-providers" = {
@@ -195,15 +285,47 @@ with lib.hm.gvariant;
       button-layout = "appmenu:minimize,maximize,close";
     };
 
+    "org/gnome/eog/view" = {
+      background-color = "rgb(0,0,0)";
+      use-background-color = true;
+    };
+
     "org/gnome/epiphany/state" = {
       is-maximized = false;
       window-position = mkTuple [ (-1) (-1) ];
       window-size = mkTuple [ 1024 768 ];
     };
 
+    "org/gnome/evince/default" = {
+      window-ratio = mkTuple [ 0.10964912280701754 0.16447368421052633 ];
+    };
+
     "org/gnome/evolution-data-server" = {
       migrated = true;
       network-monitor-gio-name = "";
+    };
+
+    "org/gnome/evolution-data-server/calendar" = {
+      notify-window-height = 160;
+      notify-window-paned-position = 48;
+      notify-window-width = 522;
+      notify-window-x = 26;
+      notify-window-y = 23;
+      reminders-past = [];
+    };
+
+    "org/gnome/file-roller/listing" = {
+      list-mode = "as-folder";
+      name-column-width = 500;
+      show-path = false;
+      sort-method = "name";
+      sort-type = "ascending";
+    };
+
+    "org/gnome/file-roller/ui" = {
+      sidebar-width = 200;
+      window-height = 480;
+      window-width = 1090;
     };
 
     "org/gnome/gedit/plugins" = {
@@ -228,13 +350,19 @@ with lib.hm.gvariant;
       state = 87168;
     };
 
+    "org/gnome/gnome-screenshot" = {
+      delay = 0;
+      include-pointer = false;
+      last-save-directory = "file:///home/willian/Pictures";
+    };
+
     "org/gnome/gnome-system-monitor" = {
       current-tab = "resources";
       maximized = false;
       network-total-in-bits = false;
       show-dependencies = false;
       show-whose-processes = "user";
-      window-state = mkTuple [ 700 500 ];
+      window-state = mkTuple [ 1026 500 ];
     };
 
     "org/gnome/gnome-system-monitor/disktreenew" = {
@@ -246,7 +374,7 @@ with lib.hm.gvariant;
 
     "org/gnome/gnome-system-monitor/proctree" = {
       columns-order = [ 0 1 2 3 4 6 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ];
-      sort-col = 8;
+      sort-col = 15;
       sort-order = 0;
     };
 
@@ -269,11 +397,16 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/nautilus/window-state" = {
-      initial-size = mkTuple [ 890 550 ];
+      initial-size = mkTuple [ 1315 550 ];
       maximized = false;
     };
 
     "org/gnome/nm-applet/eap/41860233-f35f-42ba-be46-be9cf1128443" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
+    "org/gnome/nm-applet/eap/a8dfc630-96f1-40bc-a9e5-8956337f01e7" = {
       ignore-ca-cert = false;
       ignore-phase2-ca-cert = false;
     };
@@ -299,17 +432,22 @@ with lib.hm.gvariant;
 
     "org/gnome/settings-daemon/plugins/power" = {
       idle-dim = false;
+      power-button-action = "suspend";
       sleep-inactive-ac-type = "nothing";
       sleep-inactive-battery-type = "suspend";
     };
 
     "org/gnome/shell" = {
       disable-user-extensions = false;
-      disabled-extensions = [];
-      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "places-menu@gnome-shell-extensions.gcampax.github.com" "gsconnect@andyholmes.github.io" ];
-      favorite-apps = [ "google-chrome.desktop" "codium.desktop" "idea-community.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Terminal.desktop" ];
+      disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
+      enabled-extensions = [ "places-menu@gnome-shell-extensions.gcampax.github.com" "gsconnect@andyholmes.github.io" "appindicatorsupport@rgcjonas.gmail.com" ];
+      favorite-apps = [ "google-chrome.desktop" "codium.desktop" "idea-community.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" ];
       had-bluetooth-devices-setup = true;
       welcome-dialog-last-shown-version = "41.1";
+    };
+
+    "org/gnome/shell/extensions/appindicator" = {
+      tray-pos = "right";
     };
 
     "org/gnome/shell/extensions/gsconnect" = {
@@ -327,10 +465,15 @@ with lib.hm.gvariant;
       locations = "@av []";
     };
 
+    "org/gnome/simple-scan" = {
+      document-type = "photo";
+    };
+
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1641890958;
-      online-updates-timestamp = "int64 1637571160";
-      update-notification-timestamp = "int64 1637571160";
+      check-timestamp = mkInt64 1665894711;
+      first-run = false;
+      online-updates-timestamp = mkInt64 1649689558;
+      update-notification-timestamp = mkInt64 1649689558;
     };
 
     "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" = {
@@ -340,6 +483,20 @@ with lib.hm.gvariant;
 
     "org/gnome/tweaks" = {
       show-extensions-notice = false;
+    };
+
+    "org/gtk/gtk4/settings/file-chooser" = {
+      date-format = "regular";
+      location-mode = "path-bar";
+      show-hidden = false;
+      show-size-column = true;
+      show-type-column = true;
+      sidebar-width = 169;
+      sort-column = "modified";
+      sort-directories-first = false;
+      sort-order = "descending";
+      type-format = "category";
+      window-size = mkTuple [ 1284 1048 ];
     };
 
     "org/gtk/settings/color-chooser" = {
@@ -354,12 +511,16 @@ with lib.hm.gvariant;
       show-size-column = true;
       show-type-column = true;
       sidebar-width = 157;
-      sort-column = "name";
+      sort-column = "modified";
       sort-directories-first = false;
       sort-order = "descending";
       type-format = "category";
-      window-position = mkTuple [ 2232 82 ];
+      window-position = mkTuple [ 26 23 ];
       window-size = mkTuple [ 1297 902 ];
+    };
+
+    "system/proxy" = {
+      mode = "none";
     };
 
   };
