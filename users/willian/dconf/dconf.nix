@@ -87,7 +87,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "bluetooth";
+      last-panel = "background";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -111,8 +111,8 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png";
-      picture-uri-dark = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png";
+      picture-uri = "file:///home/willian/.local/share/backgrounds/2022-10-16-17-14-07-peakpx.jpg";
+      picture-uri-dark = "file:///home/willian/.local/share/backgrounds/2022-10-16-17-14-07-peakpx.jpg";
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
@@ -263,7 +263,7 @@ with lib.hm.gvariant;
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png";
+      picture-uri = "file:///home/willian/.local/share/backgrounds/2022-10-16-17-14-07-peakpx.jpg";
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
