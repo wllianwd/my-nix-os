@@ -87,7 +87,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "background";
+      last-panel = "bluetooth";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -392,6 +392,7 @@ with lib.hm.gvariant;
 
     "org/gnome/nautilus/preferences" = {
       default-folder-viewer = "list-view";
+      migrated-gtk-settings = true;
       search-filter-time-type = "last_modified";
       search-view = "list-view";
     };
@@ -402,6 +403,11 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/nm-applet/eap/41860233-f35f-42ba-be46-be9cf1128443" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
+    "org/gnome/nm-applet/eap/8d83a682-4bec-4ef4-9fbc-b446bfb53982" = {
       ignore-ca-cert = false;
       ignore-phase2-ca-cert = false;
     };
@@ -443,6 +449,7 @@ with lib.hm.gvariant;
       enabled-extensions = [ "places-menu@gnome-shell-extensions.gcampax.github.com" "gsconnect@andyholmes.github.io" "appindicatorsupport@rgcjonas.gmail.com" ];
       favorite-apps = [ "google-chrome.desktop" "codium.desktop" "idea-community.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" ];
       had-bluetooth-devices-setup = true;
+      last-selected-power-profile = "power-saver";
       welcome-dialog-last-shown-version = "41.1";
     };
 
@@ -470,7 +477,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1666240850;
+      check-timestamp = mkInt64 1667281085;
       first-run = false;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
