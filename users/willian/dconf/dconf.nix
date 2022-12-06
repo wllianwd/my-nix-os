@@ -87,7 +87,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "bluetooth";
+      last-panel = "display";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -138,7 +138,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" "gnome-network-panel" "idea-community" "discord" "postman" "org-gnome-evolution-alarm-notify" "org-gnome-console" "org-gnome-nautilus" "org-kde-showfoto" "org-gnome-baobab" "org-kde-digikam" "org-gnome-characters" "gvim" "org-gnome-settings" ];
+      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" "gnome-network-panel" "idea-community" "discord" "postman" "org-gnome-evolution-alarm-notify" "org-gnome-console" "org-gnome-nautilus" "org-kde-showfoto" "org-gnome-baobab" "org-kde-digikam" "org-gnome-characters" "gvim" "org-gnome-settings" "codium" ];
     };
 
     "org/gnome/desktop/notifications/application/codium" = {
@@ -477,7 +477,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1667281085;
+      check-timestamp = mkInt64 1670306364;
       first-run = false;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
@@ -514,7 +514,7 @@ with lib.hm.gvariant;
     "org/gtk/settings/file-chooser" = {
       date-format = "regular";
       location-mode = "path-bar";
-      show-hidden = true;
+      show-hidden = false;
       show-size-column = true;
       show-type-column = true;
       sidebar-width = 157;
@@ -522,7 +522,7 @@ with lib.hm.gvariant;
       sort-directories-first = false;
       sort-order = "descending";
       type-format = "category";
-      window-position = mkTuple [ 26 23 ];
+      window-position = mkTuple [ 2231 81 ];
       window-size = mkTuple [ 1297 902 ];
     };
 

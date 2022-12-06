@@ -26,6 +26,7 @@
         update-system = "sh ~/.my-nix-os/scripts/update-system.sh";
         update-system-boot = "sh ~/.my-nix-os/scripts/update-boot.sh";
         update-home = "sh ~/.my-nix-os/scripts/update-home.sh";
+        update-proton = "sh ~/.my-nix-os/scripts/update-proton.sh";
         copy-photos = "sh ~/.my-nix-os/scripts/copy-photos.sh";
         open-dotfiles = "cd ~/.my-nix-os";
       };
