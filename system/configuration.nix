@@ -200,7 +200,7 @@ in {
       discord
 
       # dev
-      python
+      python3
       vscodium-with-extensions
       docker-compose
       git

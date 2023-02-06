@@ -87,7 +87,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "display";
+      last-panel = "network";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -402,6 +402,11 @@ with lib.hm.gvariant;
       maximized = false;
     };
 
+    "org/gnome/nm-applet/eap/0510fe2f-dd92-47ff-8f02-030bfd4d05fb" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
     "org/gnome/nm-applet/eap/41860233-f35f-42ba-be46-be9cf1128443" = {
       ignore-ca-cert = false;
       ignore-phase2-ca-cert = false;
@@ -477,7 +482,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1670306364;
+      check-timestamp = mkInt64 1675573227;
       first-run = false;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
