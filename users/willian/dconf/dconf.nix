@@ -14,6 +14,10 @@ with lib.hm.gvariant;
       width = 1009;
     };
 
+    "org/gnome/Console" = {
+      last-window-size = mkTuple [ 652 457 ];
+    };
+
     "org/gnome/Disks" = {
       image-dir-uri = "file:///home/willian/Documents";
     };
@@ -87,7 +91,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "network";
+      last-panel = "display";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -247,7 +251,7 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/peripherals/mouse" = {
       left-handed = false;
-      speed = 5.8295964125560484e-2;
+      speed = 5.8296e-2;
     };
 
     "org/gnome/desktop/peripherals/touchpad" = {
@@ -297,7 +301,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/evince/default" = {
-      window-ratio = mkTuple [ 0.10964912280701754 0.16447368421052633 ];
+      window-ratio = mkTuple [ 0.109649 0.164474 ];
     };
 
     "org/gnome/evolution-data-server" = {
@@ -449,7 +453,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell" = {
-      disable-user-extensions = false;
+      disable-user-extensions = true;
       disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
       enabled-extensions = [ "places-menu@gnome-shell-extensions.gcampax.github.com" "gsconnect@andyholmes.github.io" "appindicatorsupport@rgcjonas.gmail.com" ];
       favorite-apps = [ "google-chrome.desktop" "codium.desktop" "idea-community.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" ];
@@ -482,7 +486,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1676212937;
+      check-timestamp = mkInt64 1676957755;
       first-run = false;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
