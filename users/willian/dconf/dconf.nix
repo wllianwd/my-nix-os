@@ -402,7 +402,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/nautilus/window-state" = {
-      initial-size = mkTuple [ 1315 550 ];
+      initial-size = mkTuple [ 1247 543 ];
       maximized = false;
     };
 
