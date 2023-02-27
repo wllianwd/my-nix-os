@@ -52,6 +52,9 @@ in {
   nixpkgs = {
     config = {
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "electron-12.2.3"
+      ];
     };
     overlays = [
       (self: super:
@@ -140,13 +143,6 @@ in {
     printing = { enable = true; };
     # flatpack
     flatpak = { enable = true; };
-#    plex = {
-#      enable = true;
-#      openFirewall = true;
-#      user = "willian";
-#      group = "wheel"; 
-#      dataDir = "/home/willian/Videos/plex";
-#    };
     # pipewire
     pipewire = {
       enable = true;
@@ -188,8 +184,6 @@ in {
       bash
       libva
       libva-utils
-      #gnumake
-      #gcc
       vlc
       mkchromecast
 
@@ -198,6 +192,7 @@ in {
       deluge
       handbrake
       discord
+      etcher
 
       # dev
       python3

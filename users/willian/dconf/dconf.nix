@@ -91,7 +91,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "display";
+      last-panel = "background";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -115,10 +115,10 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos5.png";
-      picture-uri-dark = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos5.png";
-      primary-color = "#000000000000";
-      secondary-color = "#000000000000";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/blobs-l.svg";
+      picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/blobs-d.svg";
+      primary-color = "#241f31";
+      secondary-color = "#000000";
     };
 
     "org/gnome/desktop/calendar" = {
@@ -142,7 +142,11 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" "gnome-network-panel" "idea-community" "discord" "postman" "org-gnome-evolution-alarm-notify" "org-gnome-console" "org-gnome-nautilus" "org-kde-showfoto" "org-gnome-baobab" "org-kde-digikam" "org-gnome-characters" "gvim" "org-gnome-settings" "codium" ];
+      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" "gnome-network-panel" "idea-community" "discord" "postman" "org-gnome-evolution-alarm-notify" "org-gnome-console" "org-gnome-nautilus" "org-kde-showfoto" "org-gnome-baobab" "org-kde-digikam" "org-gnome-characters" "gvim" "org-gnome-settings" "codium" "balena-etcher-electron" ];
+    };
+
+    "org/gnome/desktop/notifications/application/balena-etcher-electron" = {
+      application-id = "balena-etcher-electron.desktop";
     };
 
     "org/gnome/desktop/notifications/application/codium" = {
@@ -267,9 +271,9 @@ with lib.hm.gvariant;
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos5.png";
-      primary-color = "#000000000000";
-      secondary-color = "#000000000000";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/blobs-l.svg";
+      primary-color = "#241f31";
+      secondary-color = "#000000";
     };
 
     "org/gnome/desktop/search-providers" = {
@@ -486,7 +490,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1676957755;
+      check-timestamp = mkInt64 1677476256;
       first-run = false;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
@@ -531,7 +535,7 @@ with lib.hm.gvariant;
       sort-directories-first = false;
       sort-order = "descending";
       type-format = "category";
-      window-position = mkTuple [ 2231 81 ];
+      window-position = mkTuple [ 312 100 ];
       window-size = mkTuple [ 1297 902 ];
     };
 
