@@ -78,6 +78,11 @@ in {
       systemd-boot = { enable = true; };
       efi = { canTouchEfiVariables = true; };
     };
+    kernel = {
+      sysctl = {
+        "vm.max_map_count" = 524288;
+      };
+    };
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [ "acpi_backlight=vendor" ];
   };

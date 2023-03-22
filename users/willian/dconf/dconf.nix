@@ -115,8 +115,8 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos6.png";
-      picture-uri-dark = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos6.png";
+      picture-uri = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png";
+      picture-uri-dark = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png";
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
@@ -271,7 +271,7 @@ with lib.hm.gvariant;
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos6.png";
+      picture-uri = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png";
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
@@ -365,12 +365,12 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/gnome-system-monitor" = {
-      current-tab = "resources";
+      current-tab = "processes";
       maximized = false;
       network-total-in-bits = false;
       show-dependencies = false;
       show-whose-processes = "user";
-      window-state = mkTuple [ 1026 500 ];
+      window-state = mkTuple [ 945 500 ];
     };
 
     "org/gnome/gnome-system-monitor/disktreenew" = {
@@ -490,7 +490,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1677735436;
+      check-timestamp = mkInt64 1679461718;
       first-run = false;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
