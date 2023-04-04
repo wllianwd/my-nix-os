@@ -30,6 +30,7 @@ Sample:
 * To change your home-manager `~/.my-nix-os/users/<user>/home.nix` and do a `update-home`.
 
 ## [WIP] Quick install
+
 Boot with NixOS USB, open the terminal and:
 ```
 sudo su
