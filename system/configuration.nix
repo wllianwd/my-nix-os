@@ -238,6 +238,7 @@ in {
       lutris
       mangohud
       protonup
+      protonup-qt
       libstrangle
     ];
     variables = {

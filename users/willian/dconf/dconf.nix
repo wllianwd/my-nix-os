@@ -15,7 +15,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/Console" = {
-      last-window-size = mkTuple [ 652 457 ];
+      last-window-size = mkTuple [ 757 457 ];
     };
 
     "org/gnome/Disks" = {
@@ -115,10 +115,10 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png";
-      picture-uri-dark = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png";
-      primary-color = "#000000000000";
-      secondary-color = "#000000000000";
+      picture-uri = "file:///nix/store/57j50rdnr4zx0r5z4bgdiyi98q5j01rr-simple-blue-2016-02-19/share/backgrounds/nixos/nix-wallpaper-simple-blue.png";
+      picture-uri-dark = "file:///nix/store/zx06xh7rmfpzml7l14l89gwycsf4gmhq-simple-dark-gray-2016-02-19/share/backgrounds/nixos/nix-wallpaper-simple-dark-gray.png";
+      primary-color = "#3a4ba0";
+      secondary-color = "#2f302f";
     };
 
     "org/gnome/desktop/calendar" = {
@@ -250,7 +250,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/peripherals/keyboard" = {
-      numlock-state = true;
+      numlock-state = false;
     };
 
     "org/gnome/desktop/peripherals/mouse" = {
@@ -271,9 +271,9 @@ with lib.hm.gvariant;
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/willian/.local/share/backgrounds/2022-02-07-21-25-14-wallpaper-nixos1.png";
-      primary-color = "#000000000000";
-      secondary-color = "#000000000000";
+      picture-uri = "file:///nix/store/57j50rdnr4zx0r5z4bgdiyi98q5j01rr-simple-blue-2016-02-19/share/backgrounds/nixos/nix-wallpaper-simple-blue.png";
+      primary-color = "#3a4ba0";
+      secondary-color = "#2f302f";
     };
 
     "org/gnome/desktop/search-providers" = {
@@ -457,7 +457,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell" = {
-      disable-user-extensions = true;
+      disable-user-extensions = false;
       disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
       enabled-extensions = [ "places-menu@gnome-shell-extensions.gcampax.github.com" "gsconnect@andyholmes.github.io" "appindicatorsupport@rgcjonas.gmail.com" ];
       favorite-apps = [ "google-chrome.desktop" "codium.desktop" "idea-community.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" ];
@@ -490,7 +490,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1679461718;
+      check-timestamp = mkInt64 1680594588;
       first-run = false;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
@@ -508,7 +508,7 @@ with lib.hm.gvariant;
     "org/gtk/gtk4/settings/file-chooser" = {
       date-format = "regular";
       location-mode = "path-bar";
-      show-hidden = false;
+      show-hidden = true;
       show-size-column = true;
       show-type-column = true;
       sidebar-width = 169;
