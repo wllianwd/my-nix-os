@@ -199,6 +199,7 @@ in {
 
       # multimedia
       pdftk
+      onlyoffice-bin
       deluge
       handbrake
       discord
