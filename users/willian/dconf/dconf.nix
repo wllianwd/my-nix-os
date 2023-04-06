@@ -110,7 +110,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "info-overview";
+      last-panel = "usage";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -285,6 +285,8 @@ with lib.hm.gvariant;
       disable-microphone = false;
       old-files-age = mkUint32 30;
       recent-files-max-age = -1;
+      remove-old-temp-files = true;
+      remove-old-trash-files = true;
     };
 
     "org/gnome/desktop/screensaver" = {
@@ -384,7 +386,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/gnome-system-monitor" = {
-      current-tab = "disks";
+      current-tab = "resources";
       maximized = false;
       network-total-in-bits = false;
       show-dependencies = false;
@@ -396,7 +398,7 @@ with lib.hm.gvariant;
       col-0-visible = true;
       col-0-width = 437;
       col-6-visible = true;
-      col-6-width = 0;
+      col-6-width = 30;
     };
 
     "org/gnome/gnome-system-monitor/proctree" = {

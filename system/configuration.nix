@@ -196,6 +196,7 @@ in {
       libva-utils
       vlc
       mkchromecast
+      lm_sensors
 
       # multimedia
       pdftk
