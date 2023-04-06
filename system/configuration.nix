@@ -84,7 +84,7 @@ in {
       };
     };
     kernelPackages = pkgs.linuxPackages_zen;
-    kernelParams = [ "acpi_backlight=vendor" ];
+    kernelParams = [ "acpi_enforce_resources=lax" ];
   };
  
   # Set your time zone.
@@ -197,6 +197,7 @@ in {
       vlc
       mkchromecast
       lm_sensors
+      i2c-tools
 
       # multimedia
       pdftk
