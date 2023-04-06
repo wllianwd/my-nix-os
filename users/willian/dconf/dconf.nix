@@ -554,7 +554,7 @@ with lib.hm.gvariant;
       sort-directories-first = false;
       sort-order = "descending";
       type-format = "category";
-      window-position = mkTuple [ 312 100 ];
+      window-position = mkTuple [ 26 23 ];
       window-size = mkTuple [ 1297 902 ];
     };
 
