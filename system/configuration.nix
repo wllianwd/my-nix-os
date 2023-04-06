@@ -140,6 +140,11 @@ in {
       displayManager = { gdm = { enable = true; }; };
       desktopManager = { gnome = { enable = true; }; };
     };
+    hardware = {
+      openrgb = {
+        enable = true;
+      };
+    };
     # dbus
     dbus = { packages = [ pkgs.dconf ]; };
     # udev
@@ -225,6 +230,9 @@ in {
       mesa-demos
       zoom
       dconf2nix
+
+      # rgb
+      openrgb-with-all-plugins
 
       # gaming
       vulkan-loader

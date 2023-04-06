@@ -5,6 +5,25 @@ with lib.hm.gvariant;
 
 {
   dconf.settings = {
+    "apps/psensor" = {
+      graph-alpha-channel-enabled = false;
+      graph-background-alpha = 1.0;
+      graph-background-color = "#e8f4e8f4a8f5";
+      graph-foreground-color = "#000000000000";
+      graph-monitoring-duration = 20;
+      graph-update-interval = 2;
+      interface-hide-on-startup = false;
+      interface-window-divider-pos = 0;
+      interface-window-h = 445;
+      interface-window-restore-enabled = true;
+      interface-window-w = 800;
+      interface-window-x = 26;
+      interface-window-y = 23;
+      sensor-update-interval = 2;
+      slog-enabled = false;
+      slog-interval = 300;
+    };
+
     "apps/seahorse/listing" = {
       keyrings-selected = [ "openssh:///home/willian/.ssh" ];
     };
@@ -15,7 +34,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/Console" = {
-      last-window-size = mkTuple [ 757 457 ];
+      last-window-size = mkTuple [ 923 457 ];
     };
 
     "org/gnome/Disks" = {
@@ -91,7 +110,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "background";
+      last-panel = "info-overview";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -142,7 +161,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" "gnome-network-panel" "idea-community" "discord" "postman" "org-gnome-evolution-alarm-notify" "org-gnome-console" "org-gnome-nautilus" "org-kde-showfoto" "org-gnome-baobab" "org-kde-digikam" "org-gnome-characters" "gvim" "org-gnome-settings" "codium" "balena-etcher-electron" ];
+      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" "gnome-network-panel" "idea-community" "discord" "postman" "org-gnome-evolution-alarm-notify" "org-gnome-console" "org-gnome-nautilus" "org-kde-showfoto" "org-gnome-baobab" "org-kde-digikam" "org-gnome-characters" "gvim" "org-gnome-settings" "codium" "balena-etcher-electron" "gnome-printers-panel" ];
     };
 
     "org/gnome/desktop/notifications/application/balena-etcher-electron" = {
@@ -365,12 +384,12 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/gnome-system-monitor" = {
-      current-tab = "processes";
+      current-tab = "disks";
       maximized = false;
       network-total-in-bits = false;
       show-dependencies = false;
       show-whose-processes = "user";
-      window-state = mkTuple [ 945 500 ];
+      window-state = mkTuple [ 700 500 ];
     };
 
     "org/gnome/gnome-system-monitor/disktreenew" = {
@@ -490,7 +509,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1680594588;
+      check-timestamp = mkInt64 1680768546;
       first-run = false;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
