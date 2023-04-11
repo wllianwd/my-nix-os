@@ -110,7 +110,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "usage";
+      last-panel = "background";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -134,10 +134,10 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///nix/store/57j50rdnr4zx0r5z4bgdiyi98q5j01rr-simple-blue-2016-02-19/share/backgrounds/nixos/nix-wallpaper-simple-blue.png";
-      picture-uri-dark = "file:///nix/store/zx06xh7rmfpzml7l14l89gwycsf4gmhq-simple-dark-gray-2016-02-19/share/backgrounds/nixos/nix-wallpaper-simple-dark-gray.png";
-      primary-color = "#3a4ba0";
-      secondary-color = "#2f302f";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/drool-l.svg";
+      picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/drool-d.svg";
+      primary-color = "#86b6ef";
+      secondary-color = "#000000";
     };
 
     "org/gnome/desktop/calendar" = {
@@ -151,7 +151,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
+      color-scheme = "default";
       font-antialiasing = "grayscale";
       font-hinting = "slight";
       gtk-im-module = "gtk-im-context-simple";
@@ -292,9 +292,9 @@ with lib.hm.gvariant;
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///nix/store/57j50rdnr4zx0r5z4bgdiyi98q5j01rr-simple-blue-2016-02-19/share/backgrounds/nixos/nix-wallpaper-simple-blue.png";
-      primary-color = "#3a4ba0";
-      secondary-color = "#2f302f";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/drool-l.svg";
+      primary-color = "#86b6ef";
+      secondary-color = "#000000";
     };
 
     "org/gnome/desktop/search-providers" = {
@@ -511,7 +511,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1680768546;
+      check-timestamp = mkInt64 1681202033;
       first-run = false;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
