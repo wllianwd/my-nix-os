@@ -110,7 +110,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "background";
+      last-panel = "keyboard";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -436,7 +436,17 @@ with lib.hm.gvariant;
       ignore-phase2-ca-cert = false;
     };
 
+    "org/gnome/nm-applet/eap/3e65c142-dd9a-4bcc-b0d1-9a38000918f1" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
     "org/gnome/nm-applet/eap/41860233-f35f-42ba-be46-be9cf1128443" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
+    "org/gnome/nm-applet/eap/58d7508f-92af-41ed-b65c-93df46691d25" = {
       ignore-ca-cert = false;
       ignore-phase2-ca-cert = false;
     };
@@ -447,6 +457,11 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/nm-applet/eap/a8dfc630-96f1-40bc-a9e5-8956337f01e7" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
+    "org/gnome/nm-applet/eap/da912750-7759-4323-8675-d3e3fbc2717c" = {
       ignore-ca-cert = false;
       ignore-phase2-ca-cert = false;
     };
@@ -511,7 +526,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1681202033;
+      check-timestamp = mkInt64 1681286749;
       first-run = false;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;

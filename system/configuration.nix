@@ -198,6 +198,7 @@ in {
       mkchromecast
       lm_sensors
       i2c-tools
+      #liquidctl
 
       # multimedia
       pdftk
