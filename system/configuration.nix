@@ -228,6 +228,7 @@ in {
       gnome.gnome-tweaks
       gnomeExtensions.appindicator
       gnomeExtensions.gsconnect
+      gnomeExtensions.vitals
 
       # video
       mesa
