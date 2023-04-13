@@ -389,6 +389,7 @@ with lib.hm.gvariant;
       current-tab = "resources";
       maximized = false;
       network-total-in-bits = false;
+      process-memory-in-iec = false;
       show-dependencies = false;
       show-whose-processes = "user";
       window-state = mkTuple [ 700 500 ];
@@ -398,7 +399,7 @@ with lib.hm.gvariant;
       col-0-visible = true;
       col-0-width = 437;
       col-6-visible = true;
-      col-6-width = 30;
+      col-6-width = 0;
     };
 
     "org/gnome/gnome-system-monitor/proctree" = {
@@ -495,7 +496,7 @@ with lib.hm.gvariant;
     "org/gnome/shell" = {
       disable-user-extensions = false;
       disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
-      enabled-extensions = [ "places-menu@gnome-shell-extensions.gcampax.github.com" "gsconnect@andyholmes.github.io" "appindicatorsupport@rgcjonas.gmail.com" ];
+      enabled-extensions = [ "places-menu@gnome-shell-extensions.gcampax.github.com" "gsconnect@andyholmes.github.io" "appindicatorsupport@rgcjonas.gmail.com" "Vitals@CoreCoding.com" ];
       favorite-apps = [ "google-chrome.desktop" "codium.desktop" "idea-community.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" ];
       had-bluetooth-devices-setup = true;
       last-selected-power-profile = "power-saver";
@@ -517,6 +518,24 @@ with lib.hm.gvariant;
       window-size = mkTuple [ 640 440 ];
     };
 
+    "org/gnome/shell/extensions/vitals" = {
+      alphabetize = true;
+      fixed-widths = true;
+      hide-icons = false;
+      hide-zeros = false;
+      hot-sensors = [ "_memory_usage_" "_temperature_k10temp_tccd1_" "_temperature_amdgpu_edge_" ];
+      memory-measurement = 1;
+      show-battery = false;
+      show-fan = true;
+      show-memory = true;
+      show-network = true;
+      show-processor = true;
+      show-storage = true;
+      show-system = true;
+      show-temperature = true;
+      show-voltage = true;
+    };
+
     "org/gnome/shell/world-clocks" = {
       locations = "@av []";
     };
@@ -526,7 +545,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1681286749;
+      check-timestamp = mkInt64 1681393337;
       first-run = false;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;

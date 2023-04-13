@@ -207,6 +207,7 @@ in {
       handbrake
       discord
       etcher
+      #unigine-superposition
 
       # dev
       python3
@@ -218,7 +219,7 @@ in {
       nodejs
       yarn
       maven
-      openjdk11
+      openjdk17
       jetbrains.idea-community
       jetbrains.datagrip
       kubectl
@@ -249,7 +250,7 @@ in {
       winetricks
       protontricks
       lutris
-      mangohud
+      #mangohud
       protonup
       protonup-qt
       libstrangle
@@ -259,7 +260,7 @@ in {
       LIBVA_DRIVER_NAME="radeonsi";
     };
     etc = with pkgs; {
-      "jdk-11".source = openjdk11;
+      "jdk-17".source = openjdk17;
     };
   };
 
