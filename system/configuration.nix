@@ -44,9 +44,8 @@ in {
   };
 
   virtualisation = {
-    docker = {
-      enable = false;
-    };
+    docker = { enable = false; };
+    libvirtd = { enable = true; };
   };
 
   nixpkgs = {
@@ -173,8 +172,9 @@ in {
       willian = {
         isNormalUser = true;
         initialPassword = "guest";
-        extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
-      };
+        extraGroups = [ "wheel" "networkmanager" "libvirtd" ]; # Enable ‘sudo’ for the user.
+        #extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user. 
+     };
     };
   };
 
@@ -187,6 +187,7 @@ in {
       pciutils
       nano
       unzip
+      firefox
       google-chrome
       networkmanager
       autorandr
@@ -198,7 +199,10 @@ in {
       mkchromecast
       lm_sensors
       i2c-tools
-      #liquidctl
+      liquidctl
+      #usbutils
+      wireshark
+      virt-manager
 
       # multimedia
       pdftk
@@ -250,6 +254,7 @@ in {
       winetricks
       protontricks
       lutris
+      #heroic
       #mangohud
       protonup
       protonup-qt
@@ -269,6 +274,8 @@ in {
   programs = {
     zsh = { enable = true; };
     steam = { enable = true; };
+    dconf = { enable = true; };
+    #usbtop = { enable = true; };
   };  
   
   # This value determines the NixOS release from which the default

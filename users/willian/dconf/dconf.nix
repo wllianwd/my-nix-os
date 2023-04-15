@@ -462,6 +462,11 @@ with lib.hm.gvariant;
       ignore-phase2-ca-cert = false;
     };
 
+    "org/gnome/nm-applet/eap/ad453173-aa75-4e1e-9c36-d89a4026d3d9" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
     "org/gnome/nm-applet/eap/da912750-7759-4323-8675-d3e3fbc2717c" = {
       ignore-ca-cert = false;
       ignore-phase2-ca-cert = false;
@@ -545,8 +550,9 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1681459999;
+      check-timestamp = mkInt64 1681558810;
       first-run = false;
+      flatpak-purge-timestamp = mkInt64 1681565950;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
     };
@@ -571,6 +577,7 @@ with lib.hm.gvariant;
       sort-directories-first = false;
       sort-order = "descending";
       type-format = "category";
+      view-type = "list";
       window-size = mkTuple [ 1284 1048 ];
     };
 
@@ -592,6 +599,34 @@ with lib.hm.gvariant;
       type-format = "category";
       window-position = mkTuple [ 26 23 ];
       window-size = mkTuple [ 1297 902 ];
+    };
+
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = [ "qemu:///system" ];
+      uris = [ "qemu:///system" ];
+    };
+
+    "org/virt-manager/virt-manager/details" = {
+      show-toolbar = true;
+    };
+
+    "org/virt-manager/virt-manager/paths" = {
+      media-default = "/home/willian/Downloads";
+    };
+
+    "org/virt-manager/virt-manager/urls" = {
+      isos = [ "/home/willian/Downloads/Win10_22H2_EnglishInternational_x64.iso" ];
+    };
+
+    "org/virt-manager/virt-manager/vmlist-fields" = {
+      disk-usage = false;
+      network-traffic = false;
+    };
+
+    "org/virt-manager/virt-manager/vms/cd3f542e657e4f688386f9879d5487a0" = {
+      autoconnect = 1;
+      scaling = 1;
+      vm-window-size = mkTuple [ 1024 810 ];
     };
 
     "system/proxy" = {
