@@ -81,8 +81,8 @@ in {
         "vm.max_map_count" = 524288;
       };
     };
-    kernelPackages = pkgs.linuxPackages_testing;
-    #kernelPackages = pkgs.linuxPackages_zen;
+    #kernelPackages = pkgs.linuxPackages_testing;
+    kernelPackages = pkgs.linuxPackages_zen;
     #kernelParams = [ "acpi_enforce_resources=lax" ];
   };
  
