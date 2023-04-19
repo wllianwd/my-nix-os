@@ -45,7 +45,6 @@ in {
 
   virtualisation = {
     docker = { enable = false; };
-    libvirtd = { enable = true; };
   };
 
   nixpkgs = {
@@ -82,8 +81,9 @@ in {
         "vm.max_map_count" = 524288;
       };
     };
-    kernelPackages = pkgs.linuxPackages_zen;
-    kernelParams = [ "acpi_enforce_resources=lax" ];
+    kernelPackages = pkgs.linuxPackages_testing;
+    #kernelPackages = pkgs.linuxPackages_zen;
+    #kernelParams = [ "acpi_enforce_resources=lax" ];
   };
  
   # Set your time zone.
@@ -116,9 +116,14 @@ in {
     rtkit = { enable = true; };
     pam = {
       loginLimits = [
-        { domain = "*"; type = "soft"; item = "nofile"; value = "1048576"; }
-        { domain = "*"; type = "hard"; item = "nofile"; value = "1048576"; }
+        { domain = "*"; type = "-"; item = "nofile"; value = "1048576"; }
       ];
+    };
+  };
+
+  systemd = {
+    user = {
+      extraConfig = "DefaultLimitNOFILE=1048576";
     };
   };
 
@@ -133,8 +138,6 @@ in {
     # X11
     xserver = {
       enable = true;
-      # touchpad
-      libinput = { enable = true; };
       # gnome
       displayManager = { gdm = { enable = true; }; };
       desktopManager = { gnome = { enable = true; }; };
@@ -172,8 +175,7 @@ in {
       willian = {
         isNormalUser = true;
         initialPassword = "guest";
-        extraGroups = [ "wheel" "networkmanager" "libvirtd" ]; # Enable ‘sudo’ for the user.
-        #extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user. 
+        extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user. 
      };
     };
   };
@@ -200,9 +202,7 @@ in {
       lm_sensors
       i2c-tools
       liquidctl
-      #usbutils
-      wireshark
-      virt-manager
+      usbutils
 
       # multimedia
       pdftk
@@ -211,6 +211,7 @@ in {
       handbrake
       discord
       etcher
+      openrgb-with-all-plugins
       #unigine-superposition
 
       # dev
@@ -241,9 +242,6 @@ in {
       zoom
       dconf2nix
 
-      # rgb
-      openrgb-with-all-plugins
-
       # gaming
       vulkan-loader
       vulkan-validation-layers
@@ -254,8 +252,6 @@ in {
       winetricks
       protontricks
       lutris
-      #heroic
-      #mangohud
       protonup
       protonup-qt
       libstrangle
@@ -275,7 +271,6 @@ in {
     zsh = { enable = true; };
     steam = { enable = true; };
     dconf = { enable = true; };
-    #usbtop = { enable = true; };
   };  
   
   # This value determines the NixOS release from which the default
@@ -285,6 +280,6 @@ in {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system = {
-    stateVersion = "21.11"; # Did you read the comment?
+    stateVersion = "22.11"; # Did you read the comment?
   };
 }

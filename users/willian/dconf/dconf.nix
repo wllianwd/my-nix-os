@@ -42,8 +42,8 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/Disks/benchmark" = {
-      do-write = true;
-      num-access-samples = 1000;
+      do-write = false;
+      num-access-samples = 10000;
       num-samples = 1000;
       sample-size-mib = 10;
     };
@@ -110,7 +110,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "keyboard";
+      last-panel = "sound";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -416,6 +416,10 @@ with lib.hm.gvariant;
       workspaces-only-on-primary = true;
     };
 
+    "org/gnome/nautilus/compression" = {
+      default-compression-format = "zip";
+    };
+
     "org/gnome/nautilus/icon-view" = {
       default-zoom-level = "large";
     };
@@ -550,9 +554,9 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1681558810;
+      check-timestamp = mkInt64 1681885799;
       first-run = false;
-      flatpak-purge-timestamp = mkInt64 1681565950;
+      flatpak-purge-timestamp = mkInt64 1681824112;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
     };
@@ -597,8 +601,19 @@ with lib.hm.gvariant;
       sort-directories-first = false;
       sort-order = "descending";
       type-format = "category";
-      window-position = mkTuple [ 26 23 ];
+      window-position = mkTuple [ 0 131 ];
       window-size = mkTuple [ 1297 902 ];
+    };
+
+    "org/virt-manager/virt-manager" = {
+      manager-window-height = 550;
+      manager-window-width = 550;
+    };
+
+    "org/virt-manager/virt-manager/confirm" = {
+      delete-storage = true;
+      forcepoweroff = true;
+      unapplied-dev = true;
     };
 
     "org/virt-manager/virt-manager/connections" = {
@@ -606,8 +621,16 @@ with lib.hm.gvariant;
       uris = [ "qemu:///system" ];
     };
 
+    "org/virt-manager/virt-manager/conns/qemu:system" = {
+      window-size = mkTuple [ 800 600 ];
+    };
+
     "org/virt-manager/virt-manager/details" = {
       show-toolbar = true;
+    };
+
+    "org/virt-manager/virt-manager/new-vm" = {
+      graphics-type = "system";
     };
 
     "org/virt-manager/virt-manager/paths" = {
@@ -615,7 +638,7 @@ with lib.hm.gvariant;
     };
 
     "org/virt-manager/virt-manager/urls" = {
-      isos = [ "/home/willian/Downloads/Win10_22H2_EnglishInternational_x64.iso" ];
+      isos = [ "/home/willian/Downloads/Win11_22H2_EnglishInternational_x64v1.iso" "/home/willian/Downloads/Win10_22H2_EnglishInternational_x64.iso" ];
     };
 
     "org/virt-manager/virt-manager/vmlist-fields" = {
@@ -623,7 +646,85 @@ with lib.hm.gvariant;
       network-traffic = false;
     };
 
+    "org/virt-manager/virt-manager/vms/2e45c01e620f4141bf0d219d2480059b" = {
+      autoconnect = 1;
+      scaling = 1;
+      vm-window-size = mkTuple [ 1920 1011 ];
+    };
+
+    "org/virt-manager/virt-manager/vms/52ec43d72f9e4dd681d233fc14217670" = {
+      autoconnect = 1;
+      scaling = 1;
+      vm-window-size = mkTuple [ 1024 810 ];
+    };
+
+    "org/virt-manager/virt-manager/vms/67ba5ea088d248d68a69e16c3f9fc756" = {
+      autoconnect = 1;
+      scaling = 1;
+      vm-window-size = mkTuple [ 1024 810 ];
+    };
+
+    "org/virt-manager/virt-manager/vms/7fe8cb91e9564d5eb6abde46ba5b172d" = {
+      autoconnect = 1;
+      scaling = 1;
+      vm-window-size = mkTuple [ 1024 810 ];
+    };
+
+    "org/virt-manager/virt-manager/vms/87c20d2a14b04cdb92b81794322a314f" = {
+      autoconnect = 1;
+      scaling = 1;
+      vm-window-size = mkTuple [ 1280 832 ];
+    };
+
+    "org/virt-manager/virt-manager/vms/8a9dcf7ade8f4dbaa4418d2fd2c9c86b" = {
+      autoconnect = 1;
+      scaling = 1;
+      vm-window-size = mkTuple [ 1024 810 ];
+    };
+
+    "org/virt-manager/virt-manager/vms/9932b5717ebc4272b1777431590b603e" = {
+      autoconnect = 1;
+      scaling = 1;
+      vm-window-size = mkTuple [ 1024 810 ];
+    };
+
+    "org/virt-manager/virt-manager/vms/ab777428be654ab18da434b1eb987752" = {
+      autoconnect = 1;
+      scaling = 1;
+      vm-window-size = mkTuple [ 1920 1048 ];
+    };
+
     "org/virt-manager/virt-manager/vms/cd3f542e657e4f688386f9879d5487a0" = {
+      autoconnect = 1;
+      scaling = 1;
+      vm-window-size = mkTuple [ 1024 810 ];
+    };
+
+    "org/virt-manager/virt-manager/vms/ecdfbde0be97459ab68340cc0aa7a610" = {
+      autoconnect = 1;
+      scaling = 1;
+      vm-window-size = mkTuple [ 1024 810 ];
+    };
+
+    "org/virt-manager/virt-manager/vms/ece66a30625c4a6d819e7cd87303f382" = {
+      autoconnect = 1;
+      scaling = 1;
+      vm-window-size = mkTuple [ 1294 877 ];
+    };
+
+    "org/virt-manager/virt-manager/vms/efedc761765c44c88d5c7f0d84b32536" = {
+      autoconnect = 1;
+      scaling = 1;
+      vm-window-size = mkTuple [ 1024 810 ];
+    };
+
+    "org/virt-manager/virt-manager/vms/fa118b3268294bf2b2d81d097fc67346" = {
+      autoconnect = 1;
+      scaling = 1;
+      vm-window-size = mkTuple [ 1024 810 ];
+    };
+
+    "org/virt-manager/virt-manager/vms/ff5faae28ddd4d259fe8f153027c7714" = {
       autoconnect = 1;
       scaling = 1;
       vm-window-size = mkTuple [ 1024 810 ];
