@@ -437,7 +437,7 @@ with lib.hm.gvariant;
 
     "org/gnome/nautilus/window-state" = {
       initial-size = mkTuple [ 1247 543 ];
-      maximized = false;
+      maximized = true;
     };
 
     "org/gnome/nm-applet/eap/0510fe2f-dd92-47ff-8f02-030bfd4d05fb" = {
