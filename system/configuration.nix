@@ -74,15 +74,18 @@ in {
     loader = {
       #grub = { enable = true; version = 2; device = "replace_disk"; };
       systemd-boot = { enable = true; };
-      efi = { canTouchEfiVariables = true; };
+      efi = {
+        efiSysMountPoint = "/boot/efi"; 
+        canTouchEfiVariables = true; 
+      };
     };
     kernel = {
       sysctl = {
         "vm.max_map_count" = 524288;
       };
     };
-    #kernelPackages = pkgs.linuxPackages_testing;
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_testing;
+    #kernelPackages = pkgs.linuxPackages_zen;
     #kernelParams = [ "acpi_enforce_resources=lax" ];
   };
  
@@ -101,7 +104,20 @@ in {
   };
 
   # Select internationalisation properties.
-  i18n = { defaultLocale = "en_US.UTF-8"; };
+  i18n = {
+    extraLocaleSettings = {
+      LC_ADDRESS = "es_ES.UTF-8";
+      LC_IDENTIFICATION = "es_ES.UTF-8";
+      LC_MEASUREMENT = "es_ES.UTF-8";
+      LC_MONETARY = "es_ES.UTF-8";
+      LC_NAME = "es_ES.UTF-8";
+      LC_NUMERIC = "es_ES.UTF-8";
+      LC_PAPER = "es_ES.UTF-8";
+      LC_TELEPHONE = "es_ES.UTF-8";
+      LC_TIME = "es_ES.UTF-8";
+    };
+    defaultLocale = "en_US.UTF-8"; 
+  };
   console = { font = "Lat2-Terminus16"; keyMap = "us"; };
 
   # Fonts

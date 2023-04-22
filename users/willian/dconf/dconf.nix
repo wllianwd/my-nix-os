@@ -34,7 +34,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/Console" = {
-      last-window-size = mkTuple [ 923 457 ];
+      last-window-size = mkTuple [ 652 481 ];
     };
 
     "org/gnome/Disks" = {
@@ -319,6 +319,10 @@ with lib.hm.gvariant;
       use-background-color = true;
     };
 
+    "org/gnome/epiphany" = {
+      ask-for-default = false;
+    };
+
     "org/gnome/epiphany/state" = {
       is-maximized = false;
       window-position = mkTuple [ (-1) (-1) ];
@@ -386,7 +390,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/gnome-system-monitor" = {
-      current-tab = "resources";
+      current-tab = "processes";
       maximized = false;
       network-total-in-bits = false;
       process-memory-in-iec = false;
@@ -554,9 +558,9 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1681885799;
+      check-timestamp = mkInt64 1682155148;
       first-run = false;
-      flatpak-purge-timestamp = mkInt64 1681824112;
+      flatpak-purge-timestamp = mkInt64 1682084419;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
     };
@@ -601,7 +605,7 @@ with lib.hm.gvariant;
       sort-directories-first = false;
       sort-order = "descending";
       type-format = "category";
-      window-position = mkTuple [ 0 131 ];
+      window-position = mkTuple [ 0 32 ];
       window-size = mkTuple [ 1297 902 ];
     };
 
