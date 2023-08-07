@@ -34,7 +34,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/Console" = {
-      last-window-size = mkTuple [ 652 481 ];
+      last-window-size = mkTuple [ 811 481 ];
     };
 
     "org/gnome/Disks" = {
@@ -110,7 +110,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "sound";
+      last-panel = "display";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -242,6 +242,10 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/notifications/application/org-gnome-shell-extensions-gsconnect-preferences" = {
       application-id = "org.gnome.Shell.Extensions.GSConnect.Preferences.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-texteditor" = {
+      application-id = "org.gnome.TextEditor.desktop";
     };
 
     "org/gnome/desktop/notifications/application/org-kde-digikam" = {
@@ -437,7 +441,7 @@ with lib.hm.gvariant;
 
     "org/gnome/nautilus/window-state" = {
       initial-size = mkTuple [ 1247 543 ];
-      maximized = true;
+      maximized = false;
     };
 
     "org/gnome/nm-applet/eap/0510fe2f-dd92-47ff-8f02-030bfd4d05fb" = {
@@ -455,7 +459,22 @@ with lib.hm.gvariant;
       ignore-phase2-ca-cert = false;
     };
 
+    "org/gnome/nm-applet/eap/4e85ee7f-cbc3-4254-8705-8df50fb634ac" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
     "org/gnome/nm-applet/eap/58d7508f-92af-41ed-b65c-93df46691d25" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
+    "org/gnome/nm-applet/eap/6faf713e-3beb-4007-9425-b8c27ae45964" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
+    "org/gnome/nm-applet/eap/8839c915-0c51-43ae-997b-989b909da7d7" = {
       ignore-ca-cert = false;
       ignore-phase2-ca-cert = false;
     };
@@ -471,6 +490,16 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/nm-applet/eap/ad453173-aa75-4e1e-9c36-d89a4026d3d9" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
+    "org/gnome/nm-applet/eap/c85ecdd8-8872-4088-b433-a5ed8c988715" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
+    "org/gnome/nm-applet/eap/ce3a6cd1-5c26-4bed-a6a6-770dca3d4e8b" = {
       ignore-ca-cert = false;
       ignore-phase2-ca-cert = false;
     };
@@ -549,6 +578,11 @@ with lib.hm.gvariant;
       show-voltage = true;
     };
 
+    "org/gnome/shell/weather" = {
+      automatic-location = true;
+      locations = "@av []";
+    };
+
     "org/gnome/shell/world-clocks" = {
       locations = "@av []";
     };
@@ -558,9 +592,9 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1682155148;
+      check-timestamp = mkInt64 1691409374;
       first-run = false;
-      flatpak-purge-timestamp = mkInt64 1682084419;
+      flatpak-purge-timestamp = mkInt64 1690591251;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
     };
@@ -605,7 +639,7 @@ with lib.hm.gvariant;
       sort-directories-first = false;
       sort-order = "descending";
       type-format = "category";
-      window-position = mkTuple [ 0 32 ];
+      window-position = mkTuple [ 311 81 ];
       window-size = mkTuple [ 1297 902 ];
     };
 

@@ -2,21 +2,19 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, stdenv, ... }:
 
 # Variables
 
 let vscodium-with-extensions = pkgs.vscode-with-extensions.override {
-    vscode = pkgs.vscodium;
-    vscodeExtensions = (with pkgs.vscode-extensions; [
-      jnoortheen.nix-ide
-    ]);
-  };
+  vscode = pkgs.vscodium;
+  vscodeExtensions = (with pkgs.vscode-extensions; [ jnoortheen.nix-ide ]);
+};
 
 # Config
 in {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
 
@@ -84,8 +82,8 @@ in {
         "vm.max_map_count" = 524288;
       };
     };
-    kernelPackages = pkgs.linuxPackages_testing;
-    #kernelPackages = pkgs.linuxPackages_zen;
+    #kernelPackages = pkgs.linuxPackages_testing;
+    kernelPackages = pkgs.linuxPackages;
     #kernelParams = [ "acpi_enforce_resources=lax" ];
   };
  
@@ -122,7 +120,7 @@ in {
 
   # Fonts
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       meslo-lgs-nf
     ];
   };
@@ -219,6 +217,7 @@ in {
       i2c-tools
       liquidctl
       usbutils
+      appimage-run
 
       # multimedia
       pdftk
@@ -259,6 +258,7 @@ in {
       dconf2nix
 
       # gaming
+      mangohud
       vulkan-loader
       vulkan-validation-layers
       vulkan-tools
