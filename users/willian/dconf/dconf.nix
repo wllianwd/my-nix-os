@@ -110,7 +110,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "display";
+      last-panel = "background";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -592,9 +592,9 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1691409374;
+      check-timestamp = mkInt64 1692331343;
       first-run = false;
-      flatpak-purge-timestamp = mkInt64 1690591251;
+      flatpak-purge-timestamp = mkInt64 1692316882;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
     };
