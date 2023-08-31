@@ -67,6 +67,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/baobab/ui" = {
+      is-maximized = false;
       window-size = mkTuple [ 960 600 ];
       window-state = 87168;
     };
@@ -110,7 +111,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "background";
+      last-panel = "usage";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -162,6 +163,7 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/notifications" = {
       application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" "gnome-network-panel" "idea-community" "discord" "postman" "org-gnome-evolution-alarm-notify" "org-gnome-console" "org-gnome-nautilus" "org-kde-showfoto" "org-gnome-baobab" "org-kde-digikam" "org-gnome-characters" "gvim" "org-gnome-settings" "codium" "balena-etcher-electron" "gnome-printers-panel" ];
+      show-banners = false;
     };
 
     "org/gnome/desktop/notifications/application/balena-etcher-electron" = {
@@ -441,7 +443,7 @@ with lib.hm.gvariant;
 
     "org/gnome/nautilus/window-state" = {
       initial-size = mkTuple [ 1247 543 ];
-      maximized = false;
+      maximized = true;
     };
 
     "org/gnome/nm-applet/eap/0510fe2f-dd92-47ff-8f02-030bfd4d05fb" = {
@@ -592,9 +594,9 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1692331343;
+      check-timestamp = mkInt64 1693455872;
       first-run = false;
-      flatpak-purge-timestamp = mkInt64 1692316882;
+      flatpak-purge-timestamp = mkInt64 1693441412;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
     };
