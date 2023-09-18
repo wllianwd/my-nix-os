@@ -443,7 +443,7 @@ with lib.hm.gvariant;
 
     "org/gnome/nautilus/window-state" = {
       initial-size = mkTuple [ 1247 543 ];
-      maximized = true;
+      maximized = false;
     };
 
     "org/gnome/nm-applet/eap/0510fe2f-dd92-47ff-8f02-030bfd4d05fb" = {
@@ -594,9 +594,9 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1693455872;
+      check-timestamp = mkInt64 1694840306;
       first-run = false;
-      flatpak-purge-timestamp = mkInt64 1693441412;
+      flatpak-purge-timestamp = mkInt64 1694825845;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
     };
