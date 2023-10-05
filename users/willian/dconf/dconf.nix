@@ -111,7 +111,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "usage";
+      last-panel = "sound";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -332,7 +332,7 @@ with lib.hm.gvariant;
     "org/gnome/epiphany/state" = {
       is-maximized = false;
       window-position = mkTuple [ (-1) (-1) ];
-      window-size = mkTuple [ 1024 768 ];
+      window-size = mkTuple [ 1920 1048 ];
     };
 
     "org/gnome/evince/default" = {
@@ -594,9 +594,9 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1694840306;
+      check-timestamp = mkInt64 1695961584;
       first-run = false;
-      flatpak-purge-timestamp = mkInt64 1694825845;
+      flatpak-purge-timestamp = mkInt64 1695950724;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
     };
