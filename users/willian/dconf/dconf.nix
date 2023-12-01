@@ -33,6 +33,10 @@ with lib.hm.gvariant;
       width = 1009;
     };
 
+    "org/gnome/Connections" = {
+      first-run = false;
+    };
+
     "org/gnome/Console" = {
       last-window-size = mkTuple [ 811 481 ];
     };
@@ -111,7 +115,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "sound";
+      last-panel = "online-accounts";
       window-state = mkTuple [ 980 640 ];
     };
 
@@ -530,6 +534,22 @@ with lib.hm.gvariant;
       window-maximized = true;
     };
 
+    "org/gnome/portal/filechooser/com/valvesoftware/Steam" = {
+      last-folder-path = "/home/willian/Downloads";
+    };
+
+    "org/gnome/portal/filechooser/com/valvesoftware/Steam" = {
+      last-folder-path = "/home/willian/Downloads";
+    };
+
+    "org/gnome/portal/filechooser/google-chrome" = {
+      last-folder-path = "/home/willian/Pictures/Screenshots";
+    };
+
+    "org/gnome/portal/filechooser/steam" = {
+      last-folder-path = "/home/willian/.my-nix-os/users/willian/desktop-entries/battle-net";
+    };
+
     "org/gnome/settings-daemon/plugins/power" = {
       idle-dim = false;
       power-button-action = "suspend";
@@ -594,9 +614,9 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1695961584;
+      check-timestamp = mkInt64 1701322972;
       first-run = false;
-      flatpak-purge-timestamp = mkInt64 1695950724;
+      flatpak-purge-timestamp = mkInt64 1701308512;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
     };
@@ -641,7 +661,7 @@ with lib.hm.gvariant;
       sort-directories-first = false;
       sort-order = "descending";
       type-format = "category";
-      window-position = mkTuple [ 311 81 ];
+      window-position = mkTuple [ 26 23 ];
       window-size = mkTuple [ 1297 902 ];
     };
 
