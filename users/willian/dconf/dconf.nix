@@ -88,7 +88,9 @@ with lib.hm.gvariant;
       source-units = "degree";
       target-currency = "";
       target-units = "radian";
+      window-maximized = false;
       window-position = mkTuple [ 26 23 ];
+      window-size = mkTuple [ 360 504 ];
       word-size = 64;
     };
 
@@ -532,10 +534,6 @@ with lib.hm.gvariant;
 
     "org/gnome/photos" = {
       window-maximized = true;
-    };
-
-    "org/gnome/portal/filechooser/com/valvesoftware/Steam" = {
-      last-folder-path = "/home/willian/Downloads";
     };
 
     "org/gnome/portal/filechooser/com/valvesoftware/Steam" = {
