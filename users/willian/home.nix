@@ -31,7 +31,9 @@
     zsh = {
       enable = true;
       enableCompletion = true;
-      enableAutosuggestions = true;
+      autosuggestion = {
+        enable = true;
+      };
       shellAliases = {
         update-dconf = "sh ~/.my-nix-os/scripts/update-dconf.sh";
         update-system = "sh ~/.my-nix-os/scripts/update-system.sh";

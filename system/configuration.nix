@@ -82,7 +82,7 @@ in {
         "vm.max_map_count" = 524288;
       };
     };
-    kernelPackages = pkgs.linuxPackages_testing;
+    kernelPackages = pkgs.linuxPackages_latest;
     #kernelPackages = pkgs.linuxPackages;
     #kernelParams = [ "acpi_enforce_resources=lax" ];
   };
@@ -220,12 +220,13 @@ in {
       appimage-run
 
       # multimedia
+      obs-studio
       pdftk
       onlyoffice-bin
       deluge
       handbrake
       discord
-      etcher
+      #etcher
       openrgb-with-all-plugins
       #unigine-superposition
 
@@ -243,7 +244,6 @@ in {
       jetbrains.idea-community
       jetbrains.datagrip
       kubectl
-      postman
 
       # gnome
       gnome.gnome-tweaks
