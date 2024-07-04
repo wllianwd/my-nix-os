@@ -30,10 +30,11 @@ in {
   hardware = {
     # Disabled to use pipewire
     pulseaudio = { enable = false; };
-    opengl = { 
-      enable = true; 
-      driSupport = true; 
-      driSupport32Bit = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+      #driSupport = true; 
+      #driSupport32Bit = true;
       extraPackages = with pkgs; [
         vaapiVdpau
         libvdpau-va-gl
@@ -82,6 +83,7 @@ in {
         "vm.max_map_count" = 524288;
       };
     };
+    #kernelPackages = pkgs.linuxPackages_testing;
     kernelPackages = pkgs.linuxPackages_latest;
     #kernelPackages = pkgs.linuxPackages;
     #kernelParams = [ "acpi_enforce_resources=lax" ];
@@ -241,12 +243,12 @@ in {
       yarn
       maven
       openjdk17
-      jetbrains.idea-community
+      #jetbrains.idea-community
       jetbrains.datagrip
       kubectl
 
       # gnome
-      gnome.gnome-tweaks
+      gnome-tweaks
       gnomeExtensions.appindicator
       gnomeExtensions.gsconnect
       gnomeExtensions.vitals
