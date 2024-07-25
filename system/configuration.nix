@@ -51,6 +51,7 @@ in {
       allowUnfree = true;
       permittedInsecurePackages = [
         "electron-19.1.9"
+        "python3.12-youtube-dl-2021.12.17"
       ];
     };
     overlays = [
@@ -83,8 +84,8 @@ in {
         "vm.max_map_count" = 524288;
       };
     };
-    #kernelPackages = pkgs.linuxPackages_testing;
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_testing;
+    #kernelPackages = pkgs.linuxPackages_latest;
     #kernelPackages = pkgs.linuxPackages;
     #kernelParams = [ "acpi_enforce_resources=lax" ];
   };
@@ -243,7 +244,7 @@ in {
       yarn
       maven
       openjdk17
-      #jetbrains.idea-community
+      jetbrains.idea-community
       jetbrains.datagrip
       kubectl
 
