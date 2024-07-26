@@ -208,6 +208,7 @@ in {
       unzip
       firefox
       google-chrome
+      ladybird
       networkmanager
       autorandr
       neofetch
