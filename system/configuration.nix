@@ -208,7 +208,6 @@ in {
       unzip
       firefox
       google-chrome
-      ladybird
       networkmanager
       autorandr
       neofetch
@@ -233,6 +232,7 @@ in {
       #etcher
       openrgb-with-all-plugins
       #unigine-superposition
+      godot_4
 
       # dev
       python3
