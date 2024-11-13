@@ -11,16 +11,6 @@
     username = "willian";
     homeDirectory = "/home/willian";
     stateVersion = "22.11";
-    file.".local/share/applications/Wow Up.desktop".text = ''
-      [Desktop Entry]
-      Name=Wow Up
-      Comment=World of Wargraft Addons Manager
-      Exec=/home/willian/.my-nix-os/users/willian/desktop-entries/wowup/run.sh
-      Icon=/home/willian/.my-nix-os/users/willian/desktop-entries/wowup/Icon.png
-      Terminal=false
-      Type=Application
-      Categories=Game;
-    '';
   };
 
   # programs
