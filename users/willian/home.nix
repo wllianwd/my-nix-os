@@ -1,16 +1,17 @@
-{ config, lib, pkgs, ... }:
+{ username, config, lib, pkgs, ... }:
 
 {
 
   # imports
   imports = [ 
+    ./ssh/ssh.nix
     ./dconf/dconf.nix
   ];
 
   home = {
     username = "willian";
     homeDirectory = "/home/willian";
-    stateVersion = "22.11";
+    stateVersion = "24.05";
   };
 
   # programs
@@ -25,12 +26,8 @@
         enable = true;
       };
       shellAliases = {
-        update-dconf = "sh ~/.my-nix-os/scripts/update-dconf.sh";
         update-system = "sh ~/.my-nix-os/scripts/update-system.sh";
-        update-system-boot = "sh ~/.my-nix-os/scripts/update-boot.sh";
-        update-home = "sh ~/.my-nix-os/scripts/update-home.sh";
         update-proton = "sh ~/.my-nix-os/scripts/update-proton.sh";
-	update-all = "update-system && update-dconf && update-home && update-proton";
         rebuild-system = "cd ~/.my-nix-os && nixos-rebuild switch --use-remote-sudo --flake .#";
         copy-photos = "sh ~/.my-nix-os/scripts/copy-photos.sh";
         open-dotfiles = "cd ~/.my-nix-os";

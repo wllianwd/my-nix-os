@@ -1,0 +1,35 @@
+hosts:
+    - name: ENC[AES256_GCM,data:d183XVwO0mX+DA==,iv:L7kYo7MNDXXquSidq4oy1vuiPugLgKRH6eAR6GP2qAU=,tag:2SN7YueQbdw3iK/CjE5VfA==,type:str]
+      user: git
+      port: ""
+      identity: ENC[AES256_GCM,data:q1APuXrQRBvT/xHq25pT61L0aszroMrmUQV7xvrxVYgSWB5AN9WMj3ksv3qmggLZXhXb91+jJ/nW5FkKxQ020tWQmqMck28101mrc1qwubet9g6JrmbwzxBxyiqcaL/Jx7sWtyZSMZRXzlyv6LR3E9wb19ax+JVzFiOvzZtNST2SdkctZszElGDL8UbMx6wFn9i7csfyq+d8xc0ATALrZQyqlg6wa9kXVYmuJOcNsRxcehe040mURwHMh0OFES/JE1Ji6z2RpkQ0Xvwigh0nHdAviM3KGHJ97xFeTGDaCYsyYH6VK333JPKggzNDQQR727EI5zgILyYsn2T2Mq/Vtf08MTwWLPcJittb9CXcc9qo0ZPIH9xRodJ+cZaZUnRw/fKGz0ChgFRj3XwbXpV2hlPkJhaE7AKjKj55M2lwRzP+GFRPu2TxRiosEyLjNV9/KCOn1lBTuPD6pN57a5LqwXKURYIJ2inE5ygqJo+RVv32U2x0VB32VOegqpkcuEOr5VQVBsSJ69EAgt35qI0H02L83o1vKMFgUxMJ,iv:sj/tt48dgaeyl6Fb64gY/TJ62DE08r8qwP7lxbMW9oc=,tag:082icEzBuWn434JxJ6C5sw==,type:str]
+      hostname: ""
+      data: |
+        HostName github.com
+    - name: ENC[AES256_GCM,data:sxJwQu2XUAbc8W186kyezfw=,iv:4cJWTWQUEMZ0WPXwPpDAbJW2sCFsjx+bIkhFixKQZfw=,tag:dyBON5+Swp4uPfTX/v0u+w==,type:str]
+      user: git
+      port: ""
+      identity: ENC[AES256_GCM,data:wfECkJq7Lxz20Gay50tB5xLnbvrrHOq1jIHlE3xTcib3GUN5O+qoUjnSU9qAglhk8Nzwdxzta56Q0xAhJzUzlxpzVY2xFBL71VQPwhCgXGsokBid/1kvvmGh7MyB7vUKxRmFT7rXTlkGhrodKbUZ1+NgamJe7R1pBvjq0E+XwuK8uoii/lgqzkvy1nMnLITO6TJ6SiApr4/FfyisTFVn80JVydweO/7S5uOiVvrtLY5IZl1uIniY4Q4qPV5HnhB+AR28fEcvwRWFjnLXdxXuTYzJC9eTj6S9OT1IgLaqXtluIPdDSgNA/HEPAPBQck4yuStXjjIV3WRFIpfOsx6H7VWiXapWcKbkZk6ArzN9BNRlyuF3AJg7YQphfsgem5pCjFunh4EF5TsddjVkqv9atJG4bvBkIbedSVE3489ZB3g2agmq2Lw0t6lg6sa8fZ61rooXwcHNfVOEH0oDupD8WW5xGhSwmz8IGupQ2+iE4jmspdEbwEsycfS7aRg/hFV4/rT6lad8ch7rmb/yeKpQrjt96vEOcsKRESJ4,iv:IJgMa6UvLuh70Sixu/vl7FqVnRvofj3CKb7FisZp4Dk=,tag:XoDpJ+yEJSx6IiwdUXoD9w==,type:str]
+      hostname: ""
+      data: |
+        HostName github.com
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1fda55n0rfkv8ad39q4xjel57kq7ya2zqeae80r0eqxyucvc66qcs4nlnqw
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBKZzJCMFhOMHNGN1N5bWgw
+            UDFnUmdwd2YzZSs3Qm45SEJUNHdKTzZHRUZJCjFoUzBhemt4VysvUVFQUlJDandq
+            c0Rzb2hGQVdXdWxDRGJzWEhBSnB4bUUKLS0tIFpJdUMzOHpjVkQzb1ZFck1CMUVP
+            dUFxQm9YdWVmU1lRZDBERW9aWW9DclUKy0PuOr1Cfmccw9rPgDRL4BjRTOhpxzdh
+            V1ygce2OZGBk31PI1081aaZmC1N98UTbas4qZh0QI5vU4n2tosZwbA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-11-15T19:36:23Z"
+    mac: ENC[AES256_GCM,data:jNwIxPQSxUWs7CrYRb/AS7l5jnGHK0Jp/Z2XPPUwEQt8T+/JU76na+6Rj9uDfbPjAtg3CcZrUTioduVgE48Rk61SetT4OwHifhdUFxmx+ESy6mPItTti59FUsnROrp2mOKwGVCPouks26Vk4MqdtyXSmbU7CSo1ogPzISBW8sXw=,iv:x0R5mcGceVDIiRyVmApE1OvkmceoFku1JEiS7e1GzAY=,tag:+TT4nQAgY+vZAIH53T7C6g==,type:str]
+    pgp: []
+    encrypted_regex: (hostname|identity|name)
+    version: 3.8.1
