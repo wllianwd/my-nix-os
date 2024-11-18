@@ -244,7 +244,7 @@ in {
       nodejs
       yarn
       maven
-      openjdk17
+      openjdk21
       jetbrains.idea-community
       jetbrains.datagrip
       kubectl
@@ -281,7 +281,7 @@ in {
       LIBVA_DRIVER_NAME="radeonsi";
     };
     etc = with pkgs; {
-      "jdk-17".source = openjdk17;
+      "jdk-21".source = openjdk21;
     };
   };
 
