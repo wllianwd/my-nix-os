@@ -167,7 +167,7 @@ in {
     # dbus
     dbus = { packages = [ pkgs.dconf ]; };
     # udev
-    udev = { packages = [ pkgs.gnome.gnome-settings-daemon ]; };
+    udev = { packages = [ pkgs.gnome-settings-daemon ]; };
     # cups printing (can be accessed on http://localhost:631/)
     printing = { enable = true; };
     # flatpack
