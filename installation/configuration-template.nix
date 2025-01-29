@@ -245,7 +245,7 @@ in {
       yarn
       maven
       openjdk21
-      #jetbrains.idea-community
+      jetbrains.idea-community
       jetbrains.datagrip
       kubectl
 
