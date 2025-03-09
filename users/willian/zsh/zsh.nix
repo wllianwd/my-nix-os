@@ -12,6 +12,7 @@
       shellAliases = {
         update-system = "sh ~/.my-nix-os/scripts/update-system.sh";
         update-proton = "sh ~/.my-nix-os/scripts/update-proton.sh";
+        update-dconf = "sh ~/.my-nix-os/scripts/update-dconf.sh";
         rebuild-system = "cd ~/.my-nix-os && nixos-rebuild switch --use-remote-sudo --flake .#";
         copy-photos = "sh ~/.my-nix-os/scripts/copy-photos.sh";
         open-dotfiles = "cd ~/.my-nix-os";

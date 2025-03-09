@@ -38,6 +38,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/Console" = {
+      last-window-maximised = true;
       last-window-size = mkTuple [ 811 481 ];
     };
 
@@ -63,6 +64,17 @@ with lib.hm.gvariant;
       window-maximized = true;
       window-position = [ 0 0 ];
       window-size = [ 1920 1048 ];
+    };
+
+    "org/gnome/Snapshot" = {
+      is-maximized = false;
+      show-composition-guidelines = false;
+      window-height = 640;
+      window-width = 800;
+    };
+
+    "org/gnome/TextEditor" = {
+      last-save-directory = "file:///home/willian/Downloads";
     };
 
     "org/gnome/Totem" = {
@@ -111,14 +123,15 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/clocks/state/window" = {
+      maximized = false;
       panel-id = "world";
       size = mkTuple [ 870 690 ];
       state = 87168;
     };
 
     "org/gnome/control-center" = {
-      last-panel = "online-accounts";
-      window-state = mkTuple [ 980 640 ];
+      last-panel = "background";
+      window-state = mkTuple [ 980 640 false ];
     };
 
     "org/gnome/desktop/app-folders" = {
@@ -141,9 +154,9 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/drool-l.svg";
-      picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/drool-d.svg";
-      primary-color = "#86b6ef";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/vnc-l.png";
+      picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/vnc-d.png";
+      primary-color = "#77767B";
       secondary-color = "#000000";
     };
 
@@ -178,6 +191,10 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/notifications/application/codium" = {
       application-id = "codium.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/com-obsproject-studio" = {
+      application-id = "com.obsproject.Studio.desktop";
     };
 
     "org/gnome/desktop/notifications/application/deluge" = {
@@ -226,6 +243,10 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/notifications/application/org-gnome-console" = {
       application-id = "org.gnome.Console.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-epiphany" = {
+      application-id = "org.gnome.Epiphany.desktop";
     };
 
     "org/gnome/desktop/notifications/application/org-gnome-evolution-alarm-notify" = {
@@ -304,8 +325,8 @@ with lib.hm.gvariant;
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/drool-l.svg";
-      primary-color = "#86b6ef";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/vnc-l.png";
+      primary-color = "#77767B";
       secondary-color = "#000000";
     };
 
@@ -356,12 +377,27 @@ with lib.hm.gvariant;
       notify-window-width = 522;
       notify-window-x = 26;
       notify-window-y = 23;
-      reminders-past = [];
+      reminders-past = [ "567bb833991000325a8ca3bd68415140ab36e35an6e70d06722b98e65215d5f3c13d165d8833d301bt20250305T193000n1741197600n1741199400n1741203000nBEGIN:VEVENTrnDTSTART;TZID=Europe/Madrid:20250305T193000rnDTEND;TZID=Europe/Madrid:20250305T203000rnDTSTAMP:20250305T172236ZrnORGANIZER;CN=Unknown Organizer:mailto:rn unknownorganizer@calendar.google.comrnUID:001c1o1l4glgom08quhml2qnvo@google.comrnATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;rn CN=willian.wd@gmail.com;X-NUM-GUESTS=0:mailto:willian.wd@gmail.comrnCLASS:PRIVATErnCREATED:20250305T172236ZrnDESCRIPTION:Si quieres ver informaci\243n detallada sobre los eventos rn creados autom\225ticamente como este\\, utiliza la aplicaci\243n oficial de rn Google Calendar. https://g.co/calendar\\n\\nEste evento se ha creado a rn partir de un correo que recibiste en Gmail. https:rn //mail.google.com/mail?extsrc=cal&plid=ACUX6DMm_PP4WGFJKqF4skalRR0IuKNkt2-rn Y2Tk\\nrnLAST-MODIFIED:20250305T172236ZrnLOCATION:La Madurada Petit Versailles\\, Carrer Gran de Sant Andreu\\, rn 255\\, Barcelona\\, CT\\, 08030\\, ESrnSEQUENCE:0rnSTATUS:CONFIRMEDrnSUMMARY:Reservation at La Madurada Petit VersaillesrnTRANSP:TRANSPARENTrnX-EVOLUTION-CALDAV-ETAG:63876878556rnBEGIN:VALARMrnACTION:EMAILrnDESCRIPTION:This is an event reminderrnSUMMARY:Alarm notificationrnATTENDEE:mailto:willian.wd@gmail.comrnTRIGGER:-PT10MrnX-EVOLUTION-ALARM-UID:c749eb262bbc2c9794bad51d23091f6730d3ac5crnEND:VALARMrnBEGIN:VALARMrnACTION:DISPLAYrnDESCRIPTION:This is an event reminderrnTRIGGER:-PT30MrnX-EVOLUTION-ALARM-UID:6e70d06722b98e65215d5f3c13d165d8833d301brnEND:VALARMrnEND:VEVENTrn" "567bb833991000325a8ca3bd68415140ab36e35an9aa0252e4d6bf00537efb179227a12dff80ad7e6t20250305T193000n1741197600n1741199400n1741203000nBEGIN:VEVENTrnDTSTART;TZID=Europe/Madrid:20250305T193000rnDTEND;TZID=Europe/Madrid:20250305T203000rnDTSTAMP:20250305T172239ZrnORGANIZER;CN=Unknown Organizer:mailto:rn unknownorganizer@calendar.google.comrnUID:vmgeq2rtjpoegbbo5udt16ocao@google.comrnATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;rn CN=willian.wd@gmail.com;X-NUM-GUESTS=0:mailto:willian.wd@gmail.comrnCLASS:PRIVATErnCREATED:20250305T172239ZrnDESCRIPTION:Si quieres ver informaci\243n detallada sobre los eventos rn creados autom\225ticamente como este\\, utiliza la aplicaci\243n oficial de rn Google Calendar. https://g.co/calendar\\n\\nEste evento se ha creado a rn partir de un correo que recibiste en Gmail. https:rn //mail.google.com/mail?extsrc=cal&plid=ACUX6DNmCMr_ltPi9P-0pVLQ2E1HikYl0jfrn G1y4\\nrnLAST-MODIFIED:20250305T172239ZrnLOCATION:La Madurada Petit Versailles\\, Gran de sant andreu\\, 255\\, Sant rn andreu\\, Barcelona\\, 08030\\, Espa\241arnSEQUENCE:0rnSTATUS:CONFIRMEDrnSUMMARY:Reservation at La Madurada Petit VersaillesrnTRANSP:TRANSPARENTrnX-EVOLUTION-CALDAV-ETAG:63876878559rnBEGIN:VALARMrnACTION:EMAILrnDESCRIPTION:This is an event reminderrnSUMMARY:Alarm notificationrnATTENDEE:mailto:willian.wd@gmail.comrnTRIGGER:-PT10MrnX-EVOLUTION-ALARM-UID:6388a599c8fe8ecea496de7aecff86940d53a12frnEND:VALARMrnBEGIN:VALARMrnACTION:DISPLAYrnDESCRIPTION:This is an event reminderrnTRIGGER:-PT30MrnX-EVOLUTION-ALARM-UID:9aa0252e4d6bf00537efb179227a12dff80ad7e6rnEND:VALARMrnEND:VEVENTrn" ];
+    };
+
+    "org/gnome/file-roller/dialogs/extract" = {
+      height = 800;
+      recreate-folders = true;
+      skip-newer = false;
+      width = 1000;
+    };
+
+    "org/gnome/file-roller/file-selector" = {
+      show-hidden = false;
+      sidebar-size = 300;
+      sort-method = "name";
+      sort-type = "ascending";
+      window-size = mkTuple [ (-1) (-1) ];
     };
 
     "org/gnome/file-roller/listing" = {
       list-mode = "as-folder";
-      name-column-width = 500;
+      name-column-width = 540;
       show-path = false;
       sort-method = "name";
       sort-type = "ascending";
@@ -409,6 +445,7 @@ with lib.hm.gvariant;
       show-dependencies = false;
       show-whose-processes = "user";
       window-state = mkTuple [ 700 500 ];
+      window-width = 1128;
     };
 
     "org/gnome/gnome-system-monitor/disktreenew" = {
@@ -419,6 +456,8 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/gnome-system-monitor/proctree" = {
+      col-26-visible = false;
+      col-26-width = 0;
       columns-order = [ 0 1 2 3 4 6 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ];
       sort-col = 15;
       sort-order = 0;
@@ -449,6 +488,7 @@ with lib.hm.gvariant;
 
     "org/gnome/nautilus/window-state" = {
       initial-size = mkTuple [ 1247 543 ];
+      initial-size-file-chooser = mkTuple [ 890 550 ];
       maximized = false;
     };
 
@@ -473,6 +513,11 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/nm-applet/eap/58d7508f-92af-41ed-b65c-93df46691d25" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
+    "org/gnome/nm-applet/eap/5e8a9ed8-7c59-441f-b24b-3e160efd9cb2" = {
       ignore-ca-cert = false;
       ignore-phase2-ca-cert = false;
     };
@@ -536,8 +581,24 @@ with lib.hm.gvariant;
       window-maximized = true;
     };
 
+    "org/gnome/portal/filechooser/com/google/Chrome" = {
+      last-folder-path = "/home/willian/Downloads";
+    };
+
     "org/gnome/portal/filechooser/com/valvesoftware/Steam" = {
       last-folder-path = "/home/willian/Downloads";
+    };
+
+    "org/gnome/portal/filechooser/com/valvesoftware/Steam" = {
+      last-folder-path = "/home/willian/Downloads";
+    };
+
+    "org/gnome/portal/filechooser/discord" = {
+      last-folder-path = "/home/willian/Downloads";
+    };
+
+    "org/gnome/portal/filechooser/gnome-network-panel" = {
+      last-folder-path = "/home/willian/Documents/vpn/ovpn_udp";
     };
 
     "org/gnome/portal/filechooser/google-chrome" = {
@@ -546,6 +607,10 @@ with lib.hm.gvariant;
 
     "org/gnome/portal/filechooser/steam" = {
       last-folder-path = "/home/willian/.my-nix-os/users/willian/desktop-entries/battle-net";
+    };
+
+    "org/gnome/settings-daemon/plugins/color" = {
+      night-light-schedule-automatic = false;
     };
 
     "org/gnome/settings-daemon/plugins/power" = {
@@ -604,7 +669,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell/world-clocks" = {
-      locations = "@av []";
+      locations = [];
     };
 
     "org/gnome/simple-scan" = {
@@ -612,9 +677,9 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/software" = {
-      check-timestamp = mkInt64 1701322972;
+      check-timestamp = mkInt64 1741499178;
       first-run = false;
-      flatpak-purge-timestamp = mkInt64 1701308512;
+      flatpak-purge-timestamp = mkInt64 1741484718;
       online-updates-timestamp = mkInt64 1649689558;
       update-notification-timestamp = mkInt64 1649689558;
     };
