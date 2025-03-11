@@ -73,10 +73,6 @@ with lib.hm.gvariant;
       window-width = 800;
     };
 
-    "org/gnome/TextEditor" = {
-      last-save-directory = "file:///home/willian/Downloads";
-    };
-
     "org/gnome/Totem" = {
       active-plugins = [ "recent" "vimeo" "open-directory" "screensaver" "save-file" "apple-trailers" "rotation" "autoload-subtitles" "skipto" "screenshot" "movie-properties" "mpris" "variable-rate" ];
       subtitle-encoding = "UTF-8";
@@ -582,10 +578,6 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/portal/filechooser/com/google/Chrome" = {
-      last-folder-path = "/home/willian/Downloads";
-    };
-
-    "org/gnome/portal/filechooser/com/valvesoftware/Steam" = {
       last-folder-path = "/home/willian/Downloads";
     };
 
