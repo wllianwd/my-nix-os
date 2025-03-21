@@ -2,7 +2,8 @@
 
 let
   global = import ../../global.nix;
-in {
+in
+{
   age.identityPaths = [ "${global.nixConfigDirectory}/uncommited/id_nix" ];
   age.secretsDir = "${global.nixConfigDirectory}/uncommited/secrets";
 
@@ -28,19 +29,4 @@ in {
     symlink = false;
   };
 
-  # ~/.ssh/id_github
-  age.secrets."id_github.age" = lib.mkIf (builtins.pathExists ./secrets/id_github.age) {
-    file = ./secrets/id_github.age;
-    path = "${config.home.homeDirectory}/.ssh/id_github";
-    mode = "0600";
-    symlink = false;
-  };
-
-  # ~/.ssh/id_github.pub
-  age.secrets."id_github.pub.age" = lib.mkIf (builtins.pathExists ./secrets/id_github.pub.age) {
-    file = ./secrets/id_github.pub.age;
-    path = "${config.home.homeDirectory}/.ssh/id_github.pub";
-    mode = "0644";
-    symlink = false;
-  };
 }

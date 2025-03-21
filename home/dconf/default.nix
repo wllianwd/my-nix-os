@@ -39,7 +39,10 @@ with lib.hm.gvariant;
 
     "org/gnome/Console" = {
       last-window-maximised = true;
-      last-window-size = mkTuple [ 811 481 ];
+      last-window-size = mkTuple [
+        811
+        481
+      ];
     };
 
     "org/gnome/Disks" = {
@@ -55,15 +58,24 @@ with lib.hm.gvariant;
 
     "org/gnome/Geary" = {
       compose-as-html = true;
-      composer-window-size = [ 680 600 ];
+      composer-window-size = [
+        680
+        600
+      ];
       formatting-toolbar-visible = false;
       migrated-config = true;
     };
 
     "org/gnome/Music" = {
       window-maximized = true;
-      window-position = [ 0 0 ];
-      window-size = [ 1920 1048 ];
+      window-position = [
+        0
+        0
+      ];
+      window-size = [
+        1920
+        1048
+      ];
     };
 
     "org/gnome/Snapshot" = {
@@ -73,14 +85,35 @@ with lib.hm.gvariant;
       window-width = 800;
     };
 
+    "org/gnome/TextEditor" = {
+      last-save-directory = "file:///home/willian/Downloads";
+    };
+
     "org/gnome/Totem" = {
-      active-plugins = [ "recent" "vimeo" "open-directory" "screensaver" "save-file" "apple-trailers" "rotation" "autoload-subtitles" "skipto" "screenshot" "movie-properties" "mpris" "variable-rate" ];
+      active-plugins = [
+        "recent"
+        "vimeo"
+        "open-directory"
+        "screensaver"
+        "save-file"
+        "apple-trailers"
+        "rotation"
+        "autoload-subtitles"
+        "skipto"
+        "screenshot"
+        "movie-properties"
+        "mpris"
+        "variable-rate"
+      ];
       subtitle-encoding = "UTF-8";
     };
 
     "org/gnome/baobab/ui" = {
       is-maximized = false;
-      window-size = mkTuple [ 960 600 ];
+      window-size = mkTuple [
+        960
+        600
+      ];
       window-state = 87168;
     };
 
@@ -97,16 +130,28 @@ with lib.hm.gvariant;
       target-currency = "";
       target-units = "radian";
       window-maximized = false;
-      window-position = mkTuple [ 26 23 ];
-      window-size = mkTuple [ 360 504 ];
+      window-position = mkTuple [
+        26
+        23
+      ];
+      window-size = mkTuple [
+        360
+        504
+      ];
       word-size = 64;
     };
 
     "org/gnome/calendar" = {
       active-view = "month";
       window-maximized = true;
-      window-position = mkTuple [ 0 0 ];
-      window-size = mkTuple [ 1920 1048 ];
+      window-position = mkTuple [
+        0
+        0
+      ];
+      window-size = mkTuple [
+        1920
+        1048
+      ];
     };
 
     "org/gnome/cheese" = {
@@ -121,21 +166,48 @@ with lib.hm.gvariant;
     "org/gnome/clocks/state/window" = {
       maximized = false;
       panel-id = "world";
-      size = mkTuple [ 870 690 ];
+      size = mkTuple [
+        870
+        690
+      ];
       state = 87168;
     };
 
     "org/gnome/control-center" = {
       last-panel = "background";
-      window-state = mkTuple [ 980 640 false ];
+      window-state = mkTuple [
+        980
+        640
+        false
+      ];
     };
 
     "org/gnome/desktop/app-folders" = {
-      folder-children = [ "Utilities" "YaST" ];
+      folder-children = [
+        "Utilities"
+        "YaST"
+      ];
     };
 
     "org/gnome/desktop/app-folders/folders/Utilities" = {
-      apps = [ "gnome-abrt.desktop" "gnome-system-log.desktop" "nm-connection-editor.desktop" "org.gnome.baobab.desktop" "org.gnome.Connections.desktop" "org.gnome.DejaDup.desktop" "org.gnome.Dictionary.desktop" "org.gnome.DiskUtility.desktop" "org.gnome.eog.desktop" "org.gnome.Evince.desktop" "org.gnome.FileRoller.desktop" "org.gnome.fonts.desktop" "org.gnome.seahorse.Application.desktop" "org.gnome.tweaks.desktop" "org.gnome.Usage.desktop" "vinagre.desktop" ];
+      apps = [
+        "gnome-abrt.desktop"
+        "gnome-system-log.desktop"
+        "nm-connection-editor.desktop"
+        "org.gnome.baobab.desktop"
+        "org.gnome.Connections.desktop"
+        "org.gnome.DejaDup.desktop"
+        "org.gnome.Dictionary.desktop"
+        "org.gnome.DiskUtility.desktop"
+        "org.gnome.eog.desktop"
+        "org.gnome.Evince.desktop"
+        "org.gnome.FileRoller.desktop"
+        "org.gnome.fonts.desktop"
+        "org.gnome.seahorse.Application.desktop"
+        "org.gnome.tweaks.desktop"
+        "org.gnome.Usage.desktop"
+        "vinagre.desktop"
+      ];
       categories = [ "X-GNOME-Utilities" ];
       name = "X-GNOME-Utilities.directory";
       translate = true;
@@ -162,8 +234,17 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/input-sources" = {
       per-window = false;
-      sources = [ (mkTuple [ "xkb" "us+altgr-intl" ]) ];
-      xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" "compose:lalt" ];
+      sources = [
+        (mkTuple [
+          "xkb"
+          "us+altgr-intl"
+        ])
+      ];
+      xkb-options = [
+        "terminate:ctrl_alt_bksp"
+        "lv3:ralt_switch"
+        "compose:lalt"
+      ];
     };
 
     "org/gnome/desktop/interface" = {
@@ -177,7 +258,30 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/notifications" = {
-      application-children = [ "gnome-power-panel" "steam" "zoom" "deluge" "fr-handbrake-ghb" "google-chrome" "gnome-network-panel" "idea-community" "discord" "postman" "org-gnome-evolution-alarm-notify" "org-gnome-console" "org-gnome-nautilus" "org-kde-showfoto" "org-gnome-baobab" "org-kde-digikam" "org-gnome-characters" "gvim" "org-gnome-settings" "codium" "balena-etcher-electron" "gnome-printers-panel" ];
+      application-children = [
+        "gnome-power-panel"
+        "steam"
+        "zoom"
+        "deluge"
+        "fr-handbrake-ghb"
+        "google-chrome"
+        "gnome-network-panel"
+        "idea-community"
+        "discord"
+        "postman"
+        "org-gnome-evolution-alarm-notify"
+        "org-gnome-console"
+        "org-gnome-nautilus"
+        "org-kde-showfoto"
+        "org-gnome-baobab"
+        "org-kde-digikam"
+        "org-gnome-characters"
+        "gvim"
+        "org-gnome-settings"
+        "codium"
+        "balena-etcher-electron"
+        "gnome-printers-panel"
+      ];
       show-banners = false;
     };
 
@@ -327,7 +431,11 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/search-providers" = {
-      sort-order = [ "org.gnome.Contacts.desktop" "org.gnome.Documents.desktop" "org.gnome.Nautilus.desktop" ];
+      sort-order = [
+        "org.gnome.Contacts.desktop"
+        "org.gnome.Documents.desktop"
+        "org.gnome.Nautilus.desktop"
+      ];
     };
 
     "org/gnome/desktop/session" = {
@@ -354,12 +462,21 @@ with lib.hm.gvariant;
 
     "org/gnome/epiphany/state" = {
       is-maximized = false;
-      window-position = mkTuple [ (-1) (-1) ];
-      window-size = mkTuple [ 1920 1048 ];
+      window-position = mkTuple [
+        (-1)
+        (-1)
+      ];
+      window-size = mkTuple [
+        1920
+        1048
+      ];
     };
 
     "org/gnome/evince/default" = {
-      window-ratio = mkTuple [ 0.109649 0.164474 ];
+      window-ratio = mkTuple [
+        0.109649
+        0.164474
+      ];
     };
 
     "org/gnome/evolution-data-server" = {
@@ -373,7 +490,10 @@ with lib.hm.gvariant;
       notify-window-width = 522;
       notify-window-x = 26;
       notify-window-y = 23;
-      reminders-past = [ "567bb833991000325a8ca3bd68415140ab36e35an6e70d06722b98e65215d5f3c13d165d8833d301bt20250305T193000n1741197600n1741199400n1741203000nBEGIN:VEVENTrnDTSTART;TZID=Europe/Madrid:20250305T193000rnDTEND;TZID=Europe/Madrid:20250305T203000rnDTSTAMP:20250305T172236ZrnORGANIZER;CN=Unknown Organizer:mailto:rn unknownorganizer@calendar.google.comrnUID:001c1o1l4glgom08quhml2qnvo@google.comrnATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;rn CN=willian.wd@gmail.com;X-NUM-GUESTS=0:mailto:willian.wd@gmail.comrnCLASS:PRIVATErnCREATED:20250305T172236ZrnDESCRIPTION:Si quieres ver informaci\243n detallada sobre los eventos rn creados autom\225ticamente como este\\, utiliza la aplicaci\243n oficial de rn Google Calendar. https://g.co/calendar\\n\\nEste evento se ha creado a rn partir de un correo que recibiste en Gmail. https:rn //mail.google.com/mail?extsrc=cal&plid=ACUX6DMm_PP4WGFJKqF4skalRR0IuKNkt2-rn Y2Tk\\nrnLAST-MODIFIED:20250305T172236ZrnLOCATION:La Madurada Petit Versailles\\, Carrer Gran de Sant Andreu\\, rn 255\\, Barcelona\\, CT\\, 08030\\, ESrnSEQUENCE:0rnSTATUS:CONFIRMEDrnSUMMARY:Reservation at La Madurada Petit VersaillesrnTRANSP:TRANSPARENTrnX-EVOLUTION-CALDAV-ETAG:63876878556rnBEGIN:VALARMrnACTION:EMAILrnDESCRIPTION:This is an event reminderrnSUMMARY:Alarm notificationrnATTENDEE:mailto:willian.wd@gmail.comrnTRIGGER:-PT10MrnX-EVOLUTION-ALARM-UID:c749eb262bbc2c9794bad51d23091f6730d3ac5crnEND:VALARMrnBEGIN:VALARMrnACTION:DISPLAYrnDESCRIPTION:This is an event reminderrnTRIGGER:-PT30MrnX-EVOLUTION-ALARM-UID:6e70d06722b98e65215d5f3c13d165d8833d301brnEND:VALARMrnEND:VEVENTrn" "567bb833991000325a8ca3bd68415140ab36e35an9aa0252e4d6bf00537efb179227a12dff80ad7e6t20250305T193000n1741197600n1741199400n1741203000nBEGIN:VEVENTrnDTSTART;TZID=Europe/Madrid:20250305T193000rnDTEND;TZID=Europe/Madrid:20250305T203000rnDTSTAMP:20250305T172239ZrnORGANIZER;CN=Unknown Organizer:mailto:rn unknownorganizer@calendar.google.comrnUID:vmgeq2rtjpoegbbo5udt16ocao@google.comrnATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;rn CN=willian.wd@gmail.com;X-NUM-GUESTS=0:mailto:willian.wd@gmail.comrnCLASS:PRIVATErnCREATED:20250305T172239ZrnDESCRIPTION:Si quieres ver informaci\243n detallada sobre los eventos rn creados autom\225ticamente como este\\, utiliza la aplicaci\243n oficial de rn Google Calendar. https://g.co/calendar\\n\\nEste evento se ha creado a rn partir de un correo que recibiste en Gmail. https:rn //mail.google.com/mail?extsrc=cal&plid=ACUX6DNmCMr_ltPi9P-0pVLQ2E1HikYl0jfrn G1y4\\nrnLAST-MODIFIED:20250305T172239ZrnLOCATION:La Madurada Petit Versailles\\, Gran de sant andreu\\, 255\\, Sant rn andreu\\, Barcelona\\, 08030\\, Espa\241arnSEQUENCE:0rnSTATUS:CONFIRMEDrnSUMMARY:Reservation at La Madurada Petit VersaillesrnTRANSP:TRANSPARENTrnX-EVOLUTION-CALDAV-ETAG:63876878559rnBEGIN:VALARMrnACTION:EMAILrnDESCRIPTION:This is an event reminderrnSUMMARY:Alarm notificationrnATTENDEE:mailto:willian.wd@gmail.comrnTRIGGER:-PT10MrnX-EVOLUTION-ALARM-UID:6388a599c8fe8ecea496de7aecff86940d53a12frnEND:VALARMrnBEGIN:VALARMrnACTION:DISPLAYrnDESCRIPTION:This is an event reminderrnTRIGGER:-PT30MrnX-EVOLUTION-ALARM-UID:9aa0252e4d6bf00537efb179227a12dff80ad7e6rnEND:VALARMrnEND:VEVENTrn" ];
+      reminders-past = [
+        "567bb833991000325a8ca3bd68415140ab36e35an6e70d06722b98e65215d5f3c13d165d8833d301bt20250305T193000n1741197600n1741199400n1741203000nBEGIN:VEVENTrnDTSTART;TZID=Europe/Madrid:20250305T193000rnDTEND;TZID=Europe/Madrid:20250305T203000rnDTSTAMP:20250305T172236ZrnORGANIZER;CN=Unknown Organizer:mailto:rn unknownorganizer@calendar.google.comrnUID:001c1o1l4glgom08quhml2qnvo@google.comrnATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;rn CN=willian.wd@gmail.com;X-NUM-GUESTS=0:mailto:willian.wd@gmail.comrnCLASS:PRIVATErnCREATED:20250305T172236ZrnDESCRIPTION:Si quieres ver informaci243n detallada sobre los eventos rn creados autom225ticamente como este\\, utiliza la aplicaci243n oficial de rn Google Calendar. https://g.co/calendar\\n\\nEste evento se ha creado a rn partir de un correo que recibiste en Gmail. https:rn //mail.google.com/mail?extsrc=cal&plid=ACUX6DMm_PP4WGFJKqF4skalRR0IuKNkt2-rn Y2Tk\\nrnLAST-MODIFIED:20250305T172236ZrnLOCATION:La Madurada Petit Versailles\\, Carrer Gran de Sant Andreu\\, rn 255\\, Barcelona\\, CT\\, 08030\\, ESrnSEQUENCE:0rnSTATUS:CONFIRMEDrnSUMMARY:Reservation at La Madurada Petit VersaillesrnTRANSP:TRANSPARENTrnX-EVOLUTION-CALDAV-ETAG:63876878556rnBEGIN:VALARMrnACTION:EMAILrnDESCRIPTION:This is an event reminderrnSUMMARY:Alarm notificationrnATTENDEE:mailto:willian.wd@gmail.comrnTRIGGER:-PT10MrnX-EVOLUTION-ALARM-UID:c749eb262bbc2c9794bad51d23091f6730d3ac5crnEND:VALARMrnBEGIN:VALARMrnACTION:DISPLAYrnDESCRIPTION:This is an event reminderrnTRIGGER:-PT30MrnX-EVOLUTION-ALARM-UID:6e70d06722b98e65215d5f3c13d165d8833d301brnEND:VALARMrnEND:VEVENTrn"
+        "567bb833991000325a8ca3bd68415140ab36e35an9aa0252e4d6bf00537efb179227a12dff80ad7e6t20250305T193000n1741197600n1741199400n1741203000nBEGIN:VEVENTrnDTSTART;TZID=Europe/Madrid:20250305T193000rnDTEND;TZID=Europe/Madrid:20250305T203000rnDTSTAMP:20250305T172239ZrnORGANIZER;CN=Unknown Organizer:mailto:rn unknownorganizer@calendar.google.comrnUID:vmgeq2rtjpoegbbo5udt16ocao@google.comrnATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;rn CN=willian.wd@gmail.com;X-NUM-GUESTS=0:mailto:willian.wd@gmail.comrnCLASS:PRIVATErnCREATED:20250305T172239ZrnDESCRIPTION:Si quieres ver informaci243n detallada sobre los eventos rn creados autom225ticamente como este\\, utiliza la aplicaci243n oficial de rn Google Calendar. https://g.co/calendar\\n\\nEste evento se ha creado a rn partir de un correo que recibiste en Gmail. https:rn //mail.google.com/mail?extsrc=cal&plid=ACUX6DNmCMr_ltPi9P-0pVLQ2E1HikYl0jfrn G1y4\\nrnLAST-MODIFIED:20250305T172239ZrnLOCATION:La Madurada Petit Versailles\\, Gran de sant andreu\\, 255\\, Sant rn andreu\\, Barcelona\\, 08030\\, Espa241arnSEQUENCE:0rnSTATUS:CONFIRMEDrnSUMMARY:Reservation at La Madurada Petit VersaillesrnTRANSP:TRANSPARENTrnX-EVOLUTION-CALDAV-ETAG:63876878559rnBEGIN:VALARMrnACTION:EMAILrnDESCRIPTION:This is an event reminderrnSUMMARY:Alarm notificationrnATTENDEE:mailto:willian.wd@gmail.comrnTRIGGER:-PT10MrnX-EVOLUTION-ALARM-UID:6388a599c8fe8ecea496de7aecff86940d53a12frnEND:VALARMrnBEGIN:VALARMrnACTION:DISPLAYrnDESCRIPTION:This is an event reminderrnTRIGGER:-PT30MrnX-EVOLUTION-ALARM-UID:9aa0252e4d6bf00537efb179227a12dff80ad7e6rnEND:VALARMrnEND:VEVENTrn"
+      ];
     };
 
     "org/gnome/file-roller/dialogs/extract" = {
@@ -388,7 +508,10 @@ with lib.hm.gvariant;
       sidebar-size = 300;
       sort-method = "name";
       sort-type = "ascending";
-      window-size = mkTuple [ (-1) (-1) ];
+      window-size = mkTuple [
+        (-1)
+        (-1)
+      ];
     };
 
     "org/gnome/file-roller/listing" = {
@@ -406,7 +529,13 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/gedit/plugins" = {
-      active-plugins = [ "filebrowser" "docinfo" "spell" "sort" "modelines" ];
+      active-plugins = [
+        "filebrowser"
+        "docinfo"
+        "spell"
+        "sort"
+        "modelines"
+      ];
     };
 
     "org/gnome/gedit/plugins/filebrowser" = {
@@ -423,7 +552,10 @@ with lib.hm.gvariant;
       bottom-panel-size = 140;
       side-panel-active-page = "GeditWindowDocumentsPanel";
       side-panel-size = 200;
-      size = mkTuple [ 900 700 ];
+      size = mkTuple [
+        900
+        700
+      ];
       state = 87168;
     };
 
@@ -440,7 +572,10 @@ with lib.hm.gvariant;
       process-memory-in-iec = false;
       show-dependencies = false;
       show-whose-processes = "user";
-      window-state = mkTuple [ 700 500 ];
+      window-state = mkTuple [
+        700
+        500
+      ];
       window-width = 1128;
     };
 
@@ -454,7 +589,33 @@ with lib.hm.gvariant;
     "org/gnome/gnome-system-monitor/proctree" = {
       col-26-visible = false;
       col-26-width = 0;
-      columns-order = [ 0 1 2 3 4 6 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ];
+      columns-order = [
+        0
+        1
+        2
+        3
+        4
+        6
+        8
+        9
+        10
+        11
+        12
+        13
+        14
+        15
+        16
+        17
+        18
+        19
+        20
+        21
+        22
+        23
+        24
+        25
+        26
+      ];
       sort-col = 15;
       sort-order = 0;
     };
@@ -483,8 +644,14 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/nautilus/window-state" = {
-      initial-size = mkTuple [ 1247 543 ];
-      initial-size-file-chooser = mkTuple [ 890 550 ];
+      initial-size = mkTuple [
+        1247
+        543
+      ];
+      initial-size-file-chooser = mkTuple [
+        890
+        550
+      ];
       maximized = false;
     };
 
@@ -577,14 +744,6 @@ with lib.hm.gvariant;
       window-maximized = true;
     };
 
-    "org/gnome/portal/filechooser/com/google/Chrome" = {
-      last-folder-path = "/home/willian/Downloads";
-    };
-
-    "org/gnome/portal/filechooser/com/valvesoftware/Steam" = {
-      last-folder-path = "/home/willian/Downloads";
-    };
-
     "org/gnome/portal/filechooser/discord" = {
       last-folder-path = "/home/willian/Downloads";
     };
@@ -615,8 +774,20 @@ with lib.hm.gvariant;
     "org/gnome/shell" = {
       disable-user-extensions = false;
       disabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
-      enabled-extensions = [ "places-menu@gnome-shell-extensions.gcampax.github.com" "gsconnect@andyholmes.github.io" "appindicatorsupport@rgcjonas.gmail.com" "Vitals@CoreCoding.com" ];
-      favorite-apps = [ "google-chrome.desktop" "codium.desktop" "idea-community.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" ];
+      enabled-extensions = [
+        "places-menu@gnome-shell-extensions.gcampax.github.com"
+        "gsconnect@andyholmes.github.io"
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "Vitals@CoreCoding.com"
+      ];
+      favorite-apps = [
+        "google-chrome.desktop"
+        "org.gnome.Nautilus.desktop"
+        "steam.desktop"
+        "com.mitchellh.ghostty.desktop"
+        "dev.zed.Zed.desktop"
+        "idea-community.desktop"
+      ];
       had-bluetooth-devices-setup = true;
       last-selected-power-profile = "power-saver";
       welcome-dialog-last-shown-version = "41.1";
@@ -634,7 +805,10 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/gsconnect/preferences" = {
       window-maximized = false;
-      window-size = mkTuple [ 640 440 ];
+      window-size = mkTuple [
+        640
+        440
+      ];
     };
 
     "org/gnome/shell/extensions/vitals" = {
@@ -642,7 +816,11 @@ with lib.hm.gvariant;
       fixed-widths = true;
       hide-icons = false;
       hide-zeros = false;
-      hot-sensors = [ "_memory_usage_" "_temperature_k10temp_tccd1_" "_temperature_amdgpu_edge_" ];
+      hot-sensors = [
+        "_memory_usage_"
+        "_temperature_k10temp_tccd1_"
+        "_temperature_amdgpu_edge_"
+      ];
       memory-measurement = 1;
       show-battery = false;
       show-fan = true;
@@ -661,7 +839,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell/world-clocks" = {
-      locations = [];
+      locations = [ ];
     };
 
     "org/gnome/simple-scan" = {
@@ -697,12 +875,23 @@ with lib.hm.gvariant;
       sort-order = "descending";
       type-format = "category";
       view-type = "list";
-      window-size = mkTuple [ 1284 1048 ];
+      window-size = mkTuple [
+        1284
+        1048
+      ];
     };
 
     "org/gtk/settings/color-chooser" = {
-      custom-colors = [ (mkTuple [ 0.286275 0.658824 ]) ];
-      selected-color = mkTuple [ true 0.286275 ];
+      custom-colors = [
+        (mkTuple [
+          0.286275
+          0.658824
+        ])
+      ];
+      selected-color = mkTuple [
+        true
+        0.286275
+      ];
     };
 
     "org/gtk/settings/file-chooser" = {
@@ -716,8 +905,14 @@ with lib.hm.gvariant;
       sort-directories-first = false;
       sort-order = "descending";
       type-format = "category";
-      window-position = mkTuple [ 26 23 ];
-      window-size = mkTuple [ 1297 902 ];
+      window-position = mkTuple [
+        26
+        23
+      ];
+      window-size = mkTuple [
+        1297
+        902
+      ];
     };
 
     "org/virt-manager/virt-manager" = {
@@ -737,7 +932,10 @@ with lib.hm.gvariant;
     };
 
     "org/virt-manager/virt-manager/conns/qemu:system" = {
-      window-size = mkTuple [ 800 600 ];
+      window-size = mkTuple [
+        800
+        600
+      ];
     };
 
     "org/virt-manager/virt-manager/details" = {
@@ -753,7 +951,10 @@ with lib.hm.gvariant;
     };
 
     "org/virt-manager/virt-manager/urls" = {
-      isos = [ "/home/willian/Downloads/Win11_22H2_EnglishInternational_x64v1.iso" "/home/willian/Downloads/Win10_22H2_EnglishInternational_x64.iso" ];
+      isos = [
+        "/home/willian/Downloads/Win11_22H2_EnglishInternational_x64v1.iso"
+        "/home/willian/Downloads/Win10_22H2_EnglishInternational_x64.iso"
+      ];
     };
 
     "org/virt-manager/virt-manager/vmlist-fields" = {
@@ -764,85 +965,127 @@ with lib.hm.gvariant;
     "org/virt-manager/virt-manager/vms/2e45c01e620f4141bf0d219d2480059b" = {
       autoconnect = 1;
       scaling = 1;
-      vm-window-size = mkTuple [ 1920 1011 ];
+      vm-window-size = mkTuple [
+        1920
+        1011
+      ];
     };
 
     "org/virt-manager/virt-manager/vms/52ec43d72f9e4dd681d233fc14217670" = {
       autoconnect = 1;
       scaling = 1;
-      vm-window-size = mkTuple [ 1024 810 ];
+      vm-window-size = mkTuple [
+        1024
+        810
+      ];
     };
 
     "org/virt-manager/virt-manager/vms/67ba5ea088d248d68a69e16c3f9fc756" = {
       autoconnect = 1;
       scaling = 1;
-      vm-window-size = mkTuple [ 1024 810 ];
+      vm-window-size = mkTuple [
+        1024
+        810
+      ];
     };
 
     "org/virt-manager/virt-manager/vms/7fe8cb91e9564d5eb6abde46ba5b172d" = {
       autoconnect = 1;
       scaling = 1;
-      vm-window-size = mkTuple [ 1024 810 ];
+      vm-window-size = mkTuple [
+        1024
+        810
+      ];
     };
 
     "org/virt-manager/virt-manager/vms/87c20d2a14b04cdb92b81794322a314f" = {
       autoconnect = 1;
       scaling = 1;
-      vm-window-size = mkTuple [ 1280 832 ];
+      vm-window-size = mkTuple [
+        1280
+        832
+      ];
     };
 
     "org/virt-manager/virt-manager/vms/8a9dcf7ade8f4dbaa4418d2fd2c9c86b" = {
       autoconnect = 1;
       scaling = 1;
-      vm-window-size = mkTuple [ 1024 810 ];
+      vm-window-size = mkTuple [
+        1024
+        810
+      ];
     };
 
     "org/virt-manager/virt-manager/vms/9932b5717ebc4272b1777431590b603e" = {
       autoconnect = 1;
       scaling = 1;
-      vm-window-size = mkTuple [ 1024 810 ];
+      vm-window-size = mkTuple [
+        1024
+        810
+      ];
     };
 
     "org/virt-manager/virt-manager/vms/ab777428be654ab18da434b1eb987752" = {
       autoconnect = 1;
       scaling = 1;
-      vm-window-size = mkTuple [ 1920 1048 ];
+      vm-window-size = mkTuple [
+        1920
+        1048
+      ];
     };
 
     "org/virt-manager/virt-manager/vms/cd3f542e657e4f688386f9879d5487a0" = {
       autoconnect = 1;
       scaling = 1;
-      vm-window-size = mkTuple [ 1024 810 ];
+      vm-window-size = mkTuple [
+        1024
+        810
+      ];
     };
 
     "org/virt-manager/virt-manager/vms/ecdfbde0be97459ab68340cc0aa7a610" = {
       autoconnect = 1;
       scaling = 1;
-      vm-window-size = mkTuple [ 1024 810 ];
+      vm-window-size = mkTuple [
+        1024
+        810
+      ];
     };
 
     "org/virt-manager/virt-manager/vms/ece66a30625c4a6d819e7cd87303f382" = {
       autoconnect = 1;
       scaling = 1;
-      vm-window-size = mkTuple [ 1294 877 ];
+      vm-window-size = mkTuple [
+        1294
+        877
+      ];
     };
 
     "org/virt-manager/virt-manager/vms/efedc761765c44c88d5c7f0d84b32536" = {
       autoconnect = 1;
       scaling = 1;
-      vm-window-size = mkTuple [ 1024 810 ];
+      vm-window-size = mkTuple [
+        1024
+        810
+      ];
     };
 
     "org/virt-manager/virt-manager/vms/fa118b3268294bf2b2d81d097fc67346" = {
       autoconnect = 1;
       scaling = 1;
-      vm-window-size = mkTuple [ 1024 810 ];
+      vm-window-size = mkTuple [
+        1024
+        810
+      ];
     };
 
     "org/virt-manager/virt-manager/vms/ff5faae28ddd4d259fe8f153027c7714" = {
       autoconnect = 1;
       scaling = 1;
-      vm-window-size = mkTuple [ 1024 810 ];
+      vm-window-size = mkTuple [
+        1024
+        810
+      ];
     };
 
     "system/proxy" = {
