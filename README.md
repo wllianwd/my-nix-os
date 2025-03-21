@@ -1,25 +1,72 @@
-# My NixOS
+# Nix configuration for MacBook
 
-## Dot files
+A basic MacBook nix configuration.
 
-Create the dotfiles dir, clone this repo and update home-manager:
+## Installing Nix
+
+Considering you aready download this repo and have it opened in your terminal:
+
+```sh
+# install nix
+curl -sSf -L https://install.lix.systems/lix | sh -s -- install
+
+# change global.nix accondingly to your information
+nano global.nix
+
+# build & apply nix (after that, you can close the terminal and open Alacritty)
+nixos-rebuild switch --use-remote-sudo --flake .#
 ```
-cd ~/
-mkdir .my-nix-os
-cd .my-nix-os
-git clone https://github.com/wllianwd/my-nix-os.git .
-nix flake update
 
-# system
-sudo nixos-rebuild switch --flake .#
+After the system is built from the first time, some additional commands will be available:
+* `mnix`: open your Nix config directory
+* `mnix-rebuild`: rebuild/apply your changes
+* `mnix-update`: update packages + rebuild/apply your changes
+* `mnix-develop`: will list all available shells defined inside `./shells`
+* `oidea`: quick list/open IDEA project
+* `oconfig`: quick list/open config repo
+* `k`: for kubectl
+* `z`: [zoxide](https://github.com/ajeetdsouza/zoxide) a smarter cd command
+> You can check more in [./home/zsh/default.nix](./home/zsh/default.nix?ref_type=heads#L22)
 
+Recommended apps:
+* [zed](https://zed.dev/): text editor
+* [ghostty](https://ghostty.org/): terminal
+* [neovim](https://neovim.io/): terminal `$EDITOR`
+
+### Configuring secrets
+
+First step is to create a ssh key `id_nix` and store inside `./uncommited` (as we dont want to commit those keys to git).
+> Remember to backup this key as you'll need it in a new computer to decrypt your secrets.
+```sh
+# open nix config directory
+mnix
+
+# create the key
+ssh-keygen -t ed25519 -N "" -f ./uncommited/id_nix -q -C "<email>"
 ```
-This will create some aliases that can be used to maintain your system and home-manager using the dotfiles from this repo:
-* `update-system`: will do a `sudo nixos-rebuild switch` using `~/.my-nix-os/system/configuration.nix`
-* `update-dconf`: dump your current gnome settings to `~/.my-nix-os/users/<user>/dconf/dconf.nix` and will do a `update-home`
-* `update-proton`: check and update to latest `Proton-GE`
-* `open-dotfiles`: jump to your dotfiles directory `cd ~/.my-nix-os`
+Now, we can use this key with [ragenix](https://github.com/yaxitech/ragenix) to encrypt and mount the files into our file system.
 
-Sample:
-* To change your system `~/.my-nix-os/system/configuration.nix` and do a `update-system`.
-* To change your home-manager `~/.my-nix-os/users/<user>/home.nix` and do a `update-home`.
+Each file will be encryted as a `<file>.age` and stored inside `home/agenix/secrets`.
+
+Inside `home/ragenix/default.nix` we already have some files configured to be mounted in case exists inside `home/ragenix/secrets`, those are:
+* If `home/ragenix/secrets/settings.xml.age` exists, it will mount inside `~/.m2/settings.xml`
+* If `home/ragenix/secrets/id_rsa.age` exists, it will mount inside `~/.ssh/id_rsa`
+* If `home/ragenix/secrets/id_rsa.pub.age` exists, it will mount inside `~/.ssh/id_rsa.pub`
+* If `home/ragenix/secrets/id_github.age` exists, it will mount inside `~/.ssh/id_github`
+* If `home/ragenix/secrets/id_github.pub.age` exists, it will mount inside `~/.ssh/id_github.pub`
+
+For instance, considering you have all those files, you can encrypt into age files:
+```sh
+mnix-ragenix-create-secret -i /path_to_your_backup/settings.xml
+mnix-ragenix-create-secret -i /path_to_your_backup/id_rsa
+mnix-ragenix-create-secret -i /path_to_your_backup/id_rsa.pub
+mnix-ragenix-create-secret -i /path_to_your_backup/id_github
+mnix-ragenix-create-secret -i /path_to_your_backup/id_github.pub
+```
+You will be ble to see all files created under `home/ragenix/secrets`.
+
+> You can follow the same approach for any other file, just update `home/ragenix/default.nix` accondingly.
+
+### Docker
+
+When building for the first time it will already install `docker`, `colima` and `docker-compose`.

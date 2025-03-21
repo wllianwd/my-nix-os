@@ -1,39 +1,19 @@
-## Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, stdenv, ... }:
 
-# Variables
+{
+  imports = [ ./hardware-configuration.nix ];
 
-let vscodium-with-extensions = pkgs.vscode-with-extensions.override {
-  vscode = pkgs.vscodium;
-  vscodeExtensions = (with pkgs.vscode-extensions; [ jnoortheen.nix-ide ]);
-};
-
-# Config
-in {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
-
-  # Make ready for nix flakes
   nix = {
-    #package = pkgs.nixFlakes;
-    package = pkgs.nixVersions.stable;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
+    settings = {
+      experimental-features = "nix-command flakes";
+    };
   };
 
   hardware = {
-    # Disabled to use pipewire
-    pulseaudio = { enable = false; };
     graphics = {
       enable = true;
       enable32Bit = true;
-      #driSupport = true; 
+      #driSupport = true;
       #driSupport32Bit = true;
       extraPackages = with pkgs; [
         vaapiVdpau
@@ -42,13 +22,10 @@ in {
     };
   };
 
-  virtualisation = {
-    docker = { enable = false; };
-  };
-
   nixpkgs = {
     config = {
       allowUnfree = true;
+      allowBroken = true;
       permittedInsecurePackages = [
         "electron-19.1.9"
         "python3.12-youtube-dl-2021.12.17"
@@ -75,8 +52,8 @@ in {
       #grub = { enable = true; version = 2; device = "replace_disk"; };
       systemd-boot = { enable = true; };
       efi = {
-        efiSysMountPoint = "/boot/efi"; 
-        canTouchEfiVariables = true; 
+        efiSysMountPoint = "/boot/efi";
+        canTouchEfiVariables = true;
       };
     };
     kernel = {
@@ -89,7 +66,7 @@ in {
     #kernelPackages = pkgs.linuxPackages;
     #kernelParams = [ "acpi_enforce_resources=lax" ];
   };
- 
+
   # Set your time zone.
   time = { timeZone = "Europe/Madrid"; };
 
@@ -117,14 +94,18 @@ in {
       LC_TELEPHONE = "es_ES.UTF-8";
       LC_TIME = "es_ES.UTF-8";
     };
-    defaultLocale = "en_US.UTF-8"; 
+    defaultLocale = "en_US.UTF-8";
   };
   console = { font = "Lat2-Terminus16"; keyMap = "us"; };
 
   # Fonts
   fonts = {
     packages = with pkgs; [
-      meslo-lgs-nf
+      pkgs.meslo-lgs-nf
+      pkgs.nerd-fonts.fira-code
+      pkgs.nerd-fonts.droid-sans-mono
+      pkgs.nerd-fonts.jetbrains-mono
+      pkgs.nerd-fonts.meslo-lg
     ];
   };
 
@@ -146,6 +127,8 @@ in {
 
   # Services
   services = {
+    # Disabled to use pipewire
+    pulseaudio = { enable = false; };
     # jellyfin
     jellyfin = {
       enable = true;
@@ -192,7 +175,7 @@ in {
       willian = {
         isNormalUser = true;
         initialPassword = "guest";
-        extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user. 
+        extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
      };
     };
   };
@@ -201,98 +184,44 @@ in {
   # $ nix search wget
   environment = {
     systemPackages = with pkgs; [
-      vim
+      neovim
       cacert
-      pciutils
-      nano
-      unzip
-      firefox
-      google-chrome
       networkmanager
       autorandr
-      neofetch
-      bash
+      pciutils
       libva
       libva-utils
-      vlc
-      mkchromecast
       lm_sensors
       i2c-tools
       liquidctl
       usbutils
       appimage-run
-
-      # multimedia
-      obs-studio
-      pdftk
-      onlyoffice-bin
-      deluge
-      handbrake
-      discord
-      #etcher
-      openrgb-with-all-plugins
-      #unigine-superposition
-      godot_4
-
-      # dev
-      python3
-      vscodium-with-extensions
-      docker-compose
-      git
-      wget
-      curl
-      nodejs
-      yarn
-      maven
-      openjdk21
-      jetbrains.idea-community
-      jetbrains.datagrip
-      kubectl
-
-      # gnome
       gnome-tweaks
       gnomeExtensions.appindicator
       gnomeExtensions.gsconnect
       gnomeExtensions.vitals
-
-      # video
       mesa
       mesa-demos
-      zoom
       dconf2nix
-
-      # gaming
-      mangohud
       vulkan-loader
       vulkan-validation-layers
       vulkan-tools
       vulkan-headers
-      wineWowPackages.staging
-      wine-staging
-      winetricks
-      protontricks
-      lutris
-      protonup
-      protonup-qt
       libstrangle
     ];
     variables = {
-      NIXOS_CONFIG_DIR="$HOME/.my-nix-os/";
       LIBVA_DRIVER_NAME="radeonsi";
-    };
-    etc = with pkgs; {
-      "jdk-21".source = openjdk21;
     };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs = {
-    zsh = { enable = true; };
     steam = { enable = true; };
+    zsh = { enable = true; };
     dconf = { enable = true; };
-  };  
-  
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -300,6 +229,6 @@ in {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system = {
-    stateVersion = "22.11"; # Did you read the comment?
+    stateVersion = "24.11"; # Did you read the comment?
   };
 }

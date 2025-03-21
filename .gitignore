@@ -1,6 +1,7 @@
-.classpath
-.project
-.settings/
-target/
-result
-result/
+**.DS_Store
+
+*lazy-lock*
+*lazyvim*
+uncommited/
+home/agenix/secrets/secrets.nix
+home/agenix/secrets/fake-editor.sh

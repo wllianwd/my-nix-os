@@ -1,51 +1,75 @@
 {
-  description = "My NixOS system config";
+  description = "NixOS system flake";
 
   inputs = {
-    nixpkgs = {
-      #url = "nixpkgs/nixos-unstable";
-      url = "nixpkgs/nixos-unstable";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
-    };
-    shoji-nix = {
-      url = "github:AdoPi/shoji-nix";
-    };
+    # official nix packages
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
+    # community driven nix packages
+    nur.url = "github:nix-community/NUR";
+    nur.inputs.nixpkgs.follows = "nixpkgs";
+
+    # home manager
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # agenix
+    ragenix.url = "github:yaxitech/ragenix";
+    ragenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # nixvim
+    nvf.url = "github:notashelf/nvf";
+    nvf.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, shoji-nix, ... }:
-  let
-    system = "x86_64-linux";
-    username = "willian";
-    pkgs = import nixpkgs {
-      inherit system;
-      config = { allowUnfree = true; };
-    };
-    lib = nixpkgs.lib;
-    homeManager = home-manager.lib.homeManagerConfiguration;
-  in {
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      ragenix,
+      nvf,
+      nur,
+    }:
+    let
+      global = import ./global.nix;
+      system = "x86_64-linux"; # system architecture
+      pkgs = import nixpkgs { inherit system; };
+      lib = nixpkgs.lib;
 
-    nixosConfigurations = {
-      nixos = lib.nixosSystem {
-        inherit system;
+    in
+    {
+      nixosConfigurations."${global.host}" = lib.nixosSystem {
+        system = system;
         modules = [
-          ./system/configuration.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.sharedModules = [
-              shoji-nix.homeManagerModules.shoji
+          {
+            nixpkgs.overlays = [
+              nur.overlays.default
             ];
+          }
+          ./system
+          home-manager.nixosModules.home-manager
+          {
+            # home-manager defaults
+            home-manager.backupFileExtension = "backup";
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.${username} = import ./users/${username}/home.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.sharedModules = [
+              ragenix.homeManagerModules.default
+              nvf.homeManagerModules.default
+            ];
+
+            # home-manager specific
+            home-manager.users."${global.username}" = import ./home;
           }
         ];
       };
+
+      # expose devShells for easy access
+      devShells.${system} = {
+        python311 = import ./home/shells/python311.nix { inherit pkgs; };
+        node22 = import ./home/shells/node22.nix { inherit pkgs; };
+      };
     };
-  };
 }
