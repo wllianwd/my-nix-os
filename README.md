@@ -7,9 +7,6 @@ A basic MacBook nix configuration.
 Considering you aready download this repo and have it opened in your terminal:
 
 ```sh
-# install nix
-curl -sSf -L https://install.lix.systems/lix | sh -s -- install
-
 # change global.nix accondingly to your information
 nano global.nix
 
