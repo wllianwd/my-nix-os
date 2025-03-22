@@ -1,5 +1,8 @@
-{ config, pkgs, stdenv, ... }:
+{ pkgs, ... }:
 
+let
+  global = import ../global.nix;
+in
 {
   imports = [ ./hardware-configuration.nix ];
 
@@ -26,31 +29,16 @@
     config = {
       allowUnfree = true;
       allowBroken = true;
-      permittedInsecurePackages = [
-        "electron-19.1.9"
-        "python3.12-youtube-dl-2021.12.17"
-      ];
     };
-    overlays = [
-      (self: super:
-        # fix zoom screen sharing (https://github.com/NixOS/nixpkgs/issues/107233)
-        {
-          zoomUsFixed = pkgs.zoom-us.overrideAttrs (old: {postFixup = old.postFixup + ''
-              wrapProgram $out/bin/zoom-us --unset XDG_SESSION_TYPE
-            '';});
-          zoom = pkgs.zoom-us.overrideAttrs (old: {postFixup = old.postFixup + ''
-              wrapProgram $out/bin/zoom --unset XDG_SESSION_TYPE
-            '';});
-        }
-      )
-    ];
   };
 
   # Use the systemd-boot EFI boot loader.
   boot = {
     loader = {
       #grub = { enable = true; version = 2; device = "replace_disk"; };
-      systemd-boot = { enable = true; };
+      systemd-boot = {
+        enable = true;
+      };
       efi = {
         efiSysMountPoint = "/boot/efi";
         canTouchEfiVariables = true;
@@ -68,16 +56,25 @@
   };
 
   # Set your time zone.
-  time = { timeZone = "Europe/Madrid"; };
+  time = {
+    timeZone = "Europe/Madrid";
+  };
 
   # Network
   networking = {
     useDHCP = false;
     hostName = "nixos";
-    networkmanager = { enable = true; };
+    networkmanager = {
+      enable = true;
+    };
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 3000 5000 8010 8096 ];
+      allowedTCPPorts = [
+        3000
+        5000
+        8010
+        8096
+      ];
     };
   };
 
@@ -96,11 +93,14 @@
     };
     defaultLocale = "en_US.UTF-8";
   };
-  console = { font = "Lat2-Terminus16"; keyMap = "us"; };
+  console = {
+    font = "Lat2-Terminus16";
+    keyMap = "us";
+  };
 
   # Fonts
   fonts = {
-    packages = with pkgs; [
+    packages = [
       pkgs.meslo-lgs-nf
       pkgs.nerd-fonts.fira-code
       pkgs.nerd-fonts.droid-sans-mono
@@ -111,10 +111,17 @@
 
   # Security
   security = {
-    rtkit = { enable = true; };
+    rtkit = {
+      enable = true;
+    };
     pam = {
       loginLimits = [
-        { domain = "*"; type = "-"; item = "nofile"; value = "1048576"; }
+        {
+          domain = "*";
+          type = "-";
+          item = "nofile";
+          value = "1048576";
+        }
       ];
     };
   };
@@ -128,19 +135,31 @@
   # Services
   services = {
     # Disabled to use pipewire
-    pulseaudio = { enable = false; };
+    pulseaudio = {
+      enable = false;
+    };
     # jellyfin
     jellyfin = {
       enable = true;
-      user = "willian";
+      user = "${global.username}";
       group = "wheel";
     };
     # X11
     xserver = {
       enable = true;
+      layout = "us";
+      xkbVariant = "intl";
       # gnome
-      displayManager = { gdm = { enable = true; }; };
-      desktopManager = { gnome = { enable = true; }; };
+      displayManager = {
+        gdm = {
+          enable = true;
+        };
+      };
+      desktopManager = {
+        gnome = {
+          enable = true;
+        };
+      };
     };
     hardware = {
       openrgb = {
@@ -148,13 +167,21 @@
       };
     };
     # dbus
-    dbus = { packages = [ pkgs.dconf ]; };
+    dbus = {
+      packages = [ pkgs.dconf ];
+    };
     # udev
-    udev = { packages = [ pkgs.gnome-settings-daemon ]; };
+    udev = {
+      packages = [ pkgs.gnome-settings-daemon ];
+    };
     # cups printing (can be accessed on http://localhost:631/)
-    printing = { enable = true; };
+    printing = {
+      enable = true;
+    };
     # flatpack
-    flatpak = { enable = true; };
+    flatpak = {
+      enable = true;
+    };
     # pipewire
     pipewire = {
       enable = true;
@@ -172,11 +199,14 @@
   users = {
     defaultUserShell = pkgs.zsh;
     users = {
-      willian = {
+      "${global.username}" = {
         isNormalUser = true;
         initialPassword = "guest";
-        extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
-     };
+        extraGroups = [
+          "wheel"
+          "networkmanager"
+        ]; # Enable ‘sudo’ for the user.
+      };
     };
   };
 
@@ -210,16 +240,22 @@
       libstrangle
     ];
     variables = {
-      LIBVA_DRIVER_NAME="radeonsi";
+      LIBVA_DRIVER_NAME = "radeonsi";
     };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs = {
-    steam = { enable = true; };
-    zsh = { enable = true; };
-    dconf = { enable = true; };
+    steam = {
+      enable = true;
+    };
+    zsh = {
+      enable = true;
+    };
+    dconf = {
+      enable = true;
+    };
   };
 
   # This value determines the NixOS release from which the default

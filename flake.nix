@@ -36,18 +36,14 @@
       system = "x86_64-linux"; # system architecture
       pkgs = import nixpkgs { inherit system; };
       lib = nixpkgs.lib;
-
+      my-overlays = import ./system/overlays.nix { inherit nur pkgs; };
     in
     {
       nixosConfigurations."${global.host}" = lib.nixosSystem {
         system = system;
         modules = [
-          {
-            nixpkgs.overlays = [
-              nur.overlays.default
-            ];
-          }
-          ./system
+          my-overlays
+          ./system/configuration.nix
           home-manager.nixosModules.home-manager
           {
             # home-manager defaults
