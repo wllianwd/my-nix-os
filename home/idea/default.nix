@@ -66,7 +66,7 @@ let
 in
 {
   home.packages = with pkgs; [
-    (jetbrains.plugins.addPlugins jetbrains.idea-ultimate [
+    (jetbrains.plugins.addPlugins jetbrains.idea-community [
       detekt
       ktfmt
       codeium

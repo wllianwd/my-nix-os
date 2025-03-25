@@ -71,8 +71,6 @@ in
     protonup
     protonup-qt
     mangohud
-    jetbrains.idea-community
-    jetbrains.datagrip
     nodejs
     yarn
     python3
@@ -85,7 +83,7 @@ in
     pdftk
     onlyoffice-bin
     deluge
-    handbrake
+    #handbrake
     discord
     vlc
     neofetch
