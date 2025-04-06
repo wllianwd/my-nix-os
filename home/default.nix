@@ -26,8 +26,8 @@ in
     kubectl
     mob
     docker
-    colima
-    docker-compose
+    #colima
+    #docker-compose
     hoppscotch
     maven
     neofetch
@@ -73,6 +73,7 @@ in
     mangohud
     nodejs
     yarn
+    nodePackages.localtunnel
     python3
     docker-compose
     git

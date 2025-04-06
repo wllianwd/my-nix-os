@@ -195,6 +195,8 @@ in
     };
   };
 
+  virtualisation.docker.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     defaultUserShell = pkgs.zsh;
@@ -205,6 +207,7 @@ in
         extraGroups = [
           "wheel"
           "networkmanager"
+          "docker"
         ]; # Enable ‘sudo’ for the user.
       };
     };
@@ -216,6 +219,8 @@ in
     systemPackages = with pkgs; [
       neovim
       cacert
+      docker
+      docker-compose
       networkmanager
       autorandr
       pciutils
