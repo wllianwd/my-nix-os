@@ -12,7 +12,7 @@ let
   nixConfigDirectory = "${homeDirectory}/.my-nix-os";
 
   # The place you have your git repositories, will be used for some aliases like `oidea`
-  repositoriesDirectory = "${homeDirectory}/Documents/repositories";
+  repositoriesDirectory = "${homeDirectory}/Documents/projects";
 
   # The git info
   gitEmail = "willian.wd@gmail.com";
