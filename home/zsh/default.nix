@@ -30,6 +30,7 @@ in
       oconfig = "fd . '${global.repositoriesDirectory}/configs' --type d --hidden --exclude .git --max-depth 1 | fzf | xargs -I {} nvim {}";
       mnix = "cd ${global.nixConfigDirectory}";
       mnix-rebuild = "sh ${global.nixConfigDirectory}/home/zsh/scripts/nix-rebuild.sh";
+      mnix-update-proton = "sh ${global.nixConfigDirectory}/home/zsh/scripts/update-proton.sh";
       mnix-update = "sh ${global.nixConfigDirectory}/home/zsh/scripts/nix-update.sh";
       mnix-develop = "nix develop ${global.nixConfigDirectory}#$(fd . '${global.nixConfigDirectory}/shells' --type f --hidden --exclude '*.md' --max-depth 1 | xargs -I {} basename {} .nix | fzf)";
       mnix-ragenix-create-secret = "sh ${global.nixConfigDirectory}/home/zsh/scripts/ragenix-create-secret.sh";
