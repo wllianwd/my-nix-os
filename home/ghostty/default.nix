@@ -43,7 +43,7 @@
         "14=#94e2d5"
         "15=#a6adc8"
       ];
-      "font-size" = 15;
+      "font-size" = 12;
       "font-family" = "JetBrainsMono Nerd Font";
       "mouse-hide-while-typing" = true;
       "focus-follows-mouse" = true;
