@@ -147,8 +147,10 @@ in
     # X11
     xserver = {
       enable = true;
-      layout = "us";
-      xkbVariant = "intl";
+      xkb = {
+        layout = "us";
+        variant = "intl";
+      };
       # gnome
       displayManager = {
         gdm = {

@@ -63,7 +63,7 @@ in
       ];
     };
 
-    initExtra = ''
+    initContent = ''
       # tmux to have correct color setting
       if [ ! "$TMUX" = "" ]; then
         export TERM=xterm-256color;
