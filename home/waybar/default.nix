@@ -37,7 +37,7 @@ in
         modules-center = [ "clock" ];
         modules-right = [
           "tray"
-          #1"memory"
+          #"memory"
           "network"
           "wireplumber"
           "battery"

@@ -16,6 +16,9 @@
     # hyperland
     hyprland.url = "github:hyprwm/Hyprland";
 
+    # catppuccin
+    catppuccin.url = "github:catppuccin/nix";
+
     # agenix
     ragenix.url = "github:yaxitech/ragenix";
     ragenix.inputs.nixpkgs.follows = "nixpkgs";
@@ -34,6 +37,7 @@
       nvf,
       nur,
       hyprland,
+      catppuccin,
     }:
     let
       global = import ./global.nix;
@@ -59,6 +63,7 @@
             home-manager.sharedModules = [
               ragenix.homeManagerModules.default
               nvf.homeManagerModules.default
+              catppuccin.homeModules.catppuccin
             ];
 
             # home-manager specific
