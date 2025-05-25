@@ -17,6 +17,9 @@ in
     ./ghostty
     ./nvf
     ./java
+    ./waybar
+    ./rofi
+    ./hyperland
     ./zed
     ./idea
   ];
@@ -28,6 +31,9 @@ in
     docker
     #colima
     #docker-compose
+    wofi
+    #    dolphin
+    xournalpp
     hoppscotch
     maven
     neofetch

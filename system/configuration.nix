@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 let
   global = import ../global.nix;
@@ -73,7 +73,6 @@ in
         3000
         5000
         8010
-        8096
       ];
     };
   };
@@ -132,6 +131,8 @@ in
     };
   };
 
+  #  services.displayManager.sddm.wayland.enable = true;
+
   # Services
   services = {
     # Disabled to use pipewire
@@ -141,28 +142,46 @@ in
     # jellyfin
     jellyfin = {
       enable = true;
+      openFirewall = true;
       user = "${global.username}";
       group = "wheel";
     };
     # X11
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "us";
-        variant = "intl";
-      };
-      # gnome
-      displayManager = {
-        gdm = {
-          enable = true;
-        };
-      };
-      desktopManager = {
-        gnome = {
+    displayManager = {
+      #gdm = {
+      #  enable = true;
+      #};
+      sddm = {
+        enable = true;
+        wayland = {
           enable = true;
         };
       };
     };
+    #xserver = {
+    # enable = true;
+    #xkb = {
+    #  layout = "us";
+    #  variant = "altgr-intl";
+    #};
+    # gnome
+
+    #displayManager = {
+    #gdm = {
+    #  enable = true;
+    #};
+    # sddm = {
+    #  enable = true;
+    #  wayland.enable = true;
+
+    #};
+    # };
+    #desktopManager = {
+    #  gnome = {
+    #    enable = true;
+    #  };
+    #};
+    #};
     hardware = {
       openrgb = {
         enable = true;
@@ -186,9 +205,9 @@ in
       openFirewall = true;
     };
     # flatpack
-    flatpak = {
-      enable = true;
-    };
+    #flatpak = {
+    #  enable = true;
+    #};
     # pipewire
     pipewire = {
       enable = true;
@@ -202,7 +221,11 @@ in
     };
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker = {
+      enable = true;
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
@@ -250,6 +273,9 @@ in
       vulkan-tools
       vulkan-headers
       libstrangle
+      jellyfin
+      jellyfin-web
+      jellyfin-ffmpeg
     ];
     variables = {
       LIBVA_DRIVER_NAME = "radeonsi";
@@ -267,6 +293,12 @@ in
     };
     dconf = {
       enable = true;
+    };
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage =
+        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
   };
 

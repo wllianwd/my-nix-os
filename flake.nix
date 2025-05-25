@@ -13,6 +13,9 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # hyperland
+    hyprland.url = "github:hyprwm/Hyprland";
+
     # agenix
     ragenix.url = "github:yaxitech/ragenix";
     ragenix.inputs.nixpkgs.follows = "nixpkgs";
@@ -30,6 +33,7 @@
       ragenix,
       nvf,
       nur,
+      hyprland,
     }:
     let
       global = import ./global.nix;
@@ -41,6 +45,7 @@
     {
       nixosConfigurations."${global.host}" = lib.nixosSystem {
         system = system;
+        specialArgs = { inherit inputs; };
         modules = [
           my-overlays
           ./system/configuration.nix
