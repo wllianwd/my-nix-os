@@ -4,6 +4,7 @@
   ...
 }:
 let
+  global = import ../../global.nix;
   vpnStatus = pkgs.writeShellApplication {
     name = "vpnStatus";
     runtimeInputs = with pkgs; [
@@ -217,6 +218,7 @@ in
           on-click = "${pkgs.systemd}/bin/systemctl poweroff";
           tooltip = false;
         };
+
       }
     ];
   };
