@@ -14,8 +14,13 @@
     nautilus
   ];
 
-  services.swaync = {
-    enable = true;
+  services = {
+    swaync = {
+      enable = true;
+    };
+    xembed-sni-proxy = {
+      enable = true;
+    };
   };
 
   wayland.windowManager.hyprland = {
