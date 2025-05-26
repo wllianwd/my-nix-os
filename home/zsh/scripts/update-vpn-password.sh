@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check if fzf is installed
+if ! command -v fzf &> /dev/null; then
+  echo "fzf not found! Please install fzf to use interactive VPN selector."
+  exit 1
+fi
+
 # Get VPN connection names into an array
 mapfile -t vpns < <(nmcli -t -f NAME,TYPE connection show | grep ":vpn" | cut -d: -f1)
 
@@ -8,19 +14,14 @@ if [ ${#vpns[@]} -eq 0 ]; then
   exit 1
 fi
 
-echo "Available VPN connections:"
-for i in "${!vpns[@]}"; do
-  echo "  [$i] ${vpns[$i]}"
-done
+# Use fzf for interactive selection
+vpn_name=$(printf '%s\n' "${vpns[@]}" | fzf --prompt="Select VPN: " --height=10 --border)
 
-# Prompt user to select a VPN by number
-read -rp "Select VPN number to update: " sel
-if ! [[ "$sel" =~ ^[0-9]+$ ]] || [ "$sel" -ge "${#vpns[@]}" ]; then
-  echo "Invalid selection."
+if [ -z "$vpn_name" ]; then
+  echo "No VPN selected."
   exit 1
 fi
 
-vpn_name="${vpns[$sel]}"
 echo "Selected VPN: $vpn_name"
 
 # Prompt for password (hidden input)
