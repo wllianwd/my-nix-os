@@ -17,8 +17,12 @@ in
     ./ghostty
     ./nvf
     ./java
+    ./waybar
+    ./rofi
+    ./hyperland
     ./zed
     ./idea
+    ./catppuccin
   ];
 
   # Packages that should be installed to the user profile.
@@ -28,6 +32,9 @@ in
     docker
     #colima
     #docker-compose
+    wofi
+    #    dolphin
+    xournalpp
     hoppscotch
     maven
     neofetch

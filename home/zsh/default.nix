@@ -12,6 +12,7 @@ in
       MY_NIX_CONFIG_DIR = global.nixConfigDirectory;
       PATH = "$HOME/.nix-profile/bin:/opt/homebrew/bin:$PATH";
       EDITOR = "nvim";
+      KUBECONFIG = "$HOME/.kube/minikube-remote-config";
       #DOCKER_HOST = "unix://$HOME/.colima/default/docker.sock";
       #TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE = "/var/run/docker.sock";
       #TESTCONTAINERS_HOST_OVERRIDE = "colima ls -j | jq -r '.address'";

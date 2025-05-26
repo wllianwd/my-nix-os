@@ -1,0 +1,146 @@
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 13px;
+}
+
+window#waybar {
+  background-color: @crust;
+  color: @overlay0;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+}
+
+window#waybar.hidden {
+  opacity: 0.5;
+}
+
+#workspaces {
+  background-color: transparent;
+}
+
+#workspaces button {
+  all: initial;
+  min-width: 0;
+  box-shadow: inset 0 -3px transparent;
+  padding: 6px 18px;
+  margin: 6px 3px;
+  border-radius: 4px;
+  background-color: @base;
+  color: @text;
+}
+
+#workspaces button.active,
+#workspaces button:hover {
+  color: @base;
+  background-color: @text;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+}
+
+#memory,
+#bluetooth,
+#battery,
+#backlight,
+#wireplumber,
+#network,
+#clock,
+#custom-lock,
+#custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-vpn,
+#tray {
+  border-radius: 4px;
+  margin: 6px 3px;
+  padding: 6px 12px;
+  background-color: @base;
+  color: @crust;
+}
+
+#custom-vpn.tailnet {
+    color: @blue;
+    background-color: transparent;
+}
+#custom-vpn.connected {
+    color: @blue;
+    background-color: transparent;
+}
+#custom-vpn.exitNode {
+    color: @green;
+    background-color: transparent;
+}
+#custom-vpn.disconnected {
+    color: @red;
+    background-color: transparent;
+}
+#custom-power {
+    color: @accent;
+    background-color: transparent;
+}
+
+#custom-quit, #custom-lock, #custom-reboot {
+    color: @red;
+    background-color: transparent;
+}
+
+#memory {
+  background-color: @peach;
+}
+
+#battery {
+  background-color: @red;
+}
+
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+  background-color: #ff0000;
+  color: #FFFF00;
+}
+
+#battery.charging {
+  background-color: @green;
+  color: @crust;
+}
+
+#backlight {
+  background-color: @peach;
+}
+
+#wireplumber {
+  background-color: @yellow;
+}
+
+#bluetooth.off {
+    color: @orange;
+}
+
+#wireplumber.muted {
+    color: @orange;
+}
+
+#network {
+  background-color: @teal;
+  padding-right: 17px;
+}
+
+#clock {
+  font-family: JetBrainsMono Nerd Font;
+  background-color: @mauve;
+}
+
+tooltip {
+  border-radius: 8px;
+  padding: 15px;
+  background-color: @crust;
+}
+
+tooltip label {
+  padding: 5px;
+  background-color: @crust;
+}

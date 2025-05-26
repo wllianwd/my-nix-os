@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 let
   global = import ../global.nix;
@@ -73,7 +73,6 @@ in
         3000
         5000
         8010
-        8096
       ];
     };
   };
@@ -132,6 +131,8 @@ in
     };
   };
 
+  #  services.displayManager.sddm.wayland.enable = true;
+
   # Services
   services = {
     # Disabled to use pipewire
@@ -141,27 +142,47 @@ in
     # jellyfin
     jellyfin = {
       enable = true;
+      openFirewall = true;
       user = "${global.username}";
       group = "wheel";
     };
     # X11
+    displayManager = {
+      #gdm = {
+      #  enable = true;
+      #};
+      sddm = {
+        enable = true;
+        package = pkgs.kdePackages.sddm;
+        theme = "catppuccin-mocha";
+        wayland = {
+          enable = true;
+        };
+      };
+    };
     xserver = {
-      enable = true;
+      # enable = true;
       xkb = {
         layout = "us";
-        variant = "intl";
+        variant = "altgr-intl";
       };
       # gnome
-      displayManager = {
-        gdm = {
-          enable = true;
-        };
-      };
-      desktopManager = {
-        gnome = {
-          enable = true;
-        };
-      };
+
+      #displayManager = {
+      #gdm = {
+      #  enable = true;
+      #};
+      # sddm = {
+      #  enable = true;
+      #  wayland.enable = true;
+
+      #};
+      # };
+      #desktopManager = {
+      #  gnome = {
+      #    enable = true;
+      #  };
+      #};
     };
     hardware = {
       openrgb = {
@@ -186,9 +207,9 @@ in
       openFirewall = true;
     };
     # flatpack
-    flatpak = {
-      enable = true;
-    };
+    #flatpak = {
+    #  enable = true;
+    #};
     # pipewire
     pipewire = {
       enable = true;
@@ -202,7 +223,11 @@ in
     };
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker = {
+      enable = true;
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
@@ -244,12 +269,23 @@ in
       gnomeExtensions.vitals
       mesa
       mesa-demos
+      killall
       dconf2nix
       vulkan-loader
       vulkan-validation-layers
       vulkan-tools
       vulkan-headers
       libstrangle
+      jellyfin
+      jellyfin-web
+      jellyfin-ffmpeg
+      (catppuccin-sddm.override {
+        flavor = "mocha";
+        font = "Noto Sans";
+        fontSize = "9";
+        #background = "${./wallpaper.png}";
+        loginBackground = true;
+      })
     ];
     variables = {
       LIBVA_DRIVER_NAME = "radeonsi";
@@ -267,6 +303,12 @@ in
     };
     dconf = {
       enable = true;
+    };
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage =
+        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
   };
 
