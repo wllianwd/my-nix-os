@@ -269,6 +269,7 @@ in
       gnomeExtensions.vitals
       mesa
       mesa-demos
+      killall
       dconf2nix
       vulkan-loader
       vulkan-validation-layers

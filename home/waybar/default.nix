@@ -1,19 +1,9 @@
 {
   lib,
   pkgs,
-  inputs,
   ...
 }:
 let
-  compileSCSS =
-    name: source:
-    "${
-      pkgs.runCommandLocal name { } ''
-        mkdir -p $out
-        ${lib.getExe pkgs.sassc} -t expanded '${source}' > $out/${name}.css
-      ''
-    }/${name}.css";
-
   vpnStatus = pkgs.writeShellApplication {
     name = "vpnStatus";
     runtimeInputs = with pkgs; [
@@ -46,10 +36,10 @@ in
 
     settings = [
       {
-        #      layer = "top";
-        #      position = "top";
-        #      spacing = 0;
-        #      height = 34;
+        #layer = "top";
+        #position = "top";
+        #spacing = 0;
+        #height = 34;
 
         modules-left = [
           "hyprland/workspaces"
@@ -57,12 +47,10 @@ in
         modules-center = [ "clock" ];
         modules-right = [
           "tray"
-          #"memory"
           "network"
           "custom/vpn"
           "wireplumber"
           "battery"
-          #"custom/power"
           "group/group-power"
         ];
 
@@ -133,8 +121,6 @@ in
           exec = "${lib.getExe vpnStatus}";
           on-click = "rofi-vpn";
           on-click-right = "nmcli connection down id $(nmcli -t -f NAME,TYPE con show --active | grep ':vpn' | cut -d: -f1)";
-          #on-click = "${lib.getExe tsCheck} toggle";
-          #on-click-right = "${lib.getExe tsCheck} exit";
           return-type = "json";
           interval = 1;
         };

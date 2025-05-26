@@ -2,11 +2,11 @@
   pkgs,
   ...
 }:
-
 {
 
   imports = [
     ./hyprlock.nix
+    ./hyprpaper.nix
   ];
 
   home.packages = with pkgs; [
@@ -25,23 +25,17 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    # package = pkgs.hyprland.override ({
-    #   wlroots = null;
-    # });
     plugins = [
       # hyprland-plugins.packages.${pkgs.system}.hyprbars
     ];
 
     settings = {
-      # monitor = ",highrr,auto,1";
       monitor = ",highrr,auto,auto";
       "$mod" = "SUPER";
       "$terminal" = "ghostty";
       "$fileManager" = "nautilus";
       exec-once = [
-        #"nm-applet --indicator"
-        #"blueman-applet"
-        #"waybar"
+        #"hyprpaper"
       ];
       bindm = [
         "$mod, mouse:272, movewindow"
@@ -94,6 +88,5 @@
           )
         );
     };
-
   };
 }

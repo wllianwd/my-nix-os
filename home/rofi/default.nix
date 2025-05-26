@@ -11,7 +11,6 @@
 
   catppuccin.rofi = {
     enable = false;
-    flavor = "mocha";
   };
 
   programs.rofi = {
