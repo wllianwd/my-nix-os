@@ -11,8 +11,8 @@
       "clipboard-read" = "allow";
       "clipboard-write" = "allow";
       "copy-on-select" = false;
-      "window-padding-x" = 20;
-      "window-padding-y" = 20;
+      "window-padding-x" = 10;
+      "window-padding-y" = 10;
       "window-padding-balance" = true;
       "background-opacity" = 0.9;
       "background-blur-radius" = 20;

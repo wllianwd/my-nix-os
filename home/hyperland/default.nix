@@ -1,18 +1,22 @@
 {
-  config,
   pkgs,
-  inputs,
   ...
 }:
 
 {
 
+  imports = [
+    ./hyprlock.nix
+  ];
+
   home.packages = with pkgs; [
-    grimblast
-    #networkmanagerapplet
-    #blueman
+    hyprshot
     nautilus
   ];
+
+  services.swaync = {
+    enable = true;
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -61,7 +65,8 @@
           "$mod, down, movefocus, d"
           "$mod, mouse_down, workspace, e+1"
           "$mod, mouse_up, workspace, e-1"
-          ", Print, exec, grimblast copy area"
+          ", PRINT, exec, hyprshot -m window"
+          "SHIFT, PRINT, exec, hyprshot -m region"
         ]
         ++ (
           # workspaces

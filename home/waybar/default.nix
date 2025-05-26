@@ -13,6 +13,26 @@ let
         ${lib.getExe pkgs.sassc} -t expanded '${source}' > $out/${name}.css
       ''
     }/${name}.css";
+
+  vpnStatus = pkgs.writeShellApplication {
+    name = "vpnStatus";
+    runtimeInputs = with pkgs; [
+      networkmanager
+      coreutils
+      jq
+    ];
+    text = ''
+      set -euo pipefail
+
+      active_vpn="$(nmcli -t -f NAME,TYPE con show --active | grep ':vpn' || true | cut -d: -f1)"
+
+      if [ -n "$active_vpn" ]; then
+        echo "{\"text\": \"🔒\", \"tooltip\": \"VPN active: $active_vpn\", \"class\": \"connected\"}"
+      else
+        echo "{\"text\": \"󰖂\", \"tooltip\": \"No VPN connected\", \"class\": \"disconnected\"}"
+      fi
+    '';
+  };
 in
 {
 
@@ -26,10 +46,10 @@ in
 
     settings = [
       {
-        layer = "top";
-        position = "top";
-        spacing = 0;
-        height = 34;
+        #      layer = "top";
+        #      position = "top";
+        #      spacing = 0;
+        #      height = 34;
 
         modules-left = [
           "hyprland/workspaces"
@@ -39,9 +59,11 @@ in
           "tray"
           #"memory"
           "network"
+          "custom/vpn"
           "wireplumber"
           "battery"
-          "custom/power"
+          #"custom/power"
+          "group/group-power"
         ];
 
         "wlr/taskbar" = {
@@ -79,12 +101,6 @@ in
           };
         };
 
-        memory = {
-          interval = 5;
-          format = "󰍛 {}%";
-          max-length = 10;
-        };
-
         tray = {
           spacing = 10;
         };
@@ -105,17 +121,22 @@ in
             "󰤨"
           ];
           format-ethernet = "󰀂";
-          format-alt = "󱛇";
           format-disconnected = "󰖪";
-          tooltip-format-wifi = "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
-          tooltip-format-ethernet = "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
-          tooltip-format-disconnected = "Disconnected";
-          #on-click = "~/.config/rofi/wifi/wifi.sh &";
-          #on-click = "nm-connection-editor";
-          #on-click = "nmtui";
-          #on-click-right = "~/.config/rofi/wifi/wifinew.sh &";
+          tooltip-format = "{ifname} / {essid} ({signalStrength}%) / {ipaddr}";
+          on-click = "${pkgs.rofi-network-manager}/bin/rofi-network-manager";
           interval = 5;
           nospacing = 1;
+        };
+
+        "custom/vpn" = {
+          format = "{}";
+          exec = "${lib.getExe vpnStatus}";
+          on-click = "rofi-vpn";
+          on-click-right = "nmcli connection down id $(nmcli -t -f NAME,TYPE con show --active | grep ':vpn' | cut -d: -f1)";
+          #on-click = "${lib.getExe tsCheck} toggle";
+          #on-click-right = "${lib.getExe tsCheck} exit";
+          return-type = "json";
+          interval = 1;
         };
 
         wireplumber = {
@@ -173,15 +194,47 @@ in
           tooltip = false;
         };
 
-        "custom/power" = {
-          format = "󰤆";
+        "group/group-power" = {
+          orientation = "inherit";
+          drawer = {
+            transition-duration = 500;
+            transition-left-to-right = false;
+          };
+          modules = [
+            "custom/power"
+            "custom/quit"
+            "custom/lock"
+            "custom/reboot"
+          ];
+        };
+
+        "custom/quit" = {
+          format = "󰗼";
+          on-click = "${pkgs.hyprland}/bin/hyprctl dispatch exit";
           tooltip = false;
-          on-click = "~/.config/rofi/powermenu/type-2/powermenu.sh &";
+        };
+
+        "custom/lock" = {
+          format = "󰍁";
+          on-click = "${pkgs.hyprlock}/bin/hyprlock";
+          tooltip = false;
+        };
+
+        "custom/reboot" = {
+          format = "󰜉";
+          on-click = "${pkgs.systemd}/bin/systemctl reboot";
+          tooltip = false;
+        };
+
+        "custom/power" = {
+          format = "";
+          on-click = "${pkgs.systemd}/bin/systemctl poweroff";
+          tooltip = false;
         };
       }
     ];
   };
 
-  programs.waybar.style = builtins.readFile (compileSCSS "waybar-style" ./waybar.scss);
+  programs.waybar.style = builtins.readFile ./waybar.scss;
 
 }
