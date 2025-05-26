@@ -198,25 +198,29 @@ in
         "custom/quit" = {
           format = "󰗼";
           on-click = "${pkgs.hyprland}/bin/hyprctl dispatch exit";
-          tooltip = false;
+          tooltip = true;
+          tooltip-format = "Logout";
         };
 
         "custom/lock" = {
           format = "󰍁";
           on-click = "${pkgs.hyprlock}/bin/hyprlock";
-          tooltip = false;
+          tooltip = true;
+          tooltip-format = "Lock";
         };
 
         "custom/reboot" = {
           format = "󰜉";
           on-click = "${pkgs.systemd}/bin/systemctl reboot";
-          tooltip = false;
+          tooltip = true;
+          tooltip-format = "Reboot";
         };
 
         "custom/power" = {
           format = "";
           on-click = "${pkgs.systemd}/bin/systemctl poweroff";
-          tooltip = false;
+          tooltip = true;
+          tooltip-format = "Power off";
         };
 
       }

@@ -30,6 +30,10 @@
     ];
 
     settings = {
+      general = {
+        allow_tearing = true;
+      };
+
       monitor = ",highrr,auto,auto";
       "$mod" = "SUPER";
       "$terminal" = "ghostty";
