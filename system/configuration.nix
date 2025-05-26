@@ -153,35 +153,37 @@ in
       #};
       sddm = {
         enable = true;
+        package = pkgs.kdePackages.sddm;
+        theme = "catppuccin-mocha";
         wayland = {
           enable = true;
         };
       };
     };
-    #xserver = {
-    # enable = true;
-    #xkb = {
-    #  layout = "us";
-    #  variant = "altgr-intl";
-    #};
-    # gnome
+    xserver = {
+      # enable = true;
+      xkb = {
+        layout = "us";
+        variant = "altgr-intl";
+      };
+      # gnome
 
-    #displayManager = {
-    #gdm = {
-    #  enable = true;
-    #};
-    # sddm = {
-    #  enable = true;
-    #  wayland.enable = true;
+      #displayManager = {
+      #gdm = {
+      #  enable = true;
+      #};
+      # sddm = {
+      #  enable = true;
+      #  wayland.enable = true;
 
-    #};
-    # };
-    #desktopManager = {
-    #  gnome = {
-    #    enable = true;
-    #  };
-    #};
-    #};
+      #};
+      # };
+      #desktopManager = {
+      #  gnome = {
+      #    enable = true;
+      #  };
+      #};
+    };
     hardware = {
       openrgb = {
         enable = true;
@@ -276,6 +278,13 @@ in
       jellyfin
       jellyfin-web
       jellyfin-ffmpeg
+      (catppuccin-sddm.override {
+        flavor = "mocha";
+        font = "Noto Sans";
+        fontSize = "9";
+        #background = "${./wallpaper.png}";
+        loginBackground = true;
+      })
     ];
     variables = {
       LIBVA_DRIVER_NAME = "radeonsi";
