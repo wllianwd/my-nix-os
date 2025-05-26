@@ -62,15 +62,27 @@ window#waybar.hidden {
   color: @crust;
 }
 
+#bluetooth.disabled, #bluetooth.off {
+    color: @red;
+}
+
+#bluetooth.on {
+    color: @white;
+}
+
+#bluetooth.connected {
+    color: @green;
+}
+
+#bluetooth.discovering {
+    color: @yellow;
+}
+
 #custom-vpn.tailnet {
     color: @blue;
     background-color: transparent;
 }
 #custom-vpn.connected {
-    color: @blue;
-    background-color: transparent;
-}
-#custom-vpn.exitNode {
     color: @green;
     background-color: transparent;
 }
@@ -114,10 +126,6 @@ window#waybar.hidden {
 
 #wireplumber {
   background-color: @yellow;
-}
-
-#bluetooth.off {
-    color: @orange;
 }
 
 #wireplumber.muted {

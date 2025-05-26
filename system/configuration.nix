@@ -23,6 +23,10 @@ in
         libvdpau-va-gl
       ];
     };
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
   };
 
   nixpkgs = {
@@ -138,6 +142,10 @@ in
     # Disabled to use pipewire
     pulseaudio = {
       enable = false;
+    };
+    # bluetooth
+    blueman = {
+      enable = true;
     };
     # jellyfin
     jellyfin = {

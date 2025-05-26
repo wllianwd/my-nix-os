@@ -5,6 +5,23 @@
 }:
 let
   global = import ../../global.nix;
+
+  bluetoothToggle = pkgs.writeShellApplication {
+    name = "bluetooth-toggle";
+    runtimeInputs = with pkgs; [
+      gnugrep
+      bluez
+    ];
+    text = ''
+      if [[ "$(bluetoothctl show | grep -Po "Powered: \K(.+)$")" =~ no ]]; then
+        bluetoothctl power on
+        bluetoothctl discoverable on
+      else
+        bluetoothctl power off
+      fi
+    '';
+  };
+
   vpnStatus = pkgs.writeShellApplication {
     name = "vpnStatus";
     runtimeInputs = with pkgs; [
@@ -18,7 +35,7 @@ let
       active_vpn="$(nmcli -t -f NAME,TYPE con show --active | grep ':vpn' || true | cut -d: -f1)"
 
       if [ -n "$active_vpn" ]; then
-        echo "{\"text\": \"🔒\", \"tooltip\": \"VPN active: $active_vpn\", \"class\": \"connected\"}"
+        echo "{\"text\": \"󰖂\", \"tooltip\": \"VPN active: $active_vpn\", \"class\": \"connected\"}"
       else
         echo "{\"text\": \"󰖂\", \"tooltip\": \"No VPN connected\", \"class\": \"disconnected\"}"
       fi
@@ -51,6 +68,7 @@ in
           "network"
           "custom/vpn"
           "wireplumber"
+          "bluetooth"
           "battery"
           "group/group-power"
         ];
@@ -142,6 +160,15 @@ in
           };
           on-click = "pamixer -t";
           scroll-step = 1;
+        };
+
+        bluetooth = {
+          format-on = "";
+          format-connected = "{device_alias} ";
+          format-off = "";
+          format-disabled = "";
+          on-click-right = "${lib.getExe' pkgs.blueberry "blueberry"}";
+          on-click = "${lib.getExe bluetoothToggle}";
         };
 
         battery = {
