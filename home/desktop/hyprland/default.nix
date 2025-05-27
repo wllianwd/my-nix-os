@@ -61,6 +61,8 @@
           "$mod, R, exec, rofi -show combi"
           "$mod, E, exec, $fileManager"
           "$mod, C, killactive,"
+          "$mod, F, fullscreen, 1"
+          "$mod SHIFT, F, fullscreen, 0"
           "$mod, Enter, exec, ghostty"
           "$mod, left, movefocus, l"
           "$mod, right, movefocus, r"
