@@ -8,7 +8,6 @@ in
   home.homeDirectory = "${global.homeDirectory}";
 
   imports = [
-    ./dconf
     ./ragenix
     ./ssh
     ./git
@@ -17,12 +16,9 @@ in
     ./ghostty
     ./nvf
     ./java
-    ./waybar
-    ./rofi
-    ./hyperland
     ./zed
     ./idea
-    ./catppuccin
+    ./desktop
   ];
 
   # Packages that should be installed to the user profile.

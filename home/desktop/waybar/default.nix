@@ -4,7 +4,6 @@
   ...
 }:
 let
-  global = import ../../global.nix;
 
   bluetoothToggle = pkgs.writeShellApplication {
     name = "bluetooth-toggle";
@@ -54,11 +53,6 @@ in
 
     settings = [
       {
-        #layer = "top";
-        #position = "top";
-        #spacing = 0;
-        #height = 34;
-
         modules-left = [
           "hyprland/workspaces"
         ];

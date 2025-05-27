@@ -4,14 +4,17 @@
 }:
 {
 
-  imports = [
-    ./hyprlock.nix
-    ./hyprpaper.nix
-  ];
-
   home.packages = with pkgs; [
     hyprshot
     nautilus
+    nwg-look
+    catppuccin-gtk
+  ];
+
+  imports = [
+    ./hyprlock.nix
+    ./hyprpaper.nix
+    ./compatibility/gtk.nix
   ];
 
   services = {
