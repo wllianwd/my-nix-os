@@ -6,9 +6,6 @@
 
   home.packages = with pkgs; [
     hyprshot
-    nautilus
-    nwg-look
-    catppuccin-gtk
   ];
 
   imports = [
