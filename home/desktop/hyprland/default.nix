@@ -9,9 +9,9 @@
   ];
 
   imports = [
+    ./compatibility
     ./hyprlock.nix
     ./hyprpaper.nix
-    ./compatibility/gtk.nix
   ];
 
   services = {
