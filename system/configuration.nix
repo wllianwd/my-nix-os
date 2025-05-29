@@ -109,6 +109,7 @@ in
       pkgs.nerd-fonts.droid-sans-mono
       pkgs.nerd-fonts.jetbrains-mono
       pkgs.nerd-fonts.meslo-lg
+      pkgs.dejavu_fonts
     ];
   };
 
@@ -156,9 +157,6 @@ in
     };
     # X11
     displayManager = {
-      #gdm = {
-      #  enable = true;
-      #};
       sddm = {
         enable = true;
         package = pkgs.kdePackages.sddm;
@@ -169,28 +167,10 @@ in
       };
     };
     xserver = {
-      # enable = true;
       xkb = {
         layout = "us";
         variant = "altgr-intl";
       };
-      # gnome
-
-      #displayManager = {
-      #gdm = {
-      #  enable = true;
-      #};
-      # sddm = {
-      #  enable = true;
-      #  wayland.enable = true;
-
-      #};
-      # };
-      #desktopManager = {
-      #  gnome = {
-      #    enable = true;
-      #  };
-      #};
     };
     hardware = {
       openrgb = {
@@ -214,10 +194,6 @@ in
       nssmdns4 = true;
       openFirewall = true;
     };
-    # flatpack
-    #flatpak = {
-    #  enable = true;
-    #};
     # pipewire
     pipewire = {
       enable = true;
@@ -271,10 +247,6 @@ in
       liquidctl
       usbutils
       appimage-run
-      gnome-tweaks
-      gnomeExtensions.appindicator
-      gnomeExtensions.gsconnect
-      gnomeExtensions.vitals
       mesa
       mesa-demos
       killall
@@ -289,9 +261,9 @@ in
       jellyfin-ffmpeg
       (catppuccin-sddm.override {
         flavor = "mocha";
-        font = "Noto Sans";
+        font = "DejaVu Sans";
         fontSize = "9";
-        #background = "${./wallpaper.png}";
+        background = "${../assets/backgrounds/shaded.png}";
         loginBackground = true;
       })
     ];

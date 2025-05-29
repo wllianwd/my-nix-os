@@ -3,7 +3,7 @@
 }:
 {
   imports = [
-    ./catppuccin
+    ./stylix
     ./hyprland
     ./rofi
     ./waybar

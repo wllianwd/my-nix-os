@@ -51,12 +51,17 @@ in
     enable = true;
     systemd.enable = true;
 
+    style = builtins.readFile ./waybar.scss;
+
     settings = [
       {
         modules-left = [
+          "group/group-power"
+          "clock"
+        ];
+        modules-center = [
           "hyprland/workspaces"
         ];
-        modules-center = [ "clock" ];
         modules-right = [
           "tray"
           "network"
@@ -64,7 +69,6 @@ in
           "wireplumber"
           "bluetooth"
           "battery"
-          "group/group-power"
         ];
 
         "wlr/taskbar" = {
@@ -77,29 +81,19 @@ in
         };
 
         "hyprland/workspaces" = {
-          on-click = "activate";
           format = "{icon}";
+          on-click = "activate";
           format-icons = {
-            default = "";
             "1" = "1";
             "2" = "2";
             "3" = "3";
             "4" = "4";
             "5" = "5";
-            "6" = "6";
-            "7" = "7";
-            "8" = "8";
-            "9" = "9";
-            active = "󱓻";
-            urgent = "󱓻";
+            urgent = "";
+            active = "";
+            default = "";
           };
-          persistent_workspaces = {
-            "1" = [ ];
-            "2" = [ ];
-            "3" = [ ];
-            "4" = [ ];
-            "5" = [ ];
-          };
+          sort-by-number = true;
         };
 
         tray = {
@@ -107,9 +101,28 @@ in
         };
 
         clock = {
-          tooltip-format = "{calendar}";
-          format-alt = "  {:%a, %d %b %Y}";
-          format = "  {:%I:%M %p}";
+          format = "{:%H:%M}  ";
+          format-alt = "{:%A, %B %d, %Y (%R)}  ";
+          tooltip-format = "<tt><small>{calendar}</small></tt>";
+          calendar = {
+            mode = "year";
+            mode-mon-col = 3;
+            weeks-pos = "right";
+            on-scroll = 1;
+            format = {
+              months = "<span color='#f2cdcd'><b>{}</b></span>";
+              days = "<span color='#bac2de'><b>{}</b></span>";
+              weeks = "<span color='#94e2d5'><b>W{}</b></span>";
+              weekdays = "<span color='#cba6f7'><b>{}</b></span>";
+              today = "<span color='#89b4fa'><b><u>{}</u></b></span>";
+            };
+          };
+          actions = {
+            on-click-right = "mode";
+            on-scroll-up = "shift_up";
+            on-scroll-down = "shift_down";
+          };
+
         };
 
         network = {
@@ -206,7 +219,6 @@ in
           orientation = "inherit";
           drawer = {
             transition-duration = 500;
-            transition-left-to-right = false;
           };
           modules = [
             "custom/power"
@@ -247,7 +259,5 @@ in
       }
     ];
   };
-
-  programs.waybar.style = builtins.readFile ./waybar.scss;
 
 }

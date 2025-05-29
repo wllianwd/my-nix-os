@@ -9,15 +9,11 @@
     rofi-network-manager
   ];
 
-  catppuccin.rofi = {
-    enable = false;
-  };
-
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
     terminal = "${pkgs.ghostty}/bin/ghostty";
-    theme = ./theme.rafi;
+    #theme = ./theme.rafi;
 
     extraConfig = {
       modi = "drun";

@@ -16,10 +16,13 @@ let
 
   # The git info
   gitEmail = "willian.wd@gmail.com";
-  gitUserName = "Williann Dallastella";
+  gitUserName = "Willian Dallastella";
 
   # Temp dir used by nixos
   nixosUserTempDir = builtins.getEnv "TMPDIR";
+
+  # Stylix theme
+  stylixTheme = "catppuccin-mocha";
 
 in
 {
@@ -32,4 +35,5 @@ in
   gitEmail = gitEmail;
   gitUserName = gitUserName;
   nixosUserTempDir = nixosUserTempDir;
+  stylixTheme = stylixTheme;
 }

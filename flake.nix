@@ -16,8 +16,13 @@
     # hyperland
     hyprland.url = "github:hyprwm/Hyprland";
 
-    # catppuccin
-    catppuccin.url = "github:catppuccin/nix";
+    # stylix
+    stylix.url = "github:danth/stylix";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # theme
+    tinted-schemes.flake = false;
+    tinted-schemes.url = "github:tinted-theming/schemes";
 
     # agenix
     ragenix.url = "github:yaxitech/ragenix";
@@ -37,7 +42,8 @@
       nvf,
       nur,
       hyprland,
-      catppuccin,
+      stylix,
+      tinted-schemes,
     }:
     let
       global = import ./global.nix;
@@ -63,7 +69,7 @@
             home-manager.sharedModules = [
               ragenix.homeManagerModules.default
               nvf.homeManagerModules.default
-              catppuccin.homeModules.catppuccin
+              stylix.homeModules.stylix
             ];
 
             # home-manager specific

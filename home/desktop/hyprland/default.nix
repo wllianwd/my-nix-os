@@ -11,7 +11,6 @@
   imports = [
     ./compatibility
     ./hyprlock.nix
-    ./hyprpaper.nix
   ];
 
   services = {
