@@ -19,6 +19,8 @@
     # stylix
     stylix.url = "github:danth/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
+    stylix.inputs.home-manager.follows = "home-manager";
+    stylix.inputs.tinted-schemes.follows = "tinted-schemes";
 
     # theme
     tinted-schemes.flake = false;

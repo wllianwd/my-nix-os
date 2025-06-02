@@ -3,12 +3,12 @@
 {
 
   nixpkgs = {
-    config = {
-      permittedInsecurePackages = [
-        "electron-19.1.9"
-        "python3.12-youtube-dl-2021.12.17"
-      ];
-    };
+    #config = {
+    #  permittedInsecurePackages = [
+    #    "electron-19.1.9"
+    #    "python3.12-youtube-dl-2021.12.17"
+    #  ];
+    #};
     overlays = [
       nur.overlays.default
       (

@@ -33,7 +33,10 @@
         allow_tearing = true;
       };
 
-      monitor = ",highrr,auto,auto";
+      monitor = [
+        "DP-1,highrr,auto,auto"
+        "DP-2,highrr,auto,auto"
+      ];
       "$mod" = "SUPER";
       "$terminal" = "ghostty";
       "$fileManager" = "nautilus";
