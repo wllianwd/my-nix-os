@@ -24,6 +24,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+
     plugins = [
       # hyprland-plugins.packages.${pkgs.system}.hyprbars
     ];
@@ -31,6 +32,9 @@
     settings = {
       general = {
         allow_tearing = true;
+        gaps_in = 4;
+        gaps_out = 8;
+        border_size = 0;
       };
 
       monitor = [

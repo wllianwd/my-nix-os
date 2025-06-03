@@ -50,8 +50,7 @@ in
   programs.waybar = {
     enable = true;
     systemd.enable = true;
-
-    style = builtins.readFile ./waybar.scss;
+    style = lib.mkAfter (builtins.readFile ./waybar.scss);
 
     settings = [
       {
@@ -122,7 +121,6 @@ in
             on-scroll-up = "shift_up";
             on-scroll-down = "shift_down";
           };
-
         };
 
         network = {
