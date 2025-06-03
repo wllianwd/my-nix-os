@@ -1,17 +1,35 @@
 window#waybar {
-  background-color: transparent;
+  background-color: transparent; /* Main window container is transparent */
   transition-property: background-color;
   transition-duration: 0.3s;
+  /* Optional: Add padding if you want the bars to be inset from all screen edges */
+  /* padding: 5px; */
 }
 
 window#waybar.hidden {
   opacity: 0.5;
 }
 
-#workspaces {
-  background-color: transparent;
+/* Style for the three main module containers (the floating bars) */
+.modules-left,
+.modules-center,
+.modules-right {
+  /* Using a semi-transparent gray.
+     Replace rgba(69, 71, 90, 0.7) with your preferred gray.
+     This example uses Catppuccin Mocha's @base03 (#45475a) with 70% opacity.
+     A generic gray would be something like rgba(128, 128, 128, 0.7). */
+  background-color: rgba(69, 71, 90, 0.5); /* Adjust color and opacity (0.0 to 1.0) as needed */
+  border-radius: 12px;      /* Adjust for desired roundness */
+  margin: 5px;              /* Space around each bar, making them "float" */
+  padding: 2px 8px;         /* Inner padding for the bar, around the modules */
 }
 
+#workspaces {
+  background-color: transparent;
+  /* Buttons inside workspaces already have border-bottom: none; which is good. */
+}
+
+/* Ensure workspace buttons don't have conflicting styles */
 .modules-left #workspaces button,
 .modules-left #workspaces button.focused,
 .modules-left #workspaces button.active,
@@ -21,9 +39,13 @@ window#waybar.hidden {
 .modules-right #workspaces button,
 .modules-right #workspaces button.focused,
 .modules-right #workspaces button.active {
-    border-bottom: none;
+  border-bottom: none;
+  /* You might want to add a small margin to workspace buttons if they feel too cramped, e.g., margin: 0 2px; */
 }
 
+/* Individual module styling */
+/* Ensure their backgrounds are transparent to show the new bar background. */
+/* Adjust margins and paddings to fit nicely within the new bars. */
 #memory,
 #bluetooth,
 #battery,
@@ -37,44 +59,51 @@ window#waybar.hidden {
 #custom-reboot,
 #custom-vpn,
 #tray {
-  border-radius: 4px;
-  margin: 6px 3px;
-  padding: 6px 12px;
+  background-color: transparent; /* Important: individual modules are transparent */
+  border-radius: 4px;            /* Optional: slight rounding for modules inside the bar */
+  margin: 4px 3px;               /* Margin between modules within the bar */
+  padding: 4px 8px;              /* Padding within each module item */
 }
 
+/* Your existing color definitions for states - these should remain to color icons/text */
 #bluetooth.disabled, #bluetooth.off {
-    color: @base08;
+  color: @base08;
 }
 
 #bluetooth.on {
-    color: @base06;
+  color: @base06;
 }
 
 #bluetooth.connected {
-    color: @base0B;
+  color: @base0B;
 }
 
 #bluetooth.discovering {
-    color: @base0A;
+  color: @base0A;
 }
 
+/* Custom VPN styling - already has transparent background, which is good */
 #custom-vpn.tailnet {
-    color: @base0D;
-    background-color: transparent;
+  color: @base0D;
+  background-color: transparent;
 }
 #custom-vpn.connected {
-    color: @base0B;
-    background-color: transparent;
+  color: @base0B;
+  background-color: transparent;
 }
 #custom-vpn.disconnected {
-    color: @base08;
-    background-color: transparent;
+  color: @base08;
+  background-color: transparent;
 }
+
+/* Custom power control buttons - already have transparent background, good */
 #custom-power {
-    color: @base08;
-    background-color: transparent;
+  color: @base08; /* This is red. Adjust if you prefer a different color for the power icon. */
+  background-color: transparent;
 }
 #custom-quit, #custom-lock, #custom-reboot {
-    color: @base08;
-    background-color: transparent;
+  /* These are also styled with @base08 (red).
+     If they aren't meant as warnings, consider a more neutral color like @base05 (Text) */
+  color: @base08;
+  background-color: transparent;
 }
