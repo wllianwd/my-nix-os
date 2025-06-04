@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -26,7 +27,7 @@
     enable = true;
 
     plugins = [
-      # hyprland-plugins.packages.${pkgs.system}.hyprbars
+      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
     ];
 
     settings = {

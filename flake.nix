@@ -15,6 +15,8 @@
 
     # hyperland
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
+    hyprland-plugins.inputs.hyprland.follows = "hyprland";
 
     # stylix
     stylix.url = "github:danth/stylix";
@@ -44,6 +46,7 @@
       nvf,
       nur,
       hyprland,
+      hyprland-plugins,
       stylix,
       tinted-schemes,
     }:
