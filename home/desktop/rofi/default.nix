@@ -36,7 +36,7 @@
         window = {
           height = 600;
           width = 600;
-          border = 3;
+          border = 0;
           border-radius = 10;
         };
 
@@ -59,41 +59,7 @@
 
         listview = {
           padding = 8;
-          border-radius = [
-            0
-            0
-            10
-            10
-          ];
-          border = [
-            2
-            2
-            2
-            2
-          ];
           dynamic = false;
-        };
-
-        textbox = {
-          background-color = "inherit";
-        };
-
-        error-message = {
-          border = [
-            20
-            20
-            20
-            20
-          ];
-        };
-
-        prompt = {
-          margin = [
-            0
-            10
-            0
-            0
-          ];
         };
 
         element = {
@@ -104,23 +70,12 @@
 
         element-text = {
           size = 40;
-          margin = [
-            0
-            10
-            0
-            0
-          ];
+          padding = 10;
           vertical-align = "center";
         };
 
         element-icon = {
           size = 40;
-          margin = [
-            0
-            10
-            0
-            0
-          ];
           vertical-align = "center";
         };
       };
