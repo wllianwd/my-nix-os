@@ -1,6 +1,4 @@
-# Nix configuration for MacBook
-
-A basic MacBook nix configuration.
+# Nix configuration
 
 ## Installing Nix
 
