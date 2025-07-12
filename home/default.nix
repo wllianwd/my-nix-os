@@ -26,10 +26,12 @@ in
     kubectl
     mob
     docker
+    kubernetes-helm
     #colima
     #docker-compose
     wofi
     #    dolphin
+    gemini-cli
     xournalpp
     hoppscotch
     maven

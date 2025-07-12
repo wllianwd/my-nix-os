@@ -68,6 +68,9 @@ in
   networking = {
     useDHCP = false;
     hostName = "nixos";
+    extraHosts = ''
+      192.168.50.147 homelab.local
+    '';
     networkmanager = {
       enable = true;
     };
@@ -210,6 +213,7 @@ in
   virtualisation = {
     docker = {
       enable = true;
+      extraOptions = "--insecure-registry=homelab.local:30700";
     };
   };
 

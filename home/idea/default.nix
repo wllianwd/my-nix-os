@@ -55,7 +55,7 @@ let
 in
 {
   home.packages = with pkgs; [
-    (jetbrains.plugins.addPlugins jetbrains.idea-ultimate downloadedPlugins)
+    (jetbrains.plugins.addPlugins jetbrains.idea-community downloadedPlugins)
   ];
 
   home.file.".ideavimrc".text = builtins.readFile ./.ideavimrc;
