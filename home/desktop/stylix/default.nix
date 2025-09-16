@@ -17,7 +17,7 @@ in
       applications = 0.7;
       popups = 0.9;
       terminal = 0.8;
-      desktop = 0.5;
+      desktop = 0.7;
     };
   };
 

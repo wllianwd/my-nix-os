@@ -50,6 +50,7 @@ in
     ragenix
     google-chrome
     slack
+    supabase-cli
     zoom-us
     age
     ripgrep
@@ -93,7 +94,11 @@ in
     discord
     vlc
     neofetch
+    udiskie
     google-chrome
+    gimp
+    sweethome3d.application
+    #sweethome3d
   ];
 
   programs.home-manager.enable = true;

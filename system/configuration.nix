@@ -73,6 +73,9 @@ in
     '';
     networkmanager = {
       enable = true;
+      plugins = [
+        pkgs.networkmanager-openvpn
+      ];
     };
     firewall = {
       enable = true;
@@ -143,6 +146,12 @@ in
 
   # Services
   services = {
+    udisks2 = {
+      enable = true;
+    };
+    gvfs = {
+      enable = true;
+    };
     # Disabled to use pipewire
     pulseaudio = {
       enable = false;
@@ -267,7 +276,7 @@ in
         flavor = "mocha";
         font = "DejaVu Sans";
         fontSize = "9";
-        background = "${../assets/backgrounds/shaded.png}";
+        #  background = "${../assets/backgrounds/shaded.png}";
         loginBackground = true;
       })
     ];

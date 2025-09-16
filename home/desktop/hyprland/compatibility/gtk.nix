@@ -5,8 +5,8 @@
 {
 
   home.packages = with pkgs; [
-    nautilus
-    catppuccin-gtk
+    #nautilus
+    #catppuccin-gtk
   ];
 
   gtk = {
