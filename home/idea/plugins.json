@@ -15,16 +15,16 @@
   },
   {
     "id": 20540,
-    "version": "2.6.7",
-    "url": "https://downloads.marketplace.jetbrains.com/files/20540/854114/codeium-2.6.7.zip",
-    "hash": "sha256-dBt3sa3ppDoRK21q13WUk2lN+UzepBjT/DNIDbIEoTo=",
+    "version": "2.6.8",
+    "url": "https://downloads.marketplace.jetbrains.com/files/20540/859471/codeium-2.6.8.zip",
+    "hash": "sha256-PswBb0MtKsE3/qP8XJ75pq4ieqBkCpxTOSGsYKegkDE=",
     "name": "Windsurf Plugin (formerly Codeium) for Python, JS, Java, Go..."
   },
   {
     "id": 22857,
-    "version": "253.20558.12",
-    "url": "https://downloads.marketplace.jetbrains.com/files/22857/858489/vcs-gitlab-253.20558.12.zip",
-    "hash": "sha256-StK8EYx/daQbNWQs3qgmFuOECIhdP5lQWRUrrseUGvk=",
+    "version": "253.20558.43",
+    "url": "https://downloads.marketplace.jetbrains.com/files/22857/861649/vcs-gitlab-253.20558.43.zip",
+    "hash": "sha256-RUWppglzf11K1KHK1mV72/55FqDah9pHbaytX+5mwow=",
     "name": "GitLab"
   },
   {
@@ -36,9 +36,9 @@
   },
   {
     "id": 21704,
-    "version": "253.17525.95",
-    "url": "https://downloads.marketplace.jetbrains.com/files/21704/857485/bigdatatools-kafka-253.17525.95.zip",
-    "hash": "sha256-rtBQq2uy+qL9gXULTbDqhdCYWc9Ui3Twuhl8OdaJiV0=",
+    "version": "253.20558.43",
+    "url": "https://downloads.marketplace.jetbrains.com/files/21704/861562/bigdatatools-kafka-253.20558.43.zip",
+    "hash": "sha256-ksEFx3mRsSpiskn8OtCROeQKsDrMzSGGLzJWNikvB5o=",
     "name": "Kafka"
   }
 ]

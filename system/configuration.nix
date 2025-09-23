@@ -276,7 +276,7 @@ in
         flavor = "mocha";
         font = "DejaVu Sans";
         fontSize = "9";
-        #  background = "${../assets/backgrounds/shaded.png}";
+        #background = "${../assets/backgrounds/shaded.png}";
         loginBackground = true;
       })
     ];
