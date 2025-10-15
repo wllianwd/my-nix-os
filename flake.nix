@@ -28,6 +28,10 @@
     tinted-schemes.flake = false;
     tinted-schemes.url = "github:tinted-theming/schemes";
 
+    # caelestia
+    caelestia-shell.url = "github:caelestia-dots/shell";
+    caelestia-shell.inputs.nixpkgs.follows = "nixpkgs";
+
     # agenix
     ragenix.url = "github:yaxitech/ragenix";
     ragenix.inputs.nixpkgs.follows = "nixpkgs";
@@ -49,6 +53,7 @@
       hyprland-plugins,
       stylix,
       tinted-schemes,
+      caelestia-shell,
     }:
     let
       global = import ./global.nix;
@@ -75,6 +80,7 @@
               ragenix.homeManagerModules.default
               nvf.homeManagerModules.default
               stylix.homeModules.stylix
+              inputs.caelestia-shell.homeManagerModules.default
             ];
 
             # home-manager specific

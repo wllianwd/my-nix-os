@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 {
@@ -46,7 +45,7 @@
       "$terminal" = "ghostty";
       "$fileManager" = "nautilus";
       exec-once = [
-        #"hyprpaper"
+        "hyprpaper"
       ];
       bindm = [
         "$mod, mouse:272, movewindow"
@@ -60,46 +59,46 @@
         ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
         ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5"
       ];
-      bind =
-        [
-          "$mod, Q, exec, ghostty"
-          "$mod, B, exec, google-chrome-stable"
-          "$mod, R, exec, rofi -show drun"
-          "$mod, R, exec, rofi -show combi"
-          "$mod, E, exec, $fileManager"
-          "$mod, C, killactive,"
-          "$mod, F, fullscreen, 1"
-          "$mod SHIFT, F, fullscreen, 0"
-          "$mod, Enter, exec, ghostty"
-          "$mod, left, movefocus, l"
-          "$mod, right, movefocus, r"
-          "$mod, up, movefocus, u"
-          "$mod, down, movefocus, d"
-          "$mod, mouse_down, workspace, e+1"
-          "$mod, mouse_up, workspace, e-1"
-          ", PRINT, exec, hyprshot -m window"
-          "SHIFT, PRINT, exec, hyprshot -m region"
-        ]
-        ++ (
-          # workspaces
-          # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-          builtins.concatLists (
-            builtins.genList (
-              x:
-              let
-                ws =
-                  let
-                    c = (x + 1) / 10;
-                  in
-                  builtins.toString (x + 1 - (c * 10));
-              in
-              [
-                "$mod, ${ws}, workspace, ${toString (x + 1)}"
-                "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-              ]
-            ) 10
-          )
-        );
+      bind = [
+        "$mod, Q, exec, ghostty"
+        "$mod, B, exec, google-chrome-stable"
+        "$mod, R, exec, caelestia shell drawers toggle launcher"
+        #"$mod, R, exec, rofi -show drun"
+        #"$mod, R, exec, rofi -show combi"
+        "$mod, E, exec, $fileManager"
+        "$mod, C, killactive,"
+        "$mod, F, fullscreen, 1"
+        "$mod SHIFT, F, fullscreen, 0"
+        "$mod, Enter, exec, ghostty"
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
+        "$mod, mouse_down, workspace, e+1"
+        "$mod, mouse_up, workspace, e-1"
+        ", PRINT, exec, hyprshot -m window"
+        "SHIFT, PRINT, exec, hyprshot -m region"
+      ]
+      ++ (
+        # workspaces
+        # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
+        builtins.concatLists (
+          builtins.genList (
+            x:
+            let
+              ws =
+                let
+                  c = (x + 1) / 10;
+                in
+                builtins.toString (x + 1 - (c * 10));
+            in
+            [
+              "$mod, ${ws}, workspace, ${toString (x + 1)}"
+              "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+            ]
+          ) 10
+        )
+      );
     };
   };
 }

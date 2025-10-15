@@ -6,6 +6,7 @@
     ./stylix
     ./hyprland
     ./rofi
-    ./waybar
+    ./caelestia
+    #./waybar
   ];
 }
