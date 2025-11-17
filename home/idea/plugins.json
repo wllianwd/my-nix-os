@@ -15,16 +15,16 @@
   },
   {
     "id": 20540,
-    "version": "2.8.5",
-    "url": "https://downloads.marketplace.jetbrains.com/files/20540/874978/codeium-2.8.5.zip",
-    "hash": "sha256-M/gaAyChH5sjmXvFpt4d/mOJRiQxzSxYQH8x3wZ3afs=",
+    "version": "2.10.0",
+    "url": "https://downloads.marketplace.jetbrains.com/files/20540/891967/codeium-2.10.0.zip",
+    "hash": "sha256-6rHZWxl5swlXdkbqFYVGARS5aXnUshj+M/C9XBRVC1o=",
     "name": "Windsurf Plugin (formerly Codeium) for Python, JS, Java, Go..."
   },
   {
     "id": 22857,
-    "version": "253.25908.20",
-    "url": "https://downloads.marketplace.jetbrains.com/files/22857/874927/vcs-gitlab-253.25908.20.zip",
-    "hash": "sha256-i6aDgPoKhU1YFW6v4mFEHgjQ5hw8Uje3Mz6Ip3hP48s=",
+    "version": "253.28294.90",
+    "url": "https://downloads.marketplace.jetbrains.com/files/22857/891754/vcs-gitlab-253.28294.90.zip",
+    "hash": "sha256-U6aCeCUS7aq8NqeE1mRT1svmg4PhFMdHvQik+RauN5M=",
     "name": "GitLab"
   },
   {

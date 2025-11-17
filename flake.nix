@@ -18,6 +18,10 @@
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
     hyprland-plugins.inputs.hyprland.follows = "hyprland";
 
+    # niri
+    #niri.url = "github:sodiboo/niri-flake";
+    #niri.inputs.nixpkgs.follows = "nixpkgs";
+
     # stylix
     stylix.url = "github:danth/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
@@ -28,9 +32,21 @@
     tinted-schemes.flake = false;
     tinted-schemes.url = "github:tinted-theming/schemes";
 
+    # material shell
+    dms-cli.url = "github:AvengeMedia/danklinux";
+    dms-cli.inputs.nixpkgs.follows = "nixpkgs";
+
+    dgop.url = "github:AvengeMedia/dgop";
+    dgop.inputs.nixpkgs.follows = "nixpkgs";
+
+    dankMaterialShell.url = "github:AvengeMedia/DankMaterialShell";
+    dankMaterialShell.inputs.nixpkgs.follows = "nixpkgs";
+    dankMaterialShell.inputs.dgop.follows = "dgop";
+    dankMaterialShell.inputs.dms-cli.follows = "dms-cli";
+
     # caelestia
-    caelestia-shell.url = "github:caelestia-dots/shell";
-    caelestia-shell.inputs.nixpkgs.follows = "nixpkgs";
+    #caelestia-shell.url = "github:caelestia-dots/shell";
+    #caelestia-shell.inputs.nixpkgs.follows = "nixpkgs";
 
     # agenix
     ragenix.url = "github:yaxitech/ragenix";
@@ -49,11 +65,15 @@
       ragenix,
       nvf,
       nur,
+      #niri,
       hyprland,
       hyprland-plugins,
       stylix,
       tinted-schemes,
-      caelestia-shell,
+      #caelestia-shell,
+      dms-cli,
+      dgop,
+      dankMaterialShell,
     }:
     let
       global = import ./global.nix;
@@ -79,8 +99,11 @@
             home-manager.sharedModules = [
               ragenix.homeManagerModules.default
               nvf.homeManagerModules.default
+              #inputs.niri.homeModules.niri
               stylix.homeModules.stylix
-              inputs.caelestia-shell.homeManagerModules.default
+              #inputs.caelestia-shell.homeManagerModules.default
+              inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+              #inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
             ];
 
             # home-manager specific

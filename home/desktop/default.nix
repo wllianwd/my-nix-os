@@ -4,9 +4,11 @@
 {
   imports = [
     ./stylix
+    #./niri
     ./hyprland
-    ./rofi
-    ./caelestia
+    #./rofi
+    ./shell/dank-material
+    #./caelestia
     #./waybar
   ];
 }

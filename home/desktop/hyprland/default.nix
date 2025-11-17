@@ -5,7 +5,9 @@
 {
 
   home.packages = with pkgs; [
-    hyprshot
+    #hyprshot
+    gnugrep
+    bluez
   ];
 
   imports = [
@@ -41,12 +43,14 @@
         "DP-1,highrr,auto,auto"
         "DP-2,highrr,auto,auto"
       ];
-      "$mod" = "SUPER";
+      "$mod" = "Super";
       "$terminal" = "ghostty";
       "$fileManager" = "nautilus";
       exec-once = [
-        "hyprpaper"
+        #"hyprpaper"
       ];
+      exec = "hyprctl dispatch submap global";
+      submap = "global";
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
@@ -59,12 +63,17 @@
         ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
         ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5"
       ];
+      #bindi = [
+      #  "$mod, SUPER_L, global, caelestia:launcher"
+      #];
       bind = [
+        #"$mod, R, exec, caelestia shell drawers toggle launcher"
+        #", $mod, exec, caelestia shell drawers toggle launcher"
+        #"$mod, R, exec, caelestia shell drawers toggle launcher"
+        #"$mod, R , global, caelestia:launcher"
+        "$mod, R, exec, dms ipc call spotlight toggle"
         "$mod, Q, exec, ghostty"
         "$mod, B, exec, google-chrome-stable"
-        "$mod, R, exec, caelestia shell drawers toggle launcher"
-        #"$mod, R, exec, rofi -show drun"
-        #"$mod, R, exec, rofi -show combi"
         "$mod, E, exec, $fileManager"
         "$mod, C, killactive,"
         "$mod, F, fullscreen, 1"
@@ -76,8 +85,9 @@
         "$mod, down, movefocus, d"
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
-        ", PRINT, exec, hyprshot -m window"
-        "SHIFT, PRINT, exec, hyprshot -m region"
+        ", PRINT, exec, caelestia screenshot"
+        "SHIFT, PRINT, global, caelestia:screenshotFreeze"
+        "SHIFT+ALT, PRINT, global, caelestia:screenshot"
       ]
       ++ (
         # workspaces
@@ -99,6 +109,17 @@
           ) 10
         )
       );
+      #bindin = [
+      #  "$mod, catchall, global, caelestia:launcherInterrupt"
+      #  "$mod, mouse:272, global, caelestia:launcherInterrupt"
+      #  "$mod, mouse:273, global, caelestia:launcherInterrupt"
+      #  "$mod, mouse:274, global, caelestia:launcherInterrupt"
+      #  "$mod, mouse:275, global, caelestia:launcherInterrupt"
+      #  "$mod, mouse:276, global, caelestia:launcherInterrupt"
+      #  "$mod, mouse:277, global, caelestia:launcherInterrupt"
+      #  "$mod, mouse_up, global, caelestia:launcherInterrupt"
+      #  "$mod, mouse_down, global, caelestia:launcherInterrupt"
+      #];
     };
   };
 }

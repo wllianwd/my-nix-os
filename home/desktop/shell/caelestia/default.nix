@@ -1,4 +1,31 @@
 {
+  lib,
+  pkgs,
+  ...
+}:
+let
+  global = import ../../../../global.nix;
+  vpnStatus = pkgs.writeShellApplication {
+    name = "vpnStatus";
+    runtimeInputs = with pkgs; [
+      networkmanager
+      coreutils
+      jq
+    ];
+    text = ''
+      set -euo pipefail
+
+      active_vpn="$(nmcli -t -f NAME,TYPE con show --active | grep ':vpn' || true | cut -d: -f1)"
+
+      if [ -n "$active_vpn" ]; then
+        echo "connected:$active_vpn"
+      else
+       echo "disconnected"
+      fi
+    '';
+  };
+in
+{
   programs.caelestia = {
     enable = true;
 
@@ -32,35 +59,10 @@
 
       general = {
         apps = {
-          terminal = [ "foot" ];
-          audio = [ "pavucontrol" ];
+          terminal = [ "ghostty" ];
+          audio = [ "wireplumber" ];
           playback = [ "mpv" ];
           explorer = [ "thunar" ];
-        };
-
-        battery = {
-          warnLevels = [
-            {
-              level = 20;
-              title = "Low battery";
-              message = "You might want to plug in a charger";
-              icon = "battery_android_frame_2";
-            }
-            {
-              level = 10;
-              title = "Did you see the previous message?";
-              message = "You should probably plug in a charger <b>now</b>";
-              icon = "battery_android_frame_1";
-            }
-            {
-              level = 5;
-              title = "Critical battery level";
-              message = "PLUG THE CHARGER RIGHT NOW!!";
-              icon = "battery_android_alert";
-              critical = true;
-            }
-          ];
-          criticalLevel = 3;
         };
 
         idle = {
@@ -150,7 +152,7 @@
           showAudio = true;
           showBattery = false;
           showBluetooth = true;
-          showKbLayout = true;
+          showKbLayout = false;
           showMicrophone = false;
           showNetwork = true;
           showLockStatus = true;
@@ -378,13 +380,13 @@
       paths = {
         mediaGif = "root:/assets/bongocat.gif";
         sessionGif = "root:/assets/kurukuru.gif";
-        wallpaperDir = "~/Pictures/Wallpapers";
+        wallpaperDir = "${global.homeDirectory}/Pictures/Wallpapers";
       };
 
       services = {
         audioIncrement = 0.1;
         maxVolume = 1.0;
-        defaultPlayer = "Spotify";
+        defaultPlayer = "YT Music";
         gpuType = "";
         playerAliases = [
           {
@@ -449,11 +451,21 @@
           enabled = true;
           provider = [
             {
-              name = "wireguard";
-              interface = "your-connection-name";
-              displayName = "Wireguard (Your VPN)";
+              name = "nmcli";
+              interface = "";
+              displayName = "NetworkManager VPN";
+              statusCommand = "${lib.getExe vpnStatus}";
+              connectCommand = "nmcli connection up id es181.nordvpn.com.udp";
+              disconnectCommand = "nmcli connection down id es181.nordvpn.com.udp";
             }
           ];
+          #provider = [
+          #  {
+          #    name = "wireguard";
+          #    interface = "your-connection-name";
+          #    displayName = "Wireguard (Your VPN)";
+          #  }
+          #];
         };
       };
     };

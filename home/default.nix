@@ -29,7 +29,7 @@ in
     kubernetes-helm
     #colima
     #docker-compose
-    wofi
+    #wofi
     #    dolphin
     gemini-cli
     xournalpp
@@ -74,7 +74,7 @@ in
     winetricks
     protontricks
     lutris
-    protonup
+    protonup-ng
     protonup-qt
     mangohud
     nodejs
@@ -88,7 +88,7 @@ in
     openrgb-with-all-plugins
     obs-studio
     pdftk
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     deluge
     #handbrake
     discord

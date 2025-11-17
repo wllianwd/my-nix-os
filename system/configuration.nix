@@ -13,13 +13,14 @@ in
   };
 
   hardware = {
+    #enableAllFirmware = true;
     graphics = {
       enable = true;
       enable32Bit = true;
       #driSupport = true;
       #driSupport32Bit = true;
       extraPackages = with pkgs; [
-        vaapiVdpau
+        libva-vdpau-driver
         libvdpau-va-gl
       ];
     };
@@ -297,6 +298,9 @@ in
     dconf = {
       enable = true;
     };
+    #niri = {
+    #  enable = true;
+    #};
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
