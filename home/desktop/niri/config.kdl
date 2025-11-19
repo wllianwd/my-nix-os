@@ -23,7 +23,7 @@ input {
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 layout {
-    gaps 16
+    gaps 9
     struts {
         left 0
         right 0

@@ -16,7 +16,16 @@ in
   };
 
   hardware = {
+    enableRedistributableFirmware = true;
     #enableAllFirmware = true;
+    #firmware = [
+    #  pkgs.linux-firmware
+    #(pkgs.runCommand "mt7921-bt-fw" { } ''
+    #  mkdir -p $out/lib/firmware/mediatek
+    #  cp ${pkgs.linux-firmware}/lib/firmware/mediatek/*MT7961* $out/lib/firmware/mediatek/
+    #  cp ${pkgs.linux-firmware}/lib/firmware/mediatek/*mt7921* $out/lib/firmware/mediatek/ || true
+    #'')
+    #];
     graphics = {
       enable = true;
       enable32Bit = true;
@@ -161,9 +170,9 @@ in
       enable = false;
     };
     # bluetooth
-    blueman = {
-      enable = true;
-    };
+    #blueman = {
+    #  enable = true;
+    #};
     # jellyfin
     jellyfin = {
       enable = true;
