@@ -4,7 +4,7 @@
 {
   imports = [
     ./stylix
-    #./niri
+    ./niri
     ./hyprland
     #./rofi
     ./shell/dank-material

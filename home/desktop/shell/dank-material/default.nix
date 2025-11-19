@@ -11,10 +11,13 @@
       enable = true;
       restartIfChanged = true;
     };
-    #niri = {
-    #  enableKeybinds = true; # Automatic keybinding configuration
-    #  enableSpawn = true; # Auto-start DMS with niri
-    #};
+    niri = {
+      enableKeybinds = true; # Automatic keybinding configuration
+      enableSpawn = true; # Auto-start DMS with niri
+    };
+    quickshell = {
+      package = inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    };
     enable = true;
     enableSystemMonitoring = true; # System monitoring widgets (dgop)
     enableClipboard = true; # Clipboard history manager

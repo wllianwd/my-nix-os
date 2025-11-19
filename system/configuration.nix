@@ -4,7 +4,10 @@ let
   global = import ../global.nix;
 in
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    inputs.dankMaterialShell.nixosModules.greeter
+  ];
 
   nix = {
     settings = {
@@ -173,7 +176,7 @@ in
       sddm = {
         enable = true;
         package = pkgs.kdePackages.sddm;
-        theme = "catppuccin-mocha";
+        #theme = "catppuccin-mocha";
         wayland = {
           enable = true;
         };
@@ -247,6 +250,7 @@ in
   # $ nix search wget
   environment = {
     systemPackages = with pkgs; [
+      xwayland-satellite
       neovim
       cacert
       docker
@@ -273,13 +277,14 @@ in
       jellyfin
       jellyfin-web
       jellyfin-ffmpeg
-      (catppuccin-sddm.override {
-        flavor = "mocha";
-        font = "DejaVu Sans";
-        fontSize = "9";
-        #background = "${../assets/backgrounds/shaded.png}";
-        loginBackground = true;
-      })
+      #(catppuccin-sddm.override {
+      #  flavor = "mocha";
+      #  font = "DejaVu Sans";
+      #  fontSize = "9";
+      #  background = "${../assets/backgrounds/shaded.png}";
+      #  loginBackground = true;
+      #})
+      inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
     variables = {
       LIBVA_DRIVER_NAME = "radeonsi";
@@ -298,9 +303,18 @@ in
     dconf = {
       enable = true;
     };
-    #niri = {
-    #  enable = true;
-    #};
+    niri = {
+      enable = true;
+
+    };
+    dankMaterialShell = {
+      greeter = {
+        enable = true;
+        compositor = {
+          name = "niri";
+        };
+      };
+    };
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;

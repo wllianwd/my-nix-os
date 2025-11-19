@@ -19,8 +19,8 @@
     hyprland-plugins.inputs.hyprland.follows = "hyprland";
 
     # niri
-    #niri.url = "github:sodiboo/niri-flake";
-    #niri.inputs.nixpkgs.follows = "nixpkgs";
+    niri.url = "github:sodiboo/niri-flake";
+    niri.inputs.nixpkgs.follows = "nixpkgs";
 
     # stylix
     stylix.url = "github:danth/stylix";
@@ -44,6 +44,10 @@
     dankMaterialShell.inputs.dgop.follows = "dgop";
     dankMaterialShell.inputs.dms-cli.follows = "dms-cli";
 
+    # quickshell
+    quickshell.url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    quickshell.inputs.nixpkgs.follows = "nixpkgs";
+
     # caelestia
     #caelestia-shell.url = "github:caelestia-dots/shell";
     #caelestia-shell.inputs.nixpkgs.follows = "nixpkgs";
@@ -65,7 +69,7 @@
       ragenix,
       nvf,
       nur,
-      #niri,
+      niri,
       hyprland,
       hyprland-plugins,
       stylix,
@@ -74,6 +78,7 @@
       dms-cli,
       dgop,
       dankMaterialShell,
+      quickshell,
     }:
     let
       global = import ./global.nix;
@@ -99,11 +104,11 @@
             home-manager.sharedModules = [
               ragenix.homeManagerModules.default
               nvf.homeManagerModules.default
-              #inputs.niri.homeModules.niri
+              inputs.niri.homeModules.niri
               stylix.homeModules.stylix
               #inputs.caelestia-shell.homeManagerModules.default
               inputs.dankMaterialShell.homeModules.dankMaterialShell.default
-              #inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
+              inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
             ];
 
             # home-manager specific

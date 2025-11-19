@@ -12,7 +12,7 @@
 
   imports = [
     ./compatibility
-    ./hyprlock.nix
+    #./hyprlock.nix
   ];
 
   services = {
