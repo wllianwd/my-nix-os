@@ -33,8 +33,8 @@
     tinted-schemes.url = "github:tinted-theming/schemes";
 
     # material shell
-    dms-cli.url = "github:AvengeMedia/danklinux";
-    dms-cli.inputs.nixpkgs.follows = "nixpkgs";
+    #dms-cli.url = "github:AvengeMedia/danklinux";
+    #dms-cli.inputs.nixpkgs.follows = "nixpkgs";
 
     dgop.url = "github:AvengeMedia/dgop";
     dgop.inputs.nixpkgs.follows = "nixpkgs";
@@ -42,7 +42,7 @@
     dankMaterialShell.url = "github:AvengeMedia/DankMaterialShell";
     dankMaterialShell.inputs.nixpkgs.follows = "nixpkgs";
     dankMaterialShell.inputs.dgop.follows = "dgop";
-    dankMaterialShell.inputs.dms-cli.follows = "dms-cli";
+    #dankMaterialShell.inputs.dms-cli.follows = "dms-cli";
 
     # quickshell
     quickshell.url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
@@ -75,7 +75,7 @@
       stylix,
       tinted-schemes,
       #caelestia-shell,
-      dms-cli,
+      #dms-cli,
       dgop,
       dankMaterialShell,
       quickshell,
