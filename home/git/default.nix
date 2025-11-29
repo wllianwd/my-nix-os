@@ -7,8 +7,12 @@ in
 
   programs.git = {
     enable = true;
-    userName = global.gitUserName;
-    userEmail = global.gitEmail;
+    settings = {
+      user = {
+        name = global.gitUserName;
+        email = global.gitEmail;
+      };
+    };
   };
 
 }

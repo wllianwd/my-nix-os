@@ -85,14 +85,14 @@
       system = "x86_64-linux"; # system architecture
       pkgs = import nixpkgs { inherit system; };
       lib = nixpkgs.lib;
-      my-overlays = import ./system/overlays.nix { inherit nur pkgs; };
+      #my-overlays = import ./system/overlays.nix { inherit nur pkgs; };
     in
     {
       nixosConfigurations."${global.host}" = lib.nixosSystem {
         system = system;
         specialArgs = { inherit inputs; };
         modules = [
-          my-overlays
+          #my-overlays
           ./system/configuration.nix
           home-manager.nixosModules.home-manager
           {

@@ -7,6 +7,7 @@
       "clipboard-read" = "allow";
       "clipboard-write" = "allow";
       "copy-on-select" = false;
+      "window-decoration" = "none";
       "window-padding-x" = 10;
       "window-padding-y" = 10;
       "window-padding-balance" = true;
