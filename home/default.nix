@@ -23,6 +23,7 @@ in
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    kdePackages.dolphin
     kubectl
     mob
     docker
@@ -76,8 +77,10 @@ in
     lutris
     protonup-ng
     protonup-qt
+    gamescope
     mangohud
     nodejs
+    antigravity
     yarn
     nodePackages.localtunnel
     python3

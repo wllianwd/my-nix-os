@@ -81,9 +81,10 @@ in
   networking = {
     useDHCP = false;
     hostName = "nixos";
-    extraHosts = ''
-      192.168.50.147 homelab.local
-    '';
+    #extraHosts = ''
+    #  192.168.50.147 homelab.local
+    #  192.168.50.147 homeassistant.local
+    #'';
     networkmanager = {
       enable = true;
       plugins = [
@@ -260,6 +261,7 @@ in
   environment = {
     systemPackages = with pkgs; [
       xwayland-satellite
+      wireplumber
       neovim
       cacert
       docker
@@ -314,9 +316,8 @@ in
     };
     niri = {
       enable = true;
-
     };
-    dankMaterialShell = {
+    dank-material-shell = {
       greeter = {
         enable = true;
         compositor = {
@@ -324,12 +325,12 @@ in
         };
       };
     };
-    hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage =
-        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    };
+    #hyprland = {
+    #  enable = true;
+    #  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    #  portalPackage =
+    #    inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    #};
   };
 
   # This value determines the NixOS release from which the default

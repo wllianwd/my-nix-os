@@ -7,12 +7,13 @@
     enable = true;
     xdgOpenUsePortal = true;
     extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
+      #pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gnome
       pkgs.xdg-desktop-portal-gtk
     ];
     config = {
       hyprland.default = [
-        "hyprland"
+        #"hyprland"
         "gtk"
       ];
     };

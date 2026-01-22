@@ -3,9 +3,10 @@
 }:
 {
   imports = [
+    #./compatibility
     ./stylix
     ./niri
-    ./hyprland
+    #./hyprland
     #./rofi
     ./shell/dank-material
     #./caelestia

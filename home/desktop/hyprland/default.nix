@@ -11,7 +11,7 @@
   ];
 
   imports = [
-    ./compatibility
+    #./compatibility
     #./hyprlock.nix
   ];
 

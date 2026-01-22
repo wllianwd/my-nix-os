@@ -107,8 +107,8 @@
               inputs.niri.homeModules.niri
               stylix.homeModules.stylix
               #inputs.caelestia-shell.homeManagerModules.default
-              inputs.dankMaterialShell.homeModules.dankMaterialShell.default
-              inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
+              inputs.dankMaterialShell.homeModules.dank-material-shell
+              inputs.dankMaterialShell.homeModules.niri
             ];
 
             # home-manager specific

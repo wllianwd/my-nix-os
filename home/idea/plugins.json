@@ -8,37 +8,37 @@
   },
   {
     "id": 14912,
-    "version": "1.3.0.59",
-    "url": "https://downloads.marketplace.jetbrains.com/files/14912/877835/ktfmt_idea_plugin-1.3.0.59.zip",
-    "hash": "sha256-4IpV3GlJnNnFMmWP2i531AGZU+Mq6l+AFuMAlh6DuNU=",
+    "version": "1.3.0.61",
+    "url": "https://downloads.marketplace.jetbrains.com/files/14912/923152/ktfmt_idea_plugin-1.3.0.61.zip",
+    "hash": "sha256-oQrBwh8IE51Xy45xZR7Prn6qR8yo9ZbdBhxzZ0TOK1o=",
     "name": "ktfmt"
   },
   {
     "id": 20540,
-    "version": "2.10.0",
-    "url": "https://downloads.marketplace.jetbrains.com/files/20540/891967/codeium-2.10.0.zip",
-    "hash": "sha256-6rHZWxl5swlXdkbqFYVGARS5aXnUshj+M/C9XBRVC1o=",
-    "name": "Windsurf Plugin (formerly Codeium) for Python, JS, Java, Go..."
+    "version": "2.12.2",
+    "url": "https://downloads.marketplace.jetbrains.com/files/20540/932463/codeium-2.12.2.zip",
+    "hash": "sha256-8hMsWsIMSSkJ5trtzjjL+cp/I5gmJlY04BESvpgERiM=",
+    "name": "Windsurf Plugin for Python, JS, Java, Go..."
   },
   {
     "id": 22857,
-    "version": "253.28294.218",
-    "url": "https://downloads.marketplace.jetbrains.com/files/22857/899681/vcs-gitlab-253.28294.218.zip",
-    "hash": "sha256-19dmwB5Ngy9B59UPdjoNbTEu4VJZS1E3etbfbZ9/hAA=",
+    "version": "261.17801.55",
+    "url": "https://downloads.marketplace.jetbrains.com/files/22857/937506/vcs-gitlab-261.17801.55.zip",
+    "hash": "sha256-exIHc2/2brz/EUQtoGczQbJXAFiUUujUhzZtNNFIL0c=",
     "name": "GitLab"
   },
   {
     "id": 7179,
-    "version": "4.30.0-IJ2022.2",
-    "url": "https://downloads.marketplace.jetbrains.com/files/7179/767851/MavenHelper-4.30.0-IJ2022.2.zip",
-    "hash": "sha256-Xsw4P/KddgOuwcNBzT3UWkaQBYXLqGop+fQhoL65Dfg=",
-    "name": "Maven Helper"
+    "version": "5.0.0-IJ2025.1",
+    "url": "https://downloads.marketplace.jetbrains.com/files/7179/922461/MavenHelper-5.0.0-IJ2025.1.zip",
+    "hash": "sha256-YNk/opJGeKqxk4/f9MPFzrCrXnOXASi5zUEROi68LZk=",
+    "name": "MavenHelper"
   },
   {
     "id": 21704,
-    "version": "253.25908.13",
-    "url": "https://downloads.marketplace.jetbrains.com/files/21704/874245/bigdatatools-kafka-253.25908.13.zip",
-    "hash": "sha256-zR7uQbwIihA+kpKI98NCWG2gDrxLnKJD8Ft+oDB4kps=",
+    "version": "253.25909.3",
+    "url": "https://downloads.marketplace.jetbrains.com/files/21704/937703/intellij-v253.25909.3.zip",
+    "hash": "sha256-c1Mav5UaOF9mf2gVEp+ERR/k90boEDvRWSvYcrmrjFU=",
     "name": "Kafka"
   }
 ]

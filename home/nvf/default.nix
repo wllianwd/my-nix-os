@@ -24,16 +24,16 @@ in
 
           nix = {
             enable = true;
-            lsp = {
-              options = {
-                nisos = {
-                  expr = "(builtins.getFlake \"${global.nixConfigDirectory}\").nixosConfigurations.\"${global.host}\".options";
-                };
-                home_manager = {
-                  expr = "(builtins.getFlake \"${global.nixConfigDirectory}\").homeConfigurations.\"${global.username}\".options";
-                };
-              };
-            };
+            #lsp = {
+            #options = {
+            #  nisos = {
+            #    expr = "(builtins.getFlake \"${global.nixConfigDirectory}\").nixosConfigurations.\"${global.host}\".options";
+            #  };
+            #  home_manager = {
+            #    expr = "(builtins.getFlake \"${global.nixConfigDirectory}\").homeConfigurations.\"${global.username}\".options";
+            #  };
+            #};
+            #};
           };
         };
       };
