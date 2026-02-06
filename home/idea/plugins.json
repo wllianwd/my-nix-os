@@ -15,16 +15,16 @@
   },
   {
     "id": 20540,
-    "version": "2.12.2",
-    "url": "https://downloads.marketplace.jetbrains.com/files/20540/932463/codeium-2.12.2.zip",
-    "hash": "sha256-8hMsWsIMSSkJ5trtzjjL+cp/I5gmJlY04BESvpgERiM=",
+    "version": "2.12.5",
+    "url": "https://downloads.marketplace.jetbrains.com/files/20540/940678/codeium-2.12.5.zip",
+    "hash": "sha256-68b2Fjy/ZW/fzM6zUvNgxld2dS78PCHAk4W0rrnhXXo=",
     "name": "Windsurf Plugin for Python, JS, Java, Go..."
   },
   {
     "id": 22857,
-    "version": "261.17801.55",
-    "url": "https://downloads.marketplace.jetbrains.com/files/22857/937506/vcs-gitlab-261.17801.55.zip",
-    "hash": "sha256-exIHc2/2brz/EUQtoGczQbJXAFiUUujUhzZtNNFIL0c=",
+    "version": "261.19799.20",
+    "url": "https://downloads.marketplace.jetbrains.com/files/22857/943626/vcs-gitlab-261.19799.20.zip",
+    "hash": "sha256-wzU3KxzZha7rhKDayqS/qX47Gk0ZoUhjE/Heh/wD+cI=",
     "name": "GitLab"
   },
   {
@@ -36,9 +36,9 @@
   },
   {
     "id": 21704,
-    "version": "253.25909.3",
-    "url": "https://downloads.marketplace.jetbrains.com/files/21704/937703/intellij-v253.25909.3.zip",
-    "hash": "sha256-c1Mav5UaOF9mf2gVEp+ERR/k90boEDvRWSvYcrmrjFU=",
+    "version": "253.25909.4",
+    "url": "https://downloads.marketplace.jetbrains.com/files/21704/941641/intellij-v253.25909.4.zip",
+    "hash": "sha256-1nCrW35s4i3dLR18PSNjhZlFU4pHNIyF52I2/OKFcCE=",
     "name": "Kafka"
   }
 ]

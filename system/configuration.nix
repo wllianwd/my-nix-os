@@ -98,6 +98,9 @@ in
         5000
         8010
       ];
+      allowedUDPPorts = [
+        5353
+      ];
     };
   };
 
@@ -215,9 +218,15 @@ in
     printing = {
       enable = true;
     };
+    # resolved
+    resolved = {
+      enable = true;
+    };
+    # avahi
     avahi = {
       enable = true;
       nssmdns4 = true;
+      nssmdns6 = true;
       openFirewall = true;
       publish = {
         enable = true;
