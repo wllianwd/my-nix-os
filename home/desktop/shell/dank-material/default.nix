@@ -30,15 +30,15 @@
     #enableSystemSound = true; # System sound effects
 
     settings = {
-      currentThemeName = "dynamic";
-      customThemeFile = "";
+      #currentThemeName = "dynamic";
+      #customThemeFile = "";
       matugenScheme = "scheme-tonal-spot";
       runUserMatugenTemplates = true;
       matugenTargetMonitor = "";
       dankBarTransparency = 1;
       dankBarWidgetTransparency = 1;
-      popupTransparency = 1;
-      dockTransparency = 1;
+      #popupTransparency = 1;
+      #dockTransparency = 1;
       widgetBackgroundColor = "sch";
       cornerRadius = 14;
       use24HourClock = true;
@@ -172,8 +172,8 @@
       launcherLogoBrightness = 0.5;
       launcherLogoContrast = 1;
       launcherLogoSizeOffset = 0;
-      fontFamily = "Inter Variable";
-      monoFontFamily = "Fira Code";
+      fontFamily = "DejaVu Sans";
+      monoFontFamily = "DejaVu Sans Mono";
       fontWeight = 400;
       fontScale = 1;
       dankBarFontScale = 1;

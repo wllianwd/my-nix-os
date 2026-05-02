@@ -28,6 +28,7 @@ in
     mob
     docker
     kubernetes-helm
+    parted
     #colima
     #docker-compose
     #wofi
@@ -36,7 +37,6 @@ in
     xournalpp
     hoppscotch
     maven
-    neofetch
     python3
     nodejs
     cargo
@@ -70,11 +70,11 @@ in
     unzip
     p7zip
     gh # github ctl
-    wineWowPackages.staging
+    wineWow64Packages.staging
     wine-staging
     winetricks
     protontricks
-    lutris
+    #lutris
     protonup-ng
     protonup-qt
     gamescope
@@ -82,7 +82,6 @@ in
     nodejs
     antigravity
     yarn
-    nodePackages.localtunnel
     python3
     docker-compose
     git
@@ -96,7 +95,7 @@ in
     #handbrake
     discord
     vlc
-    neofetch
+    fastfetch
     udiskie
     google-chrome
     gimp

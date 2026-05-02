@@ -97,6 +97,7 @@ in
         3000
         5000
         8010
+        11434
       ];
       allowedUDPPorts = [
         5353
@@ -173,6 +174,17 @@ in
     pulseaudio = {
       enable = false;
     };
+    # ollama
+    #ollama = {
+    #  enable = true;
+    #  host = "0.0.0.0";   # escucha en todas las interfaces
+    #  port = 11434;
+    #  package = pkgs.ollama-rocm;
+    #  environmentVariables = {
+    #    HSA_OVERRIDE_GFX_VERSION = "10.3.0";
+    #    ROC_ENABLE_PRE_VEGA = "1";
+    #  };
+    #};
     # bluetooth
     #blueman = {
     #  enable = true;
@@ -219,21 +231,21 @@ in
       enable = true;
     };
     # resolved
-    resolved = {
-      enable = true;
-    };
+    #resolved = {
+    #  enable = true;
+    #};
     # avahi
-    avahi = {
-      enable = true;
-      nssmdns4 = true;
-      nssmdns6 = true;
-      openFirewall = true;
-      publish = {
-        enable = true;
-        userServices = true;
-        addresses = true;
-      };
-    };
+    #avahi = {
+    #  enable = true;
+    #  nssmdns2 = true;
+    #  nssmdns4 = true;
+    #  openFirewall = true;
+    #  publish = {
+    #    enable = true;
+    #    userServices = true;
+    #    addresses = true;
+    #  };
+    #};
     # pipewire
     pipewire = {
       enable = true;

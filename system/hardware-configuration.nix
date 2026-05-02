@@ -9,6 +9,9 @@
   ...
 }:
 
+let
+  global = import ../global.nix;
+in
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -43,6 +46,12 @@
   fileSystems."/boot/efi" = {
     device = "/dev/disk/by-uuid/93C9-86E5";
     fsType = "vfat";
+  };
+
+  fileSystems."/home/${global.username}/Data" = {
+    device = "/dev/disk/by-uuid/84fe09bc-42e7-4460-83c6-030377c29b13";
+    fsType = "ext4";
+    options = [ "defaults" "noatime" ];
   };
 
   swapDevices = [

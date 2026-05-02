@@ -8,23 +8,23 @@
   },
   {
     "id": 14912,
-    "version": "1.3.0.61",
-    "url": "https://downloads.marketplace.jetbrains.com/files/14912/923152/ktfmt_idea_plugin-1.3.0.61.zip",
-    "hash": "sha256-oQrBwh8IE51Xy45xZR7Prn6qR8yo9ZbdBhxzZ0TOK1o=",
+    "version": "1.3.0.62",
+    "url": "https://downloads.marketplace.jetbrains.com/files/14912/992630/ktfmt_idea_plugin-1.3.0.62.zip",
+    "hash": "sha256-9xoJg/5Bau0OvwRAt+oWi9yZX1s+A0XKPTU4NEvkjoc=",
     "name": "ktfmt"
   },
   {
     "id": 20540,
-    "version": "2.12.5",
-    "url": "https://downloads.marketplace.jetbrains.com/files/20540/940678/codeium-2.12.5.zip",
-    "hash": "sha256-68b2Fjy/ZW/fzM6zUvNgxld2dS78PCHAk4W0rrnhXXo=",
+    "version": "2.12.22",
+    "url": "https://downloads.marketplace.jetbrains.com/files/20540/1033135/codeium-2.12.22.zip",
+    "hash": "sha256-LpbP+Bht0+HARQNXBlfTMhW0Xro4IWm9o3dUx75qDGo=",
     "name": "Windsurf Plugin for Python, JS, Java, Go..."
   },
   {
     "id": 22857,
-    "version": "261.19799.20",
-    "url": "https://downloads.marketplace.jetbrains.com/files/22857/943626/vcs-gitlab-261.19799.20.zip",
-    "hash": "sha256-wzU3KxzZha7rhKDayqS/qX47Gk0ZoUhjE/Heh/wD+cI=",
+    "version": "261.23567.28",
+    "url": "https://downloads.marketplace.jetbrains.com/files/22857/1014095/vcs-gitlab-261.23567.28.zip",
+    "hash": "sha256-2p+x8X89PxTf+gEwn2h1pfyUaiyh7z2PeFLNPypUyWU=",
     "name": "GitLab"
   },
   {
@@ -36,9 +36,9 @@
   },
   {
     "id": 21704,
-    "version": "253.25909.4",
-    "url": "https://downloads.marketplace.jetbrains.com/files/21704/941641/intellij-v253.25909.4.zip",
-    "hash": "sha256-1nCrW35s4i3dLR18PSNjhZlFU4pHNIyF52I2/OKFcCE=",
-    "name": "Kafka"
+    "version": "253.25910.1",
+    "url": "https://downloads.marketplace.jetbrains.com/files/21704/1022278/intellij-v253.25910.1__1_.zip",
+    "hash": "sha256-HG/hyvZotVEW/YwnDbqVjA+M7mYJ2WuEhTTMJPGr0gU=",
+    "name": "Confluent"
   }
 ]
