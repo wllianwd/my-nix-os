@@ -29,6 +29,7 @@ in
     docker
     kubernetes-helm
     parted
+    impression
     #colima
     #docker-compose
     #wofi

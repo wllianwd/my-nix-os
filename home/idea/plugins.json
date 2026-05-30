@@ -15,23 +15,23 @@
   },
   {
     "id": 20540,
-    "version": "2.12.22",
-    "url": "https://downloads.marketplace.jetbrains.com/files/20540/1033135/codeium-2.12.22.zip",
-    "hash": "sha256-LpbP+Bht0+HARQNXBlfTMhW0Xro4IWm9o3dUx75qDGo=",
+    "version": "2.12.23",
+    "url": "https://downloads.marketplace.jetbrains.com/files/20540/1044731/codeium-2.12.23.zip",
+    "hash": "sha256-4t4ZFuoKUXGZNVU0zcqjWLuIHXkRWwtA5A4PUFZHLFI=",
     "name": "Windsurf Plugin for Python, JS, Java, Go..."
   },
   {
     "id": 22857,
-    "version": "261.23567.28",
-    "url": "https://downloads.marketplace.jetbrains.com/files/22857/1014095/vcs-gitlab-261.23567.28.zip",
-    "hash": "sha256-2p+x8X89PxTf+gEwn2h1pfyUaiyh7z2PeFLNPypUyWU=",
+    "version": "261.25134.12",
+    "url": "https://downloads.marketplace.jetbrains.com/files/22857/1053650/vcs-gitlab-261.25134.12.zip",
+    "hash": "sha256-0zWvD5Hti1pRy3gf0ocKRb5qQ+Nf00C/y5lbvBHQQn8=",
     "name": "GitLab"
   },
   {
     "id": 7179,
-    "version": "5.0.0-IJ2025.1",
-    "url": "https://downloads.marketplace.jetbrains.com/files/7179/922461/MavenHelper-5.0.0-IJ2025.1.zip",
-    "hash": "sha256-YNk/opJGeKqxk4/f9MPFzrCrXnOXASi5zUEROi68LZk=",
+    "version": "5.1.0-IJ2026.1",
+    "url": "https://downloads.marketplace.jetbrains.com/files/7179/1048484/MavenHelper-5.1.0-IJ2026.1.zip",
+    "hash": "sha256-BbyTfYpHMu2GhkKvNBb/bJDlcLsSf6JJQdD+ItDBFtU=",
     "name": "MavenHelper"
   },
   {

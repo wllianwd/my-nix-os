@@ -4,6 +4,9 @@
   inputs,
   ...
 }:
+let
+  global = import ../../../../global.nix;
+in
 {
 
   programs.dank-material-shell = {
@@ -47,7 +50,10 @@
       nightModeEnabled = false;
       animationSpeed = 1;
       customAnimationDuration = 500;
-      wallpaperFillMode = "Fill";
+      wallpaperPath = "/home/${global.username}/Pictures/Wallpapers/Desert-With-Mountains-Moon.jpg";
+      wallpaperCyclingEnabled = true;
+      wallpaperCyclingMode = "interval";
+      wallpaperCyclingInterval = 300;
       blurredWallpaperLayer = false;
       blurWallpaperOnOverview = false;
       showLauncherButton = true;
@@ -148,8 +154,10 @@
       dankBarRightWidgets = [
         "systemTray"
         "clipboard"
-        "cpuUsage"
-        "memUsage"
+        #"cpuUsage"
+        "cpuTemp"
+        #"gpuTemp"
+        #"memUsage"
         "notificationButton"
         "controlCenterButton"
       ];

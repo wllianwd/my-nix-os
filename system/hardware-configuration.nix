@@ -48,7 +48,7 @@ in
     fsType = "vfat";
   };
 
-  fileSystems."/home/${global.username}/Data" = {
+  fileSystems."/home/${global.username}/Documents/data" = {
     device = "/dev/disk/by-uuid/84fe09bc-42e7-4460-83c6-030377c29b13";
     fsType = "ext4";
     options = [ "defaults" "noatime" ];
