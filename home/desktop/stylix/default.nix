@@ -10,7 +10,7 @@ in
   stylix = {
     enable = true;
     base16Scheme = "${inputs.tinted-schemes}/base16/${global.stylixTheme}.yaml";
-    image = ../../../assets/backgrounds/shaded.png;
+    #image = ../../../assets/backgrounds/shaded.png;
     polarity = "dark";
 
     opacity = {

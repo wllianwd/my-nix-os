@@ -24,6 +24,7 @@ in
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     kdePackages.dolphin
+    kdePackages.ark
     kubectl
     mob
     docker

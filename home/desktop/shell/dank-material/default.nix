@@ -51,6 +51,8 @@ in
       animationSpeed = 1;
       customAnimationDuration = 500;
       wallpaperPath = "/home/${global.username}/Pictures/Wallpapers/Desert-With-Mountains-Moon.jpg";
+      wallpaperPathLight = "/home/${global.username}/Pictures/Wallpapers/Desert-With-Mountains-Moon.jpg";
+      wallpaperPathDark = "/home/${global.username}/Pictures/Wallpapers/Desert-With-Mountains-Moon.jpg";
       wallpaperCyclingEnabled = true;
       wallpaperCyclingMode = "interval";
       wallpaperCyclingInterval = 300;
