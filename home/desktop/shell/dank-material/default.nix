@@ -16,7 +16,7 @@ in
     };
     niri = {
       enableKeybinds = true; # Automatic keybinding configuration
-      enableSpawn = true; # Auto-start DMS with niri
+      #enableSpawn = true; # Auto-start DMS with niri
     };
     quickshell = {
       package = inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default;
@@ -31,6 +31,142 @@ in
     enableAudioWavelength = true; # Audio visualizer (cava)
     enableCalendarEvents = true; # Calendar integration (khal)
     #enableSystemSound = true; # System sound effects
+
+    session = {
+      isLightMode = false;
+      doNotDisturb = false;
+      doNotDisturbUntil = 0;
+      terminalOverride = "";
+
+      wallpaperPath = "/home/${global.username}/Pictures/Wallpapers/Desert-With-Mountains-Moon.jpg";
+
+      perMonitorWallpaper = false;
+      monitorWallpapers = { };
+
+      perModeWallpaper = false;
+      wallpaperPathLight = "";
+      wallpaperPathDark = "";
+
+      monitorWallpapersLight = { };
+      monitorWallpapersDark = { };
+      monitorWallpaperFillModes = { };
+
+      wallpaperTransition = "fade";
+
+      includedTransitions = [
+        "fade"
+        "wipe"
+        "disc"
+        "stripes"
+        "iris bloom"
+        "pixelate"
+        "portal"
+      ];
+
+      wallpaperCyclingEnabled = true;
+      wallpaperCyclingMode = "interval";
+      wallpaperCyclingInterval = 300;
+      wallpaperCyclingTime = "06:00";
+
+      monitorCyclingSettings = { };
+
+      nightModeEnabled = false;
+      nightModeTemperature = 4500;
+      nightModeHighTemperature = 6500;
+
+      nightModeAutoEnabled = false;
+      nightModeAutoMode = "time";
+
+      nightModeStartHour = 18;
+      nightModeStartMinute = 0;
+      nightModeEndHour = 6;
+      nightModeEndMinute = 0;
+
+      latitude = 0;
+      longitude = 0;
+
+      nightModeUseIPLocation = false;
+      nightModeLocationProvider = "";
+
+      themeModeAutoEnabled = false;
+      themeModeAutoMode = "time";
+
+      themeModeStartHour = 18;
+      themeModeStartMinute = 0;
+      themeModeEndHour = 6;
+      themeModeEndMinute = 0;
+
+      themeModeShareGammaSettings = true;
+
+      weatherLocation = "New York, NY";
+      weatherCoordinates = "40.7128,-74.0060";
+
+      pinnedApps = [ ];
+      barPinnedApps = [ ];
+
+      dockLauncherPosition = 0;
+
+      hiddenTrayIds = [ ];
+      trayItemOrder = [ ];
+      recentColors = [ ];
+
+      showThirdPartyPlugins = false;
+
+      launchPrefix = "";
+
+      lastBrightnessDevice = "";
+
+      brightnessExponentialDevices = { };
+      brightnessUserSetValues = { };
+      brightnessExponentValues = { };
+
+      selectedGpuIndex = 0;
+      nvidiaGpuTempEnabled = false;
+      nonNvidiaGpuTempEnabled = false;
+
+      enabledGpuPciIds = [ ];
+
+      wifiDeviceOverride = "";
+
+      weatherHourlyDetailed = true;
+
+      hiddenApps = [ ];
+      appOverrides = { };
+
+      searchAppActions = true;
+
+      vpnLastConnected = "";
+      lastPlayerIdentity = "";
+
+      deviceMaxVolumes = { };
+
+      hiddenOutputDeviceNames = [ ];
+      hiddenInputDeviceNames = [ ];
+
+      locale = "";
+      timeLocale = "";
+
+      launcherLastMode = "all";
+      launcherLastFileSearchType = "all";
+      launcherLastQuery = "sett";
+
+      launcherQueryHistory = [
+        "sett"
+        "ope"
+        "zed"
+        "sw"
+        "dol"
+        "blue"
+      ];
+
+      appDrawerLastMode = "apps";
+      niriOverviewLastMode = "apps";
+
+      settingsSidebarExpandedIds = ",";
+      settingsSidebarCollapsedIds = ",";
+
+      configVersion = 3;
+    };
 
     settings = {
       #currentThemeName = "dynamic";
@@ -50,12 +186,6 @@ in
       nightModeEnabled = false;
       animationSpeed = 1;
       customAnimationDuration = 500;
-      wallpaperPath = "/home/${global.username}/Pictures/Wallpapers/Desert-With-Mountains-Moon.jpg";
-      wallpaperPathLight = "/home/${global.username}/Pictures/Wallpapers/Desert-With-Mountains-Moon.jpg";
-      wallpaperPathDark = "/home/${global.username}/Pictures/Wallpapers/Desert-With-Mountains-Moon.jpg";
-      wallpaperCyclingEnabled = true;
-      wallpaperCyclingMode = "interval";
-      wallpaperCyclingInterval = 300;
       blurredWallpaperLayer = false;
       blurWallpaperOnOverview = false;
       showLauncherButton = true;
@@ -168,11 +298,11 @@ in
       spotlightModalViewMode = "list";
       sortAppsAlphabetically = false;
       appLauncherGridColumns = 4;
-      weatherLocation = "New York, NY";
-      weatherCoordinates = "40.7128,-74.0060";
+      weatherLocation = "Barcelona, ES";
+      weatherCoordinates = "41.412753, 2.167843";
       useAutoLocation = true;
       weatherEnabled = true;
-      networkPreference = "wifi";
+      networkPreference = "ethernet";
       vpnLastConnected = "";
       iconTheme = "System Default";
       launcherLogoMode = "apps";
