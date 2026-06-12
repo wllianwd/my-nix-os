@@ -155,8 +155,10 @@ in
   };
 
   systemd = {
-    user = {
-      extraConfig = "DefaultLimitNOFILE=1048576";
+    settings = {
+      Manager = {
+        DefaultLimitNOFILE = 1048576;
+      };
     };
   };
 
