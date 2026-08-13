@@ -17,25 +17,32 @@ in
     ./nvf
     ./java
     ./zed
-    ./idea
+    #./idea
     ./desktop
+    ./retroarch
   ];
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     kdePackages.dolphin
     kdePackages.ark
+    kdePackages.gwenview
     kubectl
+    godot
     mob
     docker
     kubernetes-helm
     parted
     impression
+    pegasus-frontend
+    skyscraper
     #colima
     #docker-compose
     #wofi
     #    dolphin
     gemini-cli
+    claude-code
+    opencode
     xournalpp
     hoppscotch
     maven
@@ -93,7 +100,8 @@ in
     obs-studio
     pdftk
     onlyoffice-desktopeditors
-    deluge
+    #deluge
+    qbittorrent
     #handbrake
     discord
     vlc

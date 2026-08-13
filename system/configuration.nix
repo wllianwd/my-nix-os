@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
 let
   global = import ../global.nix;
@@ -96,7 +101,12 @@ in
       allowedTCPPorts = [
         3000
         5000
+        5055
+        6767
+        7878
         8010
+        8989
+        9696
         11434
       ];
       allowedUDPPorts = [
@@ -191,13 +201,7 @@ in
     #blueman = {
     #  enable = true;
     #};
-    # jellyfin
-    jellyfin = {
-      enable = true;
-      openFirewall = true;
-      user = "${global.username}";
-      group = "wheel";
-    };
+
     # X11
     displayManager = {
       sddm = {
@@ -207,6 +211,10 @@ in
         wayland = {
           enable = true;
         };
+      };
+      dms-greeter = {
+        enable = true;
+        compositor.name = "niri";
       };
     };
     xserver = {
@@ -227,11 +235,21 @@ in
     # udev
     udev = {
       packages = [ pkgs.gnome-settings-daemon ];
+      extraRules = ''
+        SUBSYSTEM=="usb", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="ca21", MODE="0666"
+        SUBSYSTEM=="usb", ATTRS{idVendor}=="1d6b", ATTRS{idProduct}=="0121", MODE="0666"
+      '';
     };
     # cups printing (can be accessed on http://localhost:631/)
     printing = {
       enable = true;
     };
+    sunshine = {
+        enable = true;
+        autoStart = true;
+        capSysAdmin = true; # only needed for Wayland -- omit this when using with Xorg
+        openFirewall = true;
+      };
     # resolved
     #resolved = {
     #  enable = true;
@@ -264,13 +282,16 @@ in
   virtualisation = {
     docker = {
       enable = true;
-      extraOptions = "--insecure-registry=homelab.local:30700";
+      extraOptions = "--insecure-registry=192.168.50.68:5000";
     };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     defaultUserShell = pkgs.zsh;
+    groups = {
+      media = { };
+    };
     users = {
       "${global.username}" = {
         isNormalUser = true;
@@ -279,6 +300,10 @@ in
           "wheel"
           "networkmanager"
           "docker"
+          "uucp"
+          "dialout"
+          "media"
+          "uinput"
         ]; # Enable ‘sudo’ for the user.
       };
     };
@@ -345,14 +370,14 @@ in
     niri = {
       enable = true;
     };
-    dank-material-shell = {
-      greeter = {
-        enable = true;
-        compositor = {
-          name = "niri";
-        };
-      };
-    };
+    #dank-material-shell = {
+    #  greeter = {
+    #    enable = true;
+    #    compositor = {
+   #       name = "niri";
+   #     };
+   #   };
+   # };
     #hyprland = {
     #  enable = true;
     #  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;

@@ -19,7 +19,7 @@ in
         languages = {
           enableTreesitter = true;
 
-          ts.enable = true;
+          tsx.enable = true;
           rust.enable = true;
 
           nix = {
