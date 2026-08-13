@@ -35,6 +35,7 @@ in
       mnix-update = "sh ${global.nixConfigDirectory}/home/zsh/scripts/nix-update.sh";
       mnix-develop = "nix develop ${global.nixConfigDirectory}#$(fd . '${global.nixConfigDirectory}/shells' --type f --hidden --exclude '*.md' --max-depth 1 | xargs -I {} basename {} .nix | fzf)";
       mnix-ragenix-create-secret = "sh ${global.nixConfigDirectory}/home/zsh/scripts/ragenix-create-secret.sh";
+      mnix-ragenix-edit-secret = "sh ${global.nixConfigDirectory}/home/zsh/scripts/ragenix-edit-secret.sh";
     };
 
     history = {

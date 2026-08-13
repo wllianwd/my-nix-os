@@ -29,4 +29,12 @@ in
     symlink = false;
   };
 
+  # ~/.kube/config
+  age.secrets."kubeconfig.age" = lib.mkIf (builtins.pathExists ./secrets/kubeconfig.age) {
+    file = ./secrets/kubeconfig.age;
+    path = "${config.home.homeDirectory}/.kube/config";
+    mode = "0600";
+    symlink = false;
+  };
+
 }
