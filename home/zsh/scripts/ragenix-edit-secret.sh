@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Secret to edit, defaults to settings.xml.age
 secret_filename="${1:-settings.xml.age}"
 secret_path="${MY_NIX_CONFIG_DIR}/home/ragenix/secrets/$secret_filename"
