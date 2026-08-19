@@ -3,10 +3,10 @@
 }:
 {
   imports = [
-    #./compatibility
+    ./compatibility
     ./stylix
-    ./niri
-    #./hyprland
+    #./niri
+    ./hyprland
     #./rofi
     ./shell/dank-material
     #./caelestia

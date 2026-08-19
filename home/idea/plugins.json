@@ -15,9 +15,9 @@
   },
   {
     "id": 20540,
-    "version": "2.12.26",
-    "url": "https://downloads.marketplace.jetbrains.com/files/20540/1119506/codeium-2.12.26.zip",
-    "hash": "sha256-HR6OfKN3vZrQapfQXp9ZbPQs2Y2hOLYqfvgAbseULJQ=",
+    "version": "2.12.27",
+    "url": "https://downloads.marketplace.jetbrains.com/files/20540/1141895/codeium-2.12.27.zip",
+    "hash": "sha256-0OVtix62PJShUJ6QmeOBJ9v5Oq6wr9BDYHsTEIbUdmI=",
     "name": "Windsurf Plugin for Python, JS, Java, Go..."
   },
   {
@@ -36,9 +36,9 @@
   },
   {
     "id": 21704,
-    "version": "253.25910.1",
-    "url": "https://downloads.marketplace.jetbrains.com/files/21704/1022278/intellij-v253.25910.1__1_.zip",
-    "hash": "sha256-HG/hyvZotVEW/YwnDbqVjA+M7mYJ2WuEhTTMJPGr0gU=",
+    "version": "253.25910.2",
+    "url": "https://downloads.marketplace.jetbrains.com/files/21704/1128452/intellij-v253.25910.2.zip",
+    "hash": "sha256-qUD1Fy/1X9lIJay5/EpZmrK09ibWlgmZe+xL0IIjyLw=",
     "name": "Confluent"
   }
 ]

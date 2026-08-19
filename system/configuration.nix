@@ -11,7 +11,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    inputs.dankMaterialShell.nixosModules.greeter
+    inputs.dank-greeter.nixosModules.default
   ];
 
   nix = {
@@ -22,20 +22,9 @@ in
 
   hardware = {
     enableRedistributableFirmware = true;
-    #enableAllFirmware = true;
-    #firmware = [
-    #  pkgs.linux-firmware
-    #(pkgs.runCommand "mt7921-bt-fw" { } ''
-    #  mkdir -p $out/lib/firmware/mediatek
-    #  cp ${pkgs.linux-firmware}/lib/firmware/mediatek/*MT7961* $out/lib/firmware/mediatek/
-    #  cp ${pkgs.linux-firmware}/lib/firmware/mediatek/*mt7921* $out/lib/firmware/mediatek/ || true
-    #'')
-    #];
     graphics = {
       enable = true;
       enable32Bit = true;
-      #driSupport = true;
-      #driSupport32Bit = true;
       extraPackages = with pkgs; [
         libva-vdpau-driver
         libvdpau-va-gl
@@ -57,7 +46,6 @@ in
   # Use the systemd-boot EFI boot loader.
   boot = {
     loader = {
-      #grub = { enable = true; version = 2; device = "replace_disk"; };
       systemd-boot = {
         enable = true;
       };
@@ -73,8 +61,6 @@ in
     };
     #kernelPackages = pkgs.linuxPackages_testing;
     kernelPackages = pkgs.linuxPackages_latest;
-    #kernelPackages = pkgs.linuxPackages;
-    #kernelParams = [ "acpi_enforce_resources=lax" ];
   };
 
   # Set your time zone.
@@ -86,10 +72,9 @@ in
   networking = {
     useDHCP = false;
     hostName = "nixos";
-    #extraHosts = ''
-    #  192.168.50.147 homelab.local
-    #  192.168.50.147 homeassistant.local
-    #'';
+    extraHosts = ''
+      192.168.50.68 homeassistant.local
+    '';
     networkmanager = {
       enable = true;
       plugins = [
@@ -172,8 +157,6 @@ in
     };
   };
 
-  #  services.displayManager.sddm.wayland.enable = true;
-
   # Services
   services = {
     udisks2 = {
@@ -186,35 +169,15 @@ in
     pulseaudio = {
       enable = false;
     };
-    # ollama
-    #ollama = {
-    #  enable = true;
-    #  host = "0.0.0.0";   # escucha en todas las interfaces
-    #  port = 11434;
-    #  package = pkgs.ollama-rocm;
-    #  environmentVariables = {
-    #    HSA_OVERRIDE_GFX_VERSION = "10.3.0";
-    #    ROC_ENABLE_PRE_VEGA = "1";
-    #  };
-    #};
-    # bluetooth
-    #blueman = {
-    #  enable = true;
-    #};
 
     # X11
     displayManager = {
       sddm = {
         enable = true;
         package = pkgs.kdePackages.sddm;
-        #theme = "catppuccin-mocha";
         wayland = {
           enable = true;
         };
-      };
-      dms-greeter = {
-        enable = true;
-        compositor.name = "niri";
       };
     };
     xserver = {
@@ -323,6 +286,8 @@ in
       autorandr
       pciutils
       libva
+      rocmPackages.rocminfo
+      rocmPackages.rocm-smi
       libva-utils
       lm_sensors
       i2c-tools
@@ -338,16 +303,6 @@ in
       vulkan-tools
       vulkan-headers
       libstrangle
-      jellyfin
-      jellyfin-web
-      jellyfin-ffmpeg
-      #(catppuccin-sddm.override {
-      #  flavor = "mocha";
-      #  font = "DejaVu Sans";
-      #  fontSize = "9";
-      #  background = "${../assets/backgrounds/shaded.png}";
-      #  loginBackground = true;
-      #})
       inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
     variables = {
@@ -358,6 +313,12 @@ in
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs = {
+    dms-greeter = {
+      enable = true;
+      compositor.name = "hyprland";
+      #compositor.name = "niri"; # or hyprland, sway, labwc, mango, scroll, miracle
+      configHome = "${global.homeDirectory}"; # copies that user's DMS settings (and wallpaper) into the greeter data directory before greetd starts
+    };
     steam = {
       enable = true;
     };
@@ -367,23 +328,15 @@ in
     dconf = {
       enable = true;
     };
-    niri = {
-      enable = true;
-    };
-    #dank-material-shell = {
-    #  greeter = {
-    #    enable = true;
-    #    compositor = {
-   #       name = "niri";
-   #     };
-   #   };
-   # };
-    #hyprland = {
+    #niri = {
     #  enable = true;
-    #  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    #  portalPackage =
-    #    inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     #};
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage =
+       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    };
   };
 
   # This value determines the NixOS release from which the default

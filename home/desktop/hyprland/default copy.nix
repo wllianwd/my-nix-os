@@ -4,34 +4,32 @@
 }:
 {
 
-  #home.packages = with pkgs; [
+  home.packages = with pkgs; [
     #hyprshot
-    #gnugrep
-    #bluez
-  #];
+    gnugrep
+    bluez
+  ];
 
-  #imports = [
+  imports = [
     #./compatibility
     #./hyprlock.nix
-    #];
+  ];
 
-  #services = {
-  #  swaync = {
-  #    enable = true;
-  #  };
-  #  xembed-sni-proxy = {
-  #    enable = true;
-  #  };
-  #};
+  services = {
+    swaync = {
+      enable = true;
+    };
+    xembed-sni-proxy = {
+      enable = true;
+    };
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
 
-    #plugins = [
+    plugins = [
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-    #];
-
-    configType = "hyprlang";
+    ];
 
     settings = {
       general = {
@@ -45,7 +43,7 @@
         "DP-1,highrr,auto,auto"
         "DP-2,highrr,auto,auto"
       ];
-      "$mod" = "SUPER";
+      "$mod" = "Super";
       "$terminal" = "ghostty";
       "$fileManager" = "nautilus";
       exec-once = [

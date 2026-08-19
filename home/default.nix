@@ -16,6 +16,7 @@ in
     ./ghostty
     ./nvf
     ./java
+    ./ollama
     ./zed
     #./idea
     ./desktop
@@ -31,6 +32,7 @@ in
     godot
     mob
     docker
+    kitty
     kubernetes-helm
     parted
     impression
@@ -40,7 +42,7 @@ in
     #docker-compose
     #wofi
     #    dolphin
-    gemini-cli
+    antigravity-cli
     claude-code
     opencode
     xournalpp
@@ -56,7 +58,7 @@ in
     awscli2
     nixd
     nil
-    nixfmt-rfc-style
+    nixfmt
     ragenix
     google-chrome
     slack
@@ -89,7 +91,7 @@ in
     gamescope
     mangohud
     nodejs
-    antigravity
+    antigravity-ide
     yarn
     python3
     docker-compose

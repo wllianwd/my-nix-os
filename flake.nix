@@ -19,13 +19,12 @@
     hyprland-plugins.inputs.hyprland.follows = "hyprland";
 
     # niri
-    niri.url = "github:sodiboo/niri-flake";
-    niri.inputs.nixpkgs.follows = "nixpkgs";
+    #niri.url = "github:sodiboo/niri-flake";
+    #niri.inputs.nixpkgs.follows = "nixpkgs";
 
     # stylix
     stylix.url = "github:danth/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
-    stylix.inputs.home-manager.follows = "home-manager";
     stylix.inputs.tinted-schemes.follows = "tinted-schemes";
 
     # theme
@@ -39,10 +38,11 @@
     dgop.url = "github:AvengeMedia/dgop";
     dgop.inputs.nixpkgs.follows = "nixpkgs";
 
-    dankMaterialShell.url = "github:AvengeMedia/DankMaterialShell";
-    dankMaterialShell.inputs.nixpkgs.follows = "nixpkgs";
-    dankMaterialShell.inputs.dgop.follows = "dgop";
-    #dankMaterialShell.inputs.dms-cli.follows = "dms-cli";
+    dms.url = "github:AvengeMedia/DankMaterialShell";
+    dms.inputs.nixpkgs.follows = "nixpkgs";
+
+    dank-greeter.url = "github:AvengeMedia/dank-greeter";
+    dank-greeter.inputs.nixpkgs.follows = "nixpkgs";
 
     # quickshell
     quickshell.url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
@@ -69,7 +69,7 @@
       ragenix,
       nvf,
       nur,
-      niri,
+      #niri,
       hyprland,
       hyprland-plugins,
       stylix,
@@ -77,7 +77,8 @@
       #caelestia-shell,
       #dms-cli,
       dgop,
-      dankMaterialShell,
+      dms,
+      dank-greeter,
       quickshell,
     }:
     let
@@ -85,14 +86,12 @@
       system = "x86_64-linux"; # system architecture
       pkgs = import nixpkgs { inherit system; };
       lib = nixpkgs.lib;
-      #my-overlays = import ./system/overlays.nix { inherit nur pkgs; };
     in
     {
       nixosConfigurations."${global.host}" = lib.nixosSystem {
         system = system;
         specialArgs = { inherit inputs; };
         modules = [
-          #my-overlays
           ./system/configuration.nix
           home-manager.nixosModules.home-manager
           {
@@ -104,11 +103,11 @@
             home-manager.sharedModules = [
               ragenix.homeManagerModules.default
               nvf.homeManagerModules.default
-              inputs.niri.homeModules.niri
+              #inputs.niri.homeModules.niri
               stylix.homeModules.stylix
               #inputs.caelestia-shell.homeManagerModules.default
-              inputs.dankMaterialShell.homeModules.dank-material-shell
-              inputs.dankMaterialShell.homeModules.niri
+              #inputs.dms.homeModules.dank-material-shell
+              #inputs.dankMaterialShell.homeModules.niri
             ];
 
             # home-manager specific
