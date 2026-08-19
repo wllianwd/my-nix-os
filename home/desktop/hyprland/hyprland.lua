@@ -3,8 +3,8 @@
 --
 -- Ordering note: Hyprland aborts the rest of this file if a line throws a runtime
 -- error (e.g. calling a dispatcher wrapper that doesn't exist). Anything important
--- (monitors, autostart, main keybinds) is placed before the less-certain bits
--- (the `global` DBus-shortcut dispatcher at the very end) so a mistake there can't
+-- (monitors, autostart, main keybinds) is placed before the one bind whose exact
+-- Lua wrapper name I couldn't fully confirm (fullscreen) so a mistake there can't
 -- take down the rest of the session.
 
 ------------------
@@ -88,10 +88,12 @@ hl.bind("XF86AudioMicMute",      hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_
 hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                  { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5"),                    { locked = true, repeating = true })
 
-------------------------------------------------
----- SCREENSHOTS (uses the `global` dispatcher, kept last on purpose) ----
-------------------------------------------------
+--------------------
+---- SCREENSHOTS ----
+--------------------
 
-hl.bind("PRINT",               hl.dsp.exec_cmd("caelestia screenshot"))
-hl.bind("SHIFT + PRINT",       hl.dsp.global("caelestia:screenshotFreeze"))
-hl.bind("SHIFT + ALT + PRINT", hl.dsp.global("caelestia:screenshot"))
+-- caelestia -> dms screenshot (region/full/window are real dms CLI subcommands,
+-- no DBus global-shortcut plumbing needed like caelestia's was)
+hl.bind("PRINT",               hl.dsp.exec_cmd("dms screenshot"))
+hl.bind("SHIFT + PRINT",       hl.dsp.exec_cmd("dms screenshot full"))
+hl.bind("SHIFT + ALT + PRINT", hl.dsp.exec_cmd("dms screenshot window"))
