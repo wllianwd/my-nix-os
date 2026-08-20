@@ -5,8 +5,7 @@
 ---- MONITORS ----
 ------------------
 
-hl.monitor({ output = "DP-1", mode = "highrr", position = "auto", scale = "auto" })
-hl.monitor({ output = "DP-2", mode = "highrr", position = "auto", scale = "auto" })
+hl.monitor({ output = "DP-3", mode = "highrr", position = "auto", scale = "auto" })
 
 ---------------------
 ---- MY PROGRAMS ----
