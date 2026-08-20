@@ -14,10 +14,10 @@ in
   ];
 
   programs.dank-material-shell = {
-    #systemd = {
-    #  enable = true;
-    #  restartIfChanged = true;
-    #};
+    systemd = {
+      enable = true;
+      restartIfChanged = true;
+    };
     #niri = {
     #  enableKeybinds = true; # Automatic keybinding configuration
       #enableSpawn = true; # Auto-start DMS with niri
