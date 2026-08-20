@@ -72,8 +72,8 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 -- fullscreen); routed through hyprctl directly since it's guaranteed-correct
 -- classic dispatcher syntax and I couldn't fully confirm the new Lua wrapper's
 -- exact field names.
-hl.bind(mainMod .. " + F",         hl.dsp.exec_cmd("hyprctl dispatch fullscreen 1"))
-hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd("hyprctl dispatch fullscreen 0"))
+hl.bind(mainMod .. " + F",         hl.dsp.exec_cmd("hyprctl dispatch fullscreen 0"))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd("hyprctl dispatch fullscreen 1"))
 
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
