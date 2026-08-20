@@ -112,6 +112,17 @@ for i = 1, 10 do
     hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
+-- Relative workspace switching. Kept off Up/Down since those already move focus
+-- within a column (scrolling layout); Page_Up/Down + U/I mirror the niri config.
+hl.bind(mainMod .. " + Page_Down",        hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + Page_Up",          hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + U",                hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + I",                hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + CTRL + Page_Down", hl.dsp.window.move({ workspace = "e+1" }))
+hl.bind(mainMod .. " + CTRL + Page_Up",   hl.dsp.window.move({ workspace = "e-1" }))
+hl.bind(mainMod .. " + CTRL + U",         hl.dsp.window.move({ workspace = "e-1" }))
+hl.bind(mainMod .. " + CTRL + I",         hl.dsp.window.move({ workspace = "e+1" }))
+
 -- Move/resize windows with mainMod + LMB/RMB drag
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
